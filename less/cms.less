@@ -1,0 +1,207 @@
+@import 'mixins.less';
+@import 'reset.less';
+body{
+    font-size: 15px;
+}
+body, a, li, ul, header, footer, article, div, nav, h1, h2, p{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.testh1{
+	font-size: 45px;
+	color: #000;
+	.light();
+}
+.login{
+	.dim(100%, 100%);
+	.relative();
+	max-height: 100%;
+	overflow: hidden;
+	.blueCircle{
+		.dim(65%, 100%);
+		min-height: 1000px;
+		.border-radius(50%);
+		.relative();
+		.gradient(#3497DA, #2770A2);
+		.fleft();
+		left: -15%;
+		top: -25%;
+		background-color: #CCC;
+		.whiteCircle{
+			.dim(400px, 400px);
+			.border-radius(50%);
+			.absolute();
+			top: 50%;
+			margin-top: -200px;
+			left: 200px;
+			background: #FFF;
+		}
+	}
+	.rightSection{
+		.absolute();
+		.fright();
+		right: 0;
+		padding-right: 100px;
+		padding-top: 150px;
+		.loginContainer{
+			.dim(400px, 400px);
+			padding: 20px;
+			h1{
+				.light();
+				color: #318FCF;
+				font-size: 18px;
+				margin-bottom: 25px;
+				padding-left: 10px;
+			}
+			.forgetPassword{
+				.dim(100%);
+				.light();
+				color: #BBB;
+				font-size: 11px;
+				text-align: center;
+				a{
+					color: #3498DB;
+				}
+			}
+		}
+	}
+}
+
+nav.sidebar{
+	.dim(290px, 100%);
+	.fixed();
+	.gradient(#3497DA, #2770A2);
+	z-index: 999;
+	.user{
+		.dim(100%, 270px);
+		.box-sizing();
+		padding-top: 50px;
+		.profilePic{
+			.dim(130px, 130px);
+			.border-radius(50%);
+			.box-shadow(0px 0px 25px 5px #2C80B9);
+			overflow: hidden;
+			margin: 0px auto;
+			border: 2px solid #337EB1;
+			margin-bottom: 20px;
+		}
+		.welcome{
+			text-align: center;
+			color: #FFF;
+			.light();
+			font-size: 12px;
+			.user{
+				.semibold();
+				font-size: 14px;
+			}
+		}
+	}
+	.navButton{
+		.dim(100%, 70px);
+		.transition(.1s);
+		font-size: 13px;
+		color: #E0F0FA;
+		a{
+			.dim(100%, 70px);
+			.semibold();
+			.relative();
+			.iblock();
+			.transition(.15s);
+			line-height: 70px;
+			padding-left: 90px;
+			font-size: 1.2em;
+			&:before{
+				.dim(30px, 30px);
+				.absolute();
+				.opacity(0.8);
+				.transition(.15s);
+				left: 30px;
+				top: 20px;
+				content: ' ';
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+			}
+			&:hover, &:active{
+				.transition(.15s);
+				color: #FFF;
+				&:before{
+					.opacity(1);
+				}
+			}
+		}
+		&:hover{
+			.transition(.2s);
+			background-color: #308DCC;
+		}
+		.btnHome{
+			&:before{
+				background-image: url(../assets/svg/home.svg);
+			}
+		}
+		.btnTracks{
+			&:before{
+				background-image: url(../assets/svg/tracks.svg);
+			}
+		}
+		.btnAbout{
+			&:before{
+				background-image: url(../assets/svg/user.svg);
+			}
+		}
+		.btnBlogs{
+			&:before{
+				background-image: url(../assets/svg/messages.svg);
+			}
+		}
+		.btnCodes{
+			&:before{
+				background-image: url(../assets/svg/moneypig.svg);
+			}
+		}
+	}
+	.navButton.active{
+		color: #FFF;
+		background-color: #308DCC;
+		a{
+			&:before{
+				.opacity(1) !important;
+			}
+		}
+		
+	}
+}
+
+.container{
+	.box-sizing();
+	padding-left: 330px;
+	padding-right: 40px;
+	.titleSection{
+		.dim(100%, 120px);
+		padding-top: 40px;
+		margin-bottom: 40px;
+		h2{
+			.light();
+			color: #95989A;
+			font-size: 17px;
+		}
+		h1{
+			.bold();
+			font-size: 35px;
+			color: #308DCC;
+		}
+	}
+	.whiteSection{
+		.dim(100%);
+		.border-radius(6px);
+		.box-sizing();
+		min-height: 100px;
+		padding: 30px;
+		background: #FFF;
+		border: 1px solid #F1F1F1;
+	}
+}
+
