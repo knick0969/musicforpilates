@@ -5,6 +5,7 @@
 	<title>Login | Music For Pilates </title>
 	<?php include('../includes/head-cms.php'); ?>
 	<link rel="stylesheet" href="../css/cms.css" />
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
 	<section class="login">
@@ -17,9 +18,9 @@
 		<div class="rightSection">
 			<div class="loginContainer">
 				<h1>Sign In to MFP CMS</h1>
-				<form name="login">
+				<form name="login" class="loginForm">
 					<label for="username">Username</label>
-					<input type="text" maxlength="100" name="username" class="input">
+					<input type="text" maxlength="100" id="username" name="username" class="input username formError">
 					<label for="password">Password</label>
 					<input type="password" maxlength="100" name="password" class="input">
 					<input type="submit" name="btnLogin" class="submit" value="LOGIN">

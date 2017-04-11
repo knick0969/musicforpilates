@@ -11,11 +11,8 @@ body, a, li, ul, header, footer, article, div, nav, h1, h2, p{
     text-decoration: none;
 }
 
-.testh1{
-	font-size: 45px;
-	color: #000;
-	.light();
-}
+
+
 .login{
 	.dim(100%, 100%);
 	.relative();
@@ -75,6 +72,7 @@ nav.sidebar{
 	.dim(290px, 100%);
 	.fixed();
 	.gradient(#3497DA, #2770A2);
+	overflow: hidden;
 	z-index: 999;
 	.user{
 		.dim(100%, 270px);
@@ -105,6 +103,7 @@ nav.sidebar{
 		.transition(.1s);
 		font-size: 13px;
 		color: #E0F0FA;
+		overflow: hidden;
 		a{
 			.dim(100%, 70px);
 			.semibold();
@@ -170,8 +169,20 @@ nav.sidebar{
 			&:before{
 				.opacity(1) !important;
 			}
+		}		
+	}
+	.logOut{
+		.absolute();
+		bottom: 0;
+		.opacity(.3);
+		.transition(.2s);
+		color: #000;
+		text-align: center;
+		a{ padding: 0; }
+		&:hover, &:active{
+			.opacity(1);
+			.transition(.2s);
 		}
-		
 	}
 }
 
@@ -205,3 +216,43 @@ nav.sidebar{
 	}
 }
 
+.formError{
+	border: 1px solid rgba(204, 9, 57, 0.4) !important;
+	background-color: rgba(204, 9, 57, 0.05) !important;
+	color: #333;
+}
+
+
+@media (max-width: 900px) {
+	.container{
+		padding-top: 80px;
+		padding-left: 40px;
+	}
+	nav.sidebar{
+		.dim(100%);
+		max-height: 70px;
+		.transition(.5s);
+		.fixed();
+		.gradient(#3497DA, #2770A2);
+		top: 0px;
+		z-index: 999;
+		.buttonsContainer{
+			.opacity(0);
+			.transition(.5s);
+			margin-top: -200px;
+		}
+	}
+	nav.open{
+		.iblock();
+		.transition(.5s);
+		.clr();
+		min-height: 70px;
+		height: auto;
+		max-height: 1000px;
+		.buttonsContainer{
+			.opacity(1);
+			.transition(.5s);
+			margin-top: 0;
+		}
+	}
+}
