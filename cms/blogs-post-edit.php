@@ -13,24 +13,24 @@
 	<section class="container">
 		<div class="titleSection">
 			<h2>Welcome to MFP's CMS</h2>
-			<h1>Blog Post Add/Edit</h1>
+			<h1>Blogs</h1>
 		</div>
 		<div class="whiteSection">
 			<div class="inputBox">
-				<label>Post Title</label>
+				<label>Page Title <span>(SEO)</span></label>
 				<input type="text" class="input error" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
 			</div>
 			<div class="inputBox">
-				<label>Post Keywords <span>(SEO)</span></label>
+				<label>Page Keywords <span>(SEO)</span></label>
 				<input type="text" class="input" name="page-keywords">
 			</div>
 			<div class="inputBox">
-				<label>Post Description <span>(Essential for SEO)</span></label>
+				<label>Page Description <span>(SEO)</span></label>
 				<input type="text" class="input" name="page-description">
 			</div>
 			<div class="divider"></div>
 			<div class="inputBox">
-				<label>Post Content</label>
+				<label>Brief Description <span>(Displayed on the Homepage)</span></label>
 				<textarea class="input textarea" name="page-description"></textarea>
 			</div>
 		</div>
