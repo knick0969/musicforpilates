@@ -2,6 +2,10 @@ body,
 html {
   height: 100%;
   background: #F9F9F9;
+  -webkit-transition: all 0s ease-in-out;
+  -moz-transition: all 0s ease-in-out;
+  -o-transition: all 0s ease-in-out;
+  transition: all 0s ease-in-out;
 }
 body,
 a,
@@ -27,6 +31,22 @@ p {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+body:after,
+a:after,
+li:after,
+ul:after,
+header:after,
+footer:after,
+article:after,
+div:after,
+nav:after,
+h1:after,
+h2:after,
+p:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 input,
 textarea {

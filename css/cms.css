@@ -2,6 +2,10 @@ body,
 html {
   height: 100%;
   background: #F9F9F9;
+  -webkit-transition: all 0s ease-in-out;
+  -moz-transition: all 0s ease-in-out;
+  -o-transition: all 0s ease-in-out;
+  transition: all 0s ease-in-out;
 }
 body,
 a,
@@ -27,6 +31,22 @@ p {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+body:after,
+a:after,
+li:after,
+ul:after,
+header:after,
+footer:after,
+article:after,
+div:after,
+nav:after,
+h1:after,
+h2:after,
+p:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 input,
 textarea {
@@ -540,10 +560,155 @@ nav.sidebar .logOut:active {
   background: #FFF;
   border: 1px solid #F1F1F1;
 }
+.container .inputBox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container .inputBox .sectionDescription {
+  color: #999;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+.container .inputBox .input {
+  height: 50px;
+  width: 100%;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  background-color: #F9F9F9;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #F1F1F1;
+}
+.container .inputBox .input:hover {
+  background-color: #F9F9F9;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-box-shadow: 0px 0px 10px 2px #f9f9f9;
+  -moz-box-shadow: 0px 0px 10px 2px #f9f9f9;
+  box-shadow: 0px 0px 10px 2px #f9f9f9;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.container .inputBox .input:focus,
+.container .inputBox .input:active {
+  background-color: #FFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-box-shadow: 0px 0px 10px 2px #f0f0f0;
+  -moz-box-shadow: 0px 0px 10px 2px #f0f0f0;
+  box-shadow: 0px 0px 10px 2px #f0f0f0;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.container .inputBox .input.error {
+  -webkit-box-shadow: 0px 0px 10px 2px #eeeeee;
+  -moz-box-shadow: 0px 0px 10px 2px #eeeeee;
+  box-shadow: 0px 0px 10px 2px #eeeeee;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  border: 1px solid #BF3838;
+  background-color: #FFEBEB;
+}
+.container .inputBox .textarea {
+  height: 150px;
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.container .tracksContainer {
+  height: auto;
+  width: 100%;
+}
+.container .tracksContainer:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.container .tracksContainer .trackBox {
+  height: auto;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.container .tracksContainer .trackBox:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.container .tracksContainer .trackBox .trackOrder {
+  height: auto;
+  width: 13%;
+  float: left;
+  font-weight: 600;
+  padding: 12px 1px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #999;
+}
+.container .tracksContainer .trackBox .track {
+  height: 55px;
+  width: 87%;
+  float: right;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  max-width: 750px;
+  background-color: #F1F1F1;
+  border: 1px solid #CCC;
+}
+.container .tracksContainer .trackBox .track .trackTitle {
+  height: 55px;
+  width: 80%;
+  float: left;
+}
 .formError {
   border: 1px solid rgba(204, 9, 57, 0.4) !important;
   background-color: rgba(204, 9, 57, 0.05) !important;
   color: #333;
+}
+.cta {
+  float: right;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  font-weight: 600;
+  position: relative;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  padding: 10px 16px;
+  padding-left: 45px;
+  background-color: #3498DB;
+  color: #FFF;
+  background-image: url(../assets/svg/home.svg);
+  background-position: 12% 47%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.cta:hover,
+.cta:active {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  background-color: #2D8ED0;
+  cursor: pointer;
 }
 @media (max-width: 900px) {
   .container {
@@ -569,6 +734,7 @@ nav.sidebar .logOut:active {
     -pie-background: linear-gradient(#3497da, #2770a2);
     behavior: url(../htc/pie.htc);
     zoom: 1;
+    overflow-y: hidden;
     top: 0px;
     z-index: 999;
   }
@@ -583,7 +749,7 @@ nav.sidebar .logOut:active {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    margin-top: -200px;
+    top: -200px;
   }
   nav.open {
     display: inline-block;

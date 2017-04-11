@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
     // Toggle Sidebar/Menu for Mobile
-    $('.afas').click(function(e){
+    $('.sidebar').click(function(e){
     	e.preventDefault();
     	$(this).toggleClass('open');
     });
