@@ -12,8 +12,6 @@ body, a, li, ul, header, footer, article, div, nav, h1, h2, p{
     text-decoration: none;
 }
 
-
-
 .login{
 	.relative();
 	height: 100%;
@@ -234,6 +232,11 @@ nav.sidebar{
 				.box-shadow(0px 0px 10px 2px #F0F0F0);
 			}
 		}
+		.inputFile{
+			height: 80px;
+			.relative();
+			padding-top: 15px;
+		}
 		.input.error{
 			.box-shadow(0px 0px 10px 2px #EEE);
 			border: 1px solid #BF3838;
@@ -334,6 +337,106 @@ nav.sidebar{
 		}
 	}
 }
+
+// FILE UPLOAD STYLING
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+.no-js .inputfile + label {
+    display: none;
+}
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+.inputfile-6 + label {
+	.absolute();
+	left: 0px;
+    color: #d3394c;
+}
+.inputfile-6 + label {
+    border: 1px solid #308DCC;
+    background-color: #d5e6f2;
+    padding: 0;
+}
+.inputfile-6:focus + label,
+.inputfile-6.has-focus + label,
+.inputfile-6 + label:hover {
+    border-color: #2771A3;
+}
+.inputfile-6 + label span,
+.inputfile-6 + label strong {
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+.inputfile-6 + label span {
+    width: 200px;
+    height: 45px;
+    line-height: 25px;
+    .box-sizing();
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+    .light();
+    font-size: 0.8em;
+    color: #333;
+}
+.inputfile-6 + label strong {
+    height: 45px;
+    .box-sizing();
+    .semibold();
+    color: #FFF;
+    font-size: 0.8em;
+    background-color: #308DCC;
+    display: inline-block;
+}
+.inputfile-6:focus + label strong,
+.inputfile-6.has-focus + label strong,
+.inputfile-6 + label:hover strong {
+    background-color: #2771A3;
+    color: #FFF;
+}
+@media screen and (max-width: 50em) {
+	.inputfile-6 + label strong {
+		display: block;
+	}
+}
+
 
 .formError{
 	border: 1px solid rgba(204, 9, 57, 0.4) !important;

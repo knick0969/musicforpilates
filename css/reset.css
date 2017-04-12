@@ -48,7 +48,8 @@ p:after {
   display: block;
   clear: both;
 }
-input,
+input[type=text],
+input[type=password],
 textarea {
   outline: none;
   border: 1px solid #F9F9F9;
@@ -60,11 +61,13 @@ textarea {
   font-size: 14px;
   font-weight: 300;
 }
-input::-webkit-input-placeholder,
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #cccccc;
 }
-input:-moz-placeholder,
+input[type=text]:-moz-placeholder,
+input[type=password]:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #cccccc;
 }
