@@ -18,59 +18,59 @@
 		</div>
 		<div class="whiteSection">	
 			<h3>List of Tracks</h3>
-			<div class="tracksContainer tracksList">
-				<div class="trackBox">
-					<div class="track">
-						<div class="trackImage">
+			<div class="itemsContainer tracksList">
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
 							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
 						</div>
-						<div class="trackInfos">
-							<p class="trackTitle">Track Title</p>
+						<div class="itemInfos">
+							<p class="title">Track Title</p>
 							<p class="duration"><span>Duration: </span> 1:52</p>
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
-							<p class="trackDescription"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
 						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>
-				<div class="trackBox">
-					<div class="track">
-						<div class="trackImage">
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
 							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
 						</div>
-						<div class="trackInfos">
-							<p class="trackTitle">Track Title</p>
+						<div class="itemInfos">
+							<p class="title">Track Title</p>
 							<p class="duration"><span>Duration: </span> 1:52</p>
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
-							<p class="trackDescription"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
 						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>
-				<div class="trackBox">
-					<div class="track">
-						<div class="trackImage">
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
 							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
 						</div>
-						<div class="trackInfos">
-							<p class="trackTitle">Track Title</p>
+						<div class="itemInfos">
+							<p class="title">Track Title</p>
 							<p class="duration"><span>Duration: </span> 1:52</p>
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
-							<p class="trackDescription"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
 						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>
-				<div class="trackBox">
-					<div class="track">
-						<div class="trackImage">
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
 							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
 						</div>
-						<div class="trackInfos">
-							<p class="trackTitle">Track Title</p>
+						<div class="itemInfos">
+							<p class="title">Track Title</p>
 							<p class="duration"><span>Duration: </span> 1:52</p>
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
-							<p class="trackDescription"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
 						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
 					</div>

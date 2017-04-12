@@ -248,10 +248,10 @@ nav.sidebar{
 			padding-top: 10px;
 		}
 	}
-	.tracksContainer{
+	.itemsContainer{
 		.dim(100%);
 		.clr();
-		.trackBox{
+		.itemBox{
 			.dim(100%);
 			.clr();
 			margin-top: 20px;
@@ -265,14 +265,21 @@ nav.sidebar{
 				font-size: 1.2em;
 				color: #999;
 			}
-			.track{
+			.item{
 				.dim(87%, 65px);
 				.fleft();
 				.border-radius(8px);
 				max-width: 900px;
 				background-color: #F1F1F1;
 				border: 1px solid #CCC;
-				.trackTitle{
+				.itemImage{
+					.dim(120px, 120px);
+					.fleft();
+					.border-radius(10px);
+					background-color: #CCC;
+					margin-right: 30px;
+				}
+				.title{
 					.dim(70%, 55px);
 					.fleft();
 				}
@@ -288,25 +295,25 @@ nav.sidebar{
 	}
 	.tracksList{
 		padding-bottom: 10px;
-		.trackBox{
-			.track{
+		.itemBox{
+			.item{
 				height: 150px;
 				max-width: 1000px;
 				float: none;
 				margin: 0 auto;
 				padding: 15px;
 				padding-left: 20px;
-				.trackImage{
+				.itemImage{
 					.dim(120px, 120px);
 					.fleft();
 					.border-radius(10px);
 					background-color: #CCC;
 					margin-right: 30px;
 				}
-				.trackInfos{
+				.itemInfos{
 					.dim(60%);
 					.fleft();
-					.trackTitle{
+					.title{
 						.dim(100%);
 						.semibold();
 						font-size: 1.3em;
@@ -325,9 +332,12 @@ nav.sidebar{
 						.light();
 						font-size: 0.9em;
 					}
-					.trackDescription{
+					.description{
 						.dim(100%);
 						.light();
+						max-height: 55px;
+						text-overflow: ellipsis;
+						overflow: hidden;
 						margin-top: 13px;
 						font-size: 0.9em;
 					}

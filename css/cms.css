@@ -626,27 +626,27 @@ nav.sidebar .logOut:active {
   padding-left: 10px;
   padding-top: 10px;
 }
-.container .tracksContainer {
+.container .itemsContainer {
   height: auto;
   width: 100%;
 }
-.container .tracksContainer:after {
+.container .itemsContainer:after {
   content: " ";
   display: block;
   clear: both;
 }
-.container .tracksContainer .trackBox {
+.container .itemsContainer .itemBox {
   height: auto;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.container .tracksContainer .trackBox:after {
+.container .itemsContainer .itemBox:after {
   content: " ";
   display: block;
   clear: both;
 }
-.container .tracksContainer .trackBox .trackOrder {
+.container .itemsContainer .itemBox .trackOrder {
   height: auto;
   width: 13%;
   float: left;
@@ -656,7 +656,7 @@ nav.sidebar .logOut:active {
   font-size: 1.2em;
   color: #999;
 }
-.container .tracksContainer .trackBox .track {
+.container .itemsContainer .itemBox .item {
   height: 65px;
   width: 87%;
   float: left;
@@ -669,31 +669,7 @@ nav.sidebar .logOut:active {
   background-color: #F1F1F1;
   border: 1px solid #CCC;
 }
-.container .tracksContainer .trackBox .track .trackTitle {
-  height: 55px;
-  width: 70%;
-  float: left;
-}
-.container .tracksContainer .trackBox .track .selectContainer {
-  height: 45px;
-  width: 30%;
-  max-width: 200px;
-  position: relative;
-  float: right;
-  background-color: #000;
-}
-.container .tracksList {
-  padding-bottom: 10px;
-}
-.container .tracksList .trackBox .track {
-  height: 150px;
-  max-width: 1000px;
-  float: none;
-  margin: 0 auto;
-  padding: 15px;
-  padding-left: 20px;
-}
-.container .tracksList .trackBox .track .trackImage {
+.container .itemsContainer .itemBox .item .itemImage {
   height: 120px;
   width: 120px;
   float: left;
@@ -705,12 +681,48 @@ nav.sidebar .logOut:active {
   background-color: #CCC;
   margin-right: 30px;
 }
-.container .tracksList .trackBox .track .trackInfos {
+.container .itemsContainer .itemBox .item .title {
+  height: 55px;
+  width: 70%;
+  float: left;
+}
+.container .itemsContainer .itemBox .item .selectContainer {
+  height: 45px;
+  width: 30%;
+  max-width: 200px;
+  position: relative;
+  float: right;
+  background-color: #000;
+}
+.container .tracksList {
+  padding-bottom: 10px;
+}
+.container .tracksList .itemBox .item {
+  height: 150px;
+  max-width: 1000px;
+  float: none;
+  margin: 0 auto;
+  padding: 15px;
+  padding-left: 20px;
+}
+.container .tracksList .itemBox .item .itemImage {
+  height: 120px;
+  width: 120px;
+  float: left;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  background-color: #CCC;
+  margin-right: 30px;
+}
+.container .tracksList .itemBox .item .itemInfos {
   height: auto;
   width: 60%;
   float: left;
 }
-.container .tracksList .trackBox .track .trackInfos .trackTitle {
+.container .tracksList .itemBox .item .itemInfos .title {
   height: auto;
   width: 100%;
   font-weight: 600;
@@ -718,7 +730,7 @@ nav.sidebar .logOut:active {
   line-height: 30px;
   margin-bottom: 10px;
 }
-.container .tracksList .trackBox .track .trackInfos .duration {
+.container .tracksList .itemBox .item .itemInfos .duration {
   height: auto;
   width: 100%;
   font-weight: 300;
@@ -726,20 +738,23 @@ nav.sidebar .logOut:active {
   margin-bottom: 2px;
   font-size: 0.9em;
 }
-.container .tracksList .trackBox .track .trackInfos .keywords {
+.container .tracksList .itemBox .item .itemInfos .keywords {
   height: auto;
   width: 100%;
   font-weight: 300;
   font-size: 0.9em;
 }
-.container .tracksList .trackBox .track .trackInfos .trackDescription {
+.container .tracksList .itemBox .item .itemInfos .description {
   height: auto;
   width: 100%;
   font-weight: 300;
+  max-height: 55px;
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin-top: 13px;
   font-size: 0.9em;
 }
-.container .tracksList .trackBox .track .trackInfos span {
+.container .tracksList .itemBox .item .itemInfos span {
   font-weight: 600;
 }
 .js .inputfile {

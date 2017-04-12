@@ -18,6 +18,62 @@
 			<a href="blogs-post-edit.php" class="cta newpost">ADD NEW POST</a>
 		</div>
 		<div class="whiteSection">
+			<h3>List of Blog Posts</h3>
+			<div class="itemsContainer tracksList">
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
+							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
+						</div>
+						<div class="itemInfos">
+							<p class="title">Blog Post Title</p>
+							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+						</div>
+						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+					</div>
+				</div>
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
+							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
+						</div>
+						<div class="itemInfos">
+							<p class="title">Blog Post Title</p>
+							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother This is a pretty chilled out song to make your performance smoother This is a pretty chilled out song to make your performance smoother This is a pretty chilled out song to make your performance smoother </p>
+						</div>
+						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+					</div>
+				</div>
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
+							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
+						</div>
+						<div class="itemInfos">
+							<p class="title">Blog Post Title</p>
+							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+						</div>
+						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+					</div>
+				</div>
+				<div class="itemBox">
+					<div class="item">
+						<div class="itemImage">
+							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
+						</div>
+						<div class="itemInfos">
+							<p class="title">Blog Post Title</p>
+							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
+							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
+						</div>
+						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+					</div>
+				</div>		
+			</div>		
+			<div class="divider"></div>
 			<form name="blogs-edit" method="post" class="myValidate">
 				<div class="inputBox">
 					<label>Page Title <span>(SEO)</span></label>
