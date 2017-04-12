@@ -1,5 +1,6 @@
 @import 'mixins.less';
 @import 'reset.less';
+
 body{
     font-size: 15px;
 }
@@ -14,55 +15,47 @@ body, a, li, ul, header, footer, article, div, nav, h1, h2, p{
 
 
 .login{
-	.dim(100%, 100%);
 	.relative();
+	height: 100%;
 	max-height: 100%;
 	overflow: hidden;
+	padding: 25px;
 	.blueCircle{
-		.dim(65%, 100%);
+		.dim(200%, 100%);
 		min-height: 1000px;
 		.border-radius(50%);
 		.relative();
 		.gradient(#3497DA, #2770A2);
 		.fleft();
-		left: -15%;
-		top: -25%;
-		background-color: #CCC;
-		.whiteCircle{
-			.dim(400px, 400px);
-			.border-radius(50%);
-			.absolute();
-			top: 50%;
-			margin-top: -200px;
-			left: 200px;
-			background: #FFF;
-		}
+		left: -50%;
+		top: -65%;
 	}
-	.rightSection{
+	.loginContainer{
+		.dim(400px, 400px);
+		.border-radius(12px);
 		.absolute();
-		.fright();
-		right: 0;
-		padding-right: 100px;
-		padding-top: 150px;
-		.loginContainer{
-			.dim(400px, 400px);
-			padding: 20px;
-			h1{
-				.light();
-				color: #318FCF;
-				font-size: 18px;
-				margin-bottom: 25px;
-				padding-left: 10px;
-			}
-			.forgetPassword{
-				.dim(100%);
-				.light();
-				color: #BBB;
-				font-size: 11px;
-				text-align: center;
-				a{
-					color: #3498DB;
-				}
+		.box-shadow(0px 0px 25px 5px rgba(0, 0, 0, 0.1));
+		left: 50%;
+		margin-left: -200px;
+		top: 20%;
+		padding: 25px;
+		background-color: #FFF;
+		z-index: 9999;
+		h1{
+			.light();
+			color: #318FCF;
+			font-size: 18px;
+			margin-bottom: 25px;
+			padding-left: 10px;
+		}
+		.forgetPassword{
+			.dim(100%);
+			.light();
+			color: #BBB;
+			font-size: 11px;
+			text-align: center;
+			a{
+				color: #3498DB;
 			}
 		}
 	}
@@ -270,18 +263,72 @@ nav.sidebar{
 				color: #999;
 			}
 			.track{
-				.dim(87%, 55px);
-				.fright();
+				.dim(87%, 65px);
+				.fleft();
 				.border-radius(8px);
-				max-width: 750px;
+				max-width: 900px;
 				background-color: #F1F1F1;
 				border: 1px solid #CCC;
 				.trackTitle{
-					.dim(80%, 55px);
+					.dim(70%, 55px);
 					.fleft();
 				}
-				.changeBtn{
-					
+				.selectContainer{
+					.dim(30%, 45px);
+					max-width: 200px;
+					.relative();
+					.fright();
+					background-color: #000;
+				}
+			}
+		}
+	}
+	.tracksList{
+		padding-bottom: 10px;
+		.trackBox{
+			.track{
+				height: 150px;
+				max-width: 1000px;
+				float: none;
+				margin: 0 auto;
+				padding: 15px;
+				padding-left: 20px;
+				.trackImage{
+					.dim(120px, 120px);
+					.fleft();
+					.border-radius(10px);
+					background-color: #CCC;
+					margin-right: 30px;
+				}
+				.trackInfos{
+					.dim(60%);
+					.fleft();
+					.trackTitle{
+						.dim(100%);
+						.semibold();
+						font-size: 1.3em;
+						line-height: 30px;
+						margin-bottom: 10px;
+					}	
+					.duration{
+						.dim(100%);
+						.light();
+						margin-top: 5px;
+						margin-bottom: 2px;
+						font-size: 0.9em;
+					}
+					.keywords{
+						.dim(100%);
+						.light();
+						font-size: 0.9em;
+					}
+					.trackDescription{
+						.dim(100%);
+						.light();
+						margin-top: 13px;
+						font-size: 0.9em;
+					}
+					span{ .semibold(); }
 				}
 			}
 		}
@@ -301,11 +348,10 @@ nav.sidebar{
 	.relative();
 	.transition(.1s);
 	padding: 10px 16px;
-	padding-left: 45px;
+	padding-left: 55px;
 	background-color: #3498DB;
 	color: #FFF;
-	background-image: url(../assets/svg/home.svg);
-	background-position: 12% 47%;
+	background-position: 12% 52%;
 	background-size: 20px;
 	background-repeat: no-repeat;
 	&:hover, &:active{
@@ -313,6 +359,23 @@ nav.sidebar{
 		background-color: #2D8ED0;
 		cursor: pointer;
 	}
+}
+.editBtn{
+	.opacity(.6);
+	.transition(.2s);
+	top: 40px;
+	margin-right: 12px;
+	padding-left: 16px;
+	&:hover, &:active{
+		.opacity(1);
+		.transition(.2s);
+	}
+}
+.newpost{
+	background-image: url(../assets/svg/messages.svg);
+}
+.newTrack{
+	background-image: url(../assets/svg/tracks.svg);
 }
 
 

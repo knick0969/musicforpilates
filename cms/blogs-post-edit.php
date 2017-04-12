@@ -16,23 +16,27 @@
 			<h1>Blogs</h1>
 		</div>
 		<div class="whiteSection">
-			<div class="inputBox">
-				<label>Page Title <span>(SEO)</span></label>
-				<input type="text" class="input error" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
-			</div>
-			<div class="inputBox">
-				<label>Page Keywords <span>(SEO)</span></label>
-				<input type="text" class="input" name="page-keywords">
-			</div>
-			<div class="inputBox">
-				<label>Page Description <span>(SEO)</span></label>
-				<input type="text" class="input" name="page-description">
-			</div>
-			<div class="divider"></div>
-			<div class="inputBox">
-				<label>Brief Description <span>(Displayed on the Homepage)</span></label>
-				<textarea class="input textarea" name="page-description"></textarea>
-			</div>
+			<form name="blog-post-edit" method="post">
+				<div class="inputBox">
+					<label>Post Title</label>
+					<input type="text" class="input error" name="blogs-post-title" placeholder="Type the post title, for example: How music can improve your Pilates performance">
+				</div>
+				<div class="inputBox">
+					<label>Post Keywords <span>(SEO)</span></label>
+					<input type="text" class="input" name="blogs-post-keywords">
+				</div>
+				<div class="inputBox">
+					<label>Post Brief Description <span>(SEO)</span></label>
+					<input type="text" class="input" name="blogs-brief-description">
+				</div>
+				<div class="divider"></div>
+				<div class="inputBox">
+					<label>Post Content</label>
+					<textarea class="input textarea" name="blogs-post-content"></textarea>
+				</div>
+				<div class="divider"></div>
+				<input type="submit" value="SAVE POST" class="cta">
+			</form>
 		</div>
 	</section>
 

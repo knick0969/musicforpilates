@@ -5,6 +5,8 @@
 	<title>Homepage Edit | Music For Pilates CMS</title>
 	<?php include('../includes/head-cms.php'); ?>
 	<link rel="stylesheet" href="../css/cms.css" />
+
+	<script src='../js/chosen/chosen.jquery.min.js' type="text/javascript"></script>
 	<link rel="stylesheet" href="../js/chosen/chosen.css" />
 </head>
 <body>
@@ -18,7 +20,7 @@
 			<h1>Homepage</h1>
 		</div>
 		<div class="whiteSection">
-			<form method="post" name="" action="">
+			<form method="post" name="homepage-edit" action="">
 				<div class="inputBox">
 					<label>Page Title <span>(SEO)</span></label>
 					<input type="text" class="input" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
@@ -44,10 +46,17 @@
 							<p class="trackOrder">1st</p>
 							<div class="track">
 								<p class="trackTitle">Track Title</p>
-								<select class="chzn-select">
-									<option> HEY O HEY O HEY OOO HEY</option>
-									<option> HEY O HEY O HEEEEEEEY O</option>
-								</select>
+								<div class="selectContainer">
+									<select class="chosen-select">
+										<option> HEY O HEY O HEY OOO HEY</option>
+										<option> HEY O HEY O HEEEEEEEY O</option>
+										<option> HEY O HEY O HEEEEEEEY O</option>
+										<option> HEY O HEY O HEEEEEEEY O</option>
+										<option> HEY O HEY O HEEEEEEEY O</option>
+										<option> HEY O HEY O HEEEEEEEY O</option>
+										<option> HEY O HEY O HEEEEEEEY O</option>
+									</select>
+								</div>
 							</div>
 						</div>
 						<div class="trackBox">
@@ -77,9 +86,10 @@
 		</div>
 	</section>
 
-	
+	<script type="text/javascript">
+		$(".chosen-select").chosen();
+	</script>
 
 
-<script> $(".chzn-select").chosen(); </script>
 </body>
 </html>
