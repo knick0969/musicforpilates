@@ -8,6 +8,7 @@
 
 	<script src='../js/chosen/chosen.jquery.min.js' type="text/javascript"></script>
 	<link rel="stylesheet" href="../js/chosen/chosen.css" />
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
 	

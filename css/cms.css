@@ -352,6 +352,38 @@ nav.sidebar {
   overflow: hidden;
   z-index: 999;
 }
+nav.sidebar .logo {
+  height: 70px;
+  width: 100%;
+  font-weight: 600;
+  color: #FFF;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 70px;
+}
+nav.sidebar .logo span {
+  font-weight: 300;
+}
+nav.sidebar .divider {
+  visibility: hidden;
+}
+nav.sidebar .openToggle {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  visibility: hidden;
+  right: 10px;
+  top: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-image: url(../assets/svg/menuButton.svg);
+}
 nav.sidebar .user {
   height: 270px;
   width: 100%;
@@ -359,7 +391,7 @@ nav.sidebar .user {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 nav.sidebar .user .profilePic {
   height: 130px;
@@ -472,6 +504,47 @@ nav.sidebar .navButton .btnBlogs:before {
 nav.sidebar .navButton .btnCodes:before {
   background-image: url(../assets/svg/moneypig.svg);
 }
+nav.sidebar .navButton .btnLogout {
+  -webkit-opacity: 0.2;
+  -khtml-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+  filter: alpha(opacity=20);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #000;
+}
+nav.sidebar .navButton .btnLogout:before {
+  -webkit-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  filter: alpha(opacity=50);
+  background-image: url(../assets/svg/exit.svg);
+}
+nav.sidebar .navButton .btnLogout:hover,
+nav.sidebar .navButton .btnLogout:active {
+  -webkit-opacity: 1;
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+  color: #FFF;
+}
+nav.sidebar .navButton .btnLogout:hover:before,
+nav.sidebar .navButton .btnLogout:active:before {
+  -webkit-opacity: 0.3 !important;
+  -khtml-opacity: 0.3 !important;
+  -moz-opacity: 0.3 !important;
+  opacity: 0.3 !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30) !important;
+  filter: alpha(opacity=30) !important;
+}
 nav.sidebar .navButton.active {
   color: #FFF;
   background-color: #308DCC;
@@ -483,38 +556,6 @@ nav.sidebar .navButton.active a:before {
   opacity: 1 !important;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100) !important;
   filter: alpha(opacity=100) !important;
-}
-nav.sidebar .logOut {
-  position: absolute;
-  bottom: 0;
-  -webkit-opacity: 0.3;
-  -khtml-opacity: 0.3;
-  -moz-opacity: 0.3;
-  opacity: 0.3;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
-  filter: alpha(opacity=30);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: #000;
-  text-align: center;
-}
-nav.sidebar .logOut a {
-  padding: 0;
-}
-nav.sidebar .logOut:hover,
-nav.sidebar .logOut:active {
-  -webkit-opacity: 1;
-  -khtml-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
-  filter: alpha(opacity=100);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 .container {
   -ms-box-sizing: border-box;
@@ -881,6 +922,7 @@ nav.sidebar .logOut:active {
   -moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
+  border: none;
   padding: 10px 16px;
   padding-left: 55px;
   background-color: #3498DB;
@@ -941,11 +983,11 @@ nav.sidebar .logOut:active {
     height: auto;
     width: 100%;
     max-height: 70px;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
     position: fixed;
+    -webkit-transition: all 0 ease-in-out;
+    -moz-transition: all 0 ease-in-out;
+    -o-transition: all 0 ease-in-out;
+    transition: all 0 ease-in-out;
     background: #3497da;
     background: -webkit-linear-gradient(top, #3497da 0%, #2770a2 100%);
     background: -moz-linear-gradient(top, #3497da 0%, #2770a2 100%);
@@ -960,6 +1002,22 @@ nav.sidebar .logOut:active {
     top: 0px;
     z-index: 999;
   }
+  nav.sidebar .openToggle {
+    visibility: visible;
+  }
+  nav.sidebar .user {
+    padding-top: 10px;
+  }
+  nav.sidebar .divider {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    visibility: visible;
+  }
+  nav.sidebar .logo {
+    text-align: left;
+    padding-left: 25px;
+  }
   nav.sidebar .buttonsContainer {
     -webkit-opacity: 0;
     -khtml-opacity: 0;
@@ -973,6 +1031,12 @@ nav.sidebar .logOut:active {
     transition: all 0.5s ease-in-out;
     top: -200px;
   }
+  nav.sidebar .buttonsContainer .user {
+    -webkit-transition: all 0 ease-in-out !important;
+    -moz-transition: all 0 ease-in-out !important;
+    -o-transition: all 0 ease-in-out !important;
+    transition: all 0 ease-in-out !important;
+  }
   nav.open {
     display: inline-block;
     vertical-align: top;
@@ -980,6 +1044,11 @@ nav.sidebar .logOut:active {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.6);
+    behavior: url(../htc/pie.htc);
+    zoom: 1;
     min-height: 70px;
     height: auto;
     max-height: 1000px;
@@ -988,6 +1057,18 @@ nav.sidebar .logOut:active {
     content: " ";
     display: block;
     clear: both;
+  }
+  nav.open .openToggle {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    top: 15px;
   }
   nav.open .buttonsContainer {
     -webkit-opacity: 1;
@@ -1001,5 +1082,54 @@ nav.sidebar .logOut:active {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     margin-top: 0;
+  }
+  nav.open .buttonsContainer .user {
+    height: 100px;
+    width: 100%;
+    -webkit-transition: all 0 ease-in-out !important;
+    -moz-transition: all 0 ease-in-out !important;
+    -o-transition: all 0 ease-in-out !important;
+    transition: all 0 ease-in-out !important;
+  }
+  nav.open .buttonsContainer .user .profilePic {
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-left: 25px;
+    margin-right: 20px;
+  }
+  nav.open .buttonsContainer .user .welcome {
+    float: left;
+    font-size: 1em;
+    text-align: left;
+    margin-top: 20px;
+  }
+  .cta {
+    height: 45px;
+    width: 100%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    behavior: url(../htc/pie.htc);
+    zoom: 1;
+    font-weight: 600;
+    position: relative;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    border: none;
+    background-position: 12% 52%;
+    background-size: 20px;
+    background-repeat: no-repeat;
+  }
+  .cta:hover,
+  .cta:active {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background-color: #2D8ED0;
+    cursor: pointer;
   }
 }
