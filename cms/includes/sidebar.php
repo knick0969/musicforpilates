@@ -32,7 +32,7 @@
 			</a>
 		</div>	
 		<div class="navButton">
-			<a href="discount_codes-edit.php" class="btnCodes" title="Add & Edit Discount Codes">
+			<a href="discount-codes-list.php" class="btnCodes" title="Add & Edit Discount Codes">
 				Discount Codes
 			</a>
 		</div>	

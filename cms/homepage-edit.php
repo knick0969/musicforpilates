@@ -8,7 +8,6 @@
 
 	<script src='../js/chosen/chosen.jquery.min.js' type="text/javascript"></script>
 	<link rel="stylesheet" href="../js/chosen/chosen.css" />
-	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
 	
@@ -23,24 +22,24 @@
 		<div class="whiteSection">
 			<form method="post" name="homepage-edit" action="">
 				<div class="inputBox">
-					<label>Page Title <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
+					<label for="page_title">Page Title <span>(SEO)</span></label>
+					<input type="text" class="input" name="page_title" placeholder="Type the page title, for example: Music For Pilates">
 				</div>
 				<div class="inputBox">
-					<label>Page Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-keywords">
+					<label for="page_keywords">Page Keywords <span>(SEO)</span></label>
+					<input type="text" class="input" name="page_keywords">
 				</div>
 				<div class="inputBox">
-					<label>Page Description <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-description">
+					<label for="page_description">Page Description <span>(SEO)</span></label>
+					<input type="text" class="input" name="page_description">
 				</div>
 				<div class="divider"></div>
 				<div class="inputBox">
-					<label>Brief Description <span>(Displayed on the Homepage)</span></label>
-					<textarea class="input textarea" name="page-description"></textarea>
+					<label for="page_brief_description">Brief Description <span>(Displayed on the Homepage)</span></label>
+					<textarea class="input textarea" name="page_brief_description"></textarea>
 				</div>
 				<div class="inputBox">
-					<label>List of Tracks <span>(Displayed on the Homepage)</span></label>
+					<label for="track_order_select">List of Tracks <span>(Displayed on the Homepage)</span></label>
 					<p class="sectionDescription">Select the tracks and the order you want them to be displayed on the Homepage:</p>
 					<div class="tracksContainer">
 						<div class="trackBox">
@@ -48,7 +47,7 @@
 							<div class="track">
 								<p class="trackTitle">Track Title</p>
 								<div class="selectContainer">
-									<select class="chosen-select">
+									<select class="chosen-select" name="track_order_select">
 										<option> HEY O HEY O HEY OOO HEY</option>
 										<option> HEY O HEY O HEEEEEEEY O</option>
 										<option> HEY O HEY O HEEEEEEEY O</option>

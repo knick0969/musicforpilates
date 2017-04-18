@@ -5,9 +5,9 @@ $(document).ready(function() {
 
 
     // Toggle Sidebar/Menu for Mobile
-    $('.sidebar').click(function(e){
+    $('.openToggle').click(function(e){
     	e.preventDefault();
-    	$(this).toggleClass('open');
+    	$(".sidebar").toggleClass('open');
     });
     	
 

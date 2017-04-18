@@ -974,6 +974,9 @@ nav.sidebar .navButton.active a:before {
 .newTrack {
   background-image: url(../assets/svg/tracks.svg);
 }
+.discountCodes {
+  background-image: url(../assets/svg/moneypig.svg);
+}
 @media (max-width: 900px) {
   .container {
     padding-top: 80px;
