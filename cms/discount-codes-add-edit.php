@@ -29,7 +29,7 @@
 				<div class="inputBox">
 					<label for="discount_type_percentage">Percentage %</label>
 					<input type="radio" value="percentage" class="input" name="discount_type_percentage">
-					<label for="discount_type_fixed_amount">Percentage %</label>
+					<label for="discount_type_fixed_amount">Fixed Amount X AUD</label>
 					<input type="radio" value="fixed amount" class="input" name="discount_type_percentage">
 				</div>
 				<div class="divider"></div>
