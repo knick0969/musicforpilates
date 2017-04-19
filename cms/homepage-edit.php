@@ -3,9 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Homepage Edit | Music For Pilates CMS</title>
-	<?php include('../includes/head-cms.php'); ?>
-	<link rel="stylesheet" href="../css/cms.css" />
-
+	<?php include('includes/head-cms.php'); ?>
 	<script src='../js/chosen/chosen.jquery.min.js' type="text/javascript"></script>
 	<link rel="stylesheet" href="../js/chosen/chosen.css" />
 </head>

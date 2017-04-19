@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Discount Code Add/Edit | Music For Pilates CMS</title>
-	<?php include('../includes/head-cms.php'); ?>
-	<link rel="stylesheet" href="../css/cms.css" />
+	<?php include('includes/head-cms.php'); ?>
 </head>
 <body>
 	<!-- Includes the blue common sidebar :) -->
