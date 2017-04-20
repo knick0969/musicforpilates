@@ -8,7 +8,13 @@
 	<link rel="stylesheet" href="../js/chosen/chosen.css" />
 </head>
 <body>
-	
+	<div class="overlayMessage overlaySuccess">
+		<p>Done! Your changes were successfully saved!</p>
+	</div>
+	<div class="overlayMessage overlayError">
+		<p>Oops, something went wrong! We couldn't save your changes!</p>
+	</div>
+
 	<!-- Includes the blue common sidebar :) -->
 	<?php include('includes/sidebar.php'); ?>
 
