@@ -1,12 +1,119 @@
 @import 'mixins.less';
+@import 'reset.less';
 body{
-    font-size: 15px;
+	background: none;
 }
-body, a, li, ul, header, footer, article, div, nav, h1, h2, p{
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    color: inherit;
-    text-decoration: none;
-    font-family: 'Heebo', sans-serif;
+.header{
+	.dim(100%, 60px);
+	.relative();
+}
+.container{
+	.dim(100%);
+	max-width: 1200px;
+	.clr();
+}
+.greyBackground{
+	.dim(80%, 1000px);
+	.absolute();
+	.transition(.4s);
+	.box-shadow(0px 2px 15px 5px rgba(0, 0, 0, 0.06));
+	z-index: -1;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	max-width: 1000px;
+	top: 0;
+	background-color: #F1F1F1;
+}
+.cta{
+	.border-radius(25px);
+	.iblock();
+	.semibold();
+	.transition(.1s);
+	padding: 10px 35px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.blackCta{
+	border: 2px solid #000;
+	color: #000;
+	&:hover, &:active{
+		.transition(.1s);
+		color: #FFF;
+		background-color: #000;
+	}
+}
+.mainSection{
+	.relative();
+	.clr();
+	z-index: 2;
+	.featured{
+		.dim(100%, 1200px);
+		.relative();
+		margin: 0 auto;
+		.featuredTrack{
+			.clr();
+			.trackImage{
+				.dim(650px, 450px);
+				.absolute();
+				.box-shadow(0px 10px 18px 5px rgba(0, 0, 0, 0.1));
+				.transition(.3s);
+				top: 50px;
+				left: -70px;
+				background-color: #BBB;
+				&:hover{
+					.transition(.3s);
+					.box-shadow(0px 18px 28px 5px rgba(0, 0, 0, 0.15));
+				}
+				.playBtn{
+					.dim(76px, 76px);
+					.border-radius(50%);
+					.absolute();
+					.transition(.3s);
+					z-index: 3;
+					right: -38px;
+					top: 180px;
+					border: none;
+					background-color: #999;
+					&:hover{
+						.transition(.3s);
+						.scale(1.1);
+						&:before, &:after{
+							.scale(.72);
+							.transition(.3s);
+						}
+					}
+					&:before{
+						.dim(150px, 150px);
+						.border-radius(50%);
+						.absolute();
+						.transition(.3s);
+						z-index: -1;
+						top: -37px;
+						left: -37px;
+						content: ' ';
+						background-color: rgba(59,153,216, 0.3);
+					}
+					&:after{
+						.dim(250px, 250px);
+						.border-radius(50%);
+						.absolute();
+						.transition(.3s);
+						z-index: -0;
+						top: -85px;
+						left: -85px;
+						content: ' ';
+						background-color: rgba(59,153,216, 0.3);
+					}
+				}
+			}
+		}
+	}
+}
+.homeTracks{
+	.dim(100%, 1500px);
+	.gradient(#6F879E, #BFCFDC);
+	margin-top: -320px;
+	z-index: 1;
 }

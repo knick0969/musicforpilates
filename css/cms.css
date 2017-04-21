@@ -18,7 +18,8 @@ div,
 nav,
 h1,
 h2,
-p {
+p,
+button {
   margin: 0;
   list-style: none;
   padding: 0;
@@ -43,7 +44,8 @@ div:after,
 nav:after,
 h1:after,
 h2:after,
-p:after {
+p:after,
+button:after {
   content: " ";
   display: block;
   clear: both;
