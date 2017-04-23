@@ -259,6 +259,7 @@ body {
   height: auto;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .container:after {
   content: " ";
@@ -285,6 +286,27 @@ body {
   max-width: 1000px;
   top: 0;
   background-color: #F1F1F1;
+}
+.darkBlueBackground {
+  height: 600px;
+  width: 80%;
+  position: absolute;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-box-shadow: 0px 2px 15px 5px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0px 2px 15px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 15px 5px rgba(0, 0, 0, 0.06);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  z-index: -1;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  top: 0;
+  background-color: #4C5A61;
 }
 .cta {
   -webkit-border-radius: 25px;
@@ -317,6 +339,43 @@ body {
   color: #FFF;
   background-color: #000;
 }
+.whiteCta {
+  border: 2px solid #FFF;
+  color: #FFF;
+}
+.whiteCta:hover,
+.whiteCta:active {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  color: #000;
+  background-color: #FFF;
+}
+.sectionTitle {
+  height: auto;
+  width: 100%;
+  margin-bottom: 70px;
+}
+.sectionTitle .titleh1 {
+  font-weight: bolder;
+  font-weight: 700;
+  color: #FFF;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+.sectionTitle .line {
+  height: 5px;
+  width: 80px;
+  background-color: #FFF;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.sectionTitle .sectionText {
+  font-weight: 300;
+  font-size: 1.1em;
+  color: #FFF;
+}
 .mainSection {
   position: relative;
   z-index: 2;
@@ -339,7 +398,7 @@ body {
 }
 .mainSection .featured .featuredTrack .trackImage {
   height: 450px;
-  width: 650px;
+  width: 550px;
   position: absolute;
   -webkit-box-shadow: 0px 10px 18px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 10px 18px 5px rgba(0, 0, 0, 0.1);
@@ -351,7 +410,7 @@ body {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   top: 50px;
-  left: -70px;
+  left: 0px;
   background-color: #BBB;
 }
 .mainSection .featured .featuredTrack .trackImage:hover {
@@ -445,6 +504,10 @@ body {
   content: ' ';
   background-color: rgba(59, 153, 216, 0.3);
 }
+.mainSection .featured .featuredTrack .trackInfo {
+  position: relative;
+  float: right;
+}
 .homeTracks {
   height: 1500px;
   width: 100%;
@@ -460,4 +523,309 @@ body {
   zoom: 1;
   margin-top: -320px;
   z-index: 1;
+  padding-top: 320px;
+}
+.homeTracks .listOfTracks {
+  margin-top: 100px;
+}
+.homeTracks .listOfTracks:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.homeTracks .listOfTracks .homeTrack {
+  height: 420px;
+  width: 420px;
+  float: left;
+  -webkit-box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  margin-right: 70px;
+}
+.homeTracks .listOfTracks .homeTrack .trackInfo {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  font-weight: 600;
+  z-index: 90;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  bottom: 0;
+  color: #FFF;
+}
+.homeTracks .listOfTracks .homeTrack .trackInfo:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.homeTracks .listOfTracks .homeTrack .trackInfo .trackTags {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.homeTracks .listOfTracks .homeTrack .trackInfo .trackTitle {
+  font-size: 1.9em;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.homeTracks .listOfTracks .homeTrack .trackInfo .trackDescription {
+  font-weight: 300;
+  line-height: 1.5em;
+  font-size: .9em;
+  margin-bottom: 30px;
+}
+.homeTracks .listOfTracks .homeTrack .trackInfo .listen {
+  margin-right: 15px;
+}
+.homeTracks .listOfTracks .homeTrack .trackImg {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  -webkit-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -moz-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+  filter: alpha(opacity=90);
+  z-index: 1;
+}
+.homeTracks .listOfTracks .homeTrack:hover,
+.homeTracks .listOfTracks .homeTrack:active {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.5);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.homeTracks .listOfTracks .homeTrack:hover .trackImg,
+.homeTracks .listOfTracks .homeTrack:active .trackImg {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-opacity: 0.75;
+  -khtml-opacity: 0.75;
+  -moz-opacity: 0.75;
+  opacity: 0.75;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=75);
+  filter: alpha(opacity=75);
+}
+.freeTrack {
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.freeTrack .sectionTitle {
+  max-width: 500px;
+  float: left;
+  margin-right: 70px;
+}
+.freeTrack .inputHome {
+  height: 60px;
+  width: 500px;
+  position: relative;
+  float: right;
+  max-width: 500px;
+  margin-top: 90px;
+}
+.freeTrack .inputHome .input {
+  height: 60px;
+  width: 100%;
+  font-weight: 300;
+  background: none;
+  border: 1px solid #FFF;
+  line-height: 50px;
+  font-size: 1.4em;
+  color: #FFF;
+  font-size: 100;
+}
+.freeTrack .inputHome .input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.freeTrack .inputHome .input:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.freeTrack .inputHome .homeSubmit {
+  position: absolute;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  height: 60px;
+  border: 0;
+  padding: 0 25px;
+  background-color: #FFF;
+  color: #ACBECD;
+  text-align: center;
+  font-size: 1.2em;
+  right: 0;
+  cursor: pointer;
+  top: 0;
+}
+.featuredBlog {
+  position: relative;
+  margin-top: -250px;
+  z-index: 99;
+  padding-top: 105px;
+}
+.featuredBlog:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.featuredBlog .postImg {
+  height: 400px;
+  width: 600px;
+  float: left;
+  -webkit-box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+.featuredBlog .postImg img {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.featuredBlog .postImg .cta {
+  -webkit-opacity: 0;
+  -khtml-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 50%;
+  margin-left: -15%;
+  bottom: 0px;
+  z-index: 999;
+}
+.featuredBlog .postImg:hover,
+.featuredBlog .postImg:active {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.5);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.featuredBlog .postImg:hover img,
+.featuredBlog .postImg:active img {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-opacity: 0.45;
+  -khtml-opacity: 0.45;
+  -moz-opacity: 0.45;
+  opacity: 0.45;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=45);
+  filter: alpha(opacity=45);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.featuredBlog .postImg:hover .cta,
+.featuredBlog .postImg:active .cta {
+  -webkit-opacity: 1;
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  bottom: 150px;
+}
+.featuredBlog .sectionTitle {
+  width: 200px;
+  position: absolute;
+  top: 40px;
+  right: 120px;
+}
+.featuredBlog .postInfo {
+  height: auto;
+  width: 330px;
+  float: left;
+  margin-top: 120px;
+  margin-left: 50px;
+  color: #FFF;
+}
+.featuredBlog .postInfo .postDate {
+  font-size: .8em;
+}
+.featuredBlog .postInfo .postTitle {
+  font-weight: 600;
+  font-size: 2em;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.featuredBlog .postInfo .postDescription {
+  font-size: 1em;
+}
+.featuredBlog .allposts {
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #FFF;
+  padding: 5px 10px;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.1em;
+}
+.featuredBlog .allposts:hover,
+.featuredBlog .allposts:active {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #232e33;
 }
