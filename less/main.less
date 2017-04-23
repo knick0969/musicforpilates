@@ -4,8 +4,121 @@ body{
 	background: none;
 }
 .header{
-	.dim(100%, 60px);
+	.dim(100%, 100px);
 	.relative();
+	.mainNav{
+		padding-top: 25px;
+		li{ .iblock(); .fleft(); }
+		.leftNav{
+			.dim(450px);
+			.clr();
+			.fleft();
+			.logo{
+				.dim(200px);
+				.iblock();
+				.fleft();
+				p{ 
+					font-size: 1.6em;
+					.semibold();
+					color: #111;
+				}
+				span{
+					color: #CCC;
+				}
+			}
+				.slogan{
+					.light();
+					.fleft();
+					line-height: .8em;
+					font-size: .9em;
+				}
+		}
+		.rightNav{
+			.dim(550px);
+			.fright();
+			.navLinks{
+				.fleft();
+				.navBtn{
+					.relative();
+					font-size: 1.3em;
+					margin-right: 40px;
+					&:before{
+						.dim(15px, 2px);
+						.absolute();
+						.transition(.2s);
+						bottom: -8px;
+						background-color: #000;
+						content: ' ';
+					}
+					&:hover, &:active{
+						&:before{
+							.dim(50px, 2px);
+							.transition(.2s);
+						}
+					}
+				}
+			}
+			.navIcons{
+				.fright();
+				.shoppingCart{
+					.dim(30px, 30px);
+					.iblock();
+					background-color: #CCC;
+
+				}
+				.search{
+					.dim(30px, 30px);
+					.iblock();
+					background-color: #CCC;
+				}
+			}
+		}
+	}
+}
+.footer{
+	.dim(100%, 90px);
+	.clr();
+	padding-bottom: 20px;
+	.logo{
+		.fleft();
+		.mfp{
+			.bold();
+			font-size: 2em;
+			margin-bottom: 7px;
+		}
+		.slogan{
+			font-size: 1.1em;
+		}
+	}
+	.socialMedia{
+		.dim(200px);
+		.clr();
+		.absolute();
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		.socialBtn{
+			.dim(30px, 30px);
+			.fleft();
+			margin-right: 15px;
+			background-color: #CCC;
+		}
+		.facebook{
+
+		}
+		.linkedin{
+
+		}
+		.twitter{
+			margin-right: 0;
+
+		}
+	}
+	.copyright{
+		.fright();
+		text-align: right;
+		font-size: 1.2em;
+	}
 }
 .container{
 	.dim(100%);
@@ -48,6 +161,9 @@ body{
 	font-size: 1.2em;
 	text-transform: uppercase;
 	cursor: pointer;
+	&:hover, &:active{
+		.box-shadow(0px 10px 25px 5px rgba(0, 0, 0, 0.25));
+	}
 }
 .blackCta{
 	border: 2px solid #000;
@@ -89,23 +205,27 @@ body{
 	}
 }
 .mainSection{
+	.dim(100%, 1000px);
 	.relative();
 	.clr();
 	z-index: 2;
 	.featured{
-		.dim(100%, 1200px);
+		.dim(100%, 600px);
 		.relative();
 		margin: 0 auto;
 		.featuredTrack{
 			.clr();
 			.trackImage{
 				.dim(550px, 450px);
-				.absolute();
+				.relative();
+				.fleft();
 				.box-shadow(0px 10px 18px 5px rgba(0, 0, 0, 0.1));
 				.transition(.3s);
+				margin-right: 170px;
 				top: 50px;
 				left: 0px;
-				background-color: #BBB;
+				background-color: #000;
+				img { .dim(100%, 100%); z-index: 1; .opacity(.7); }
 				&:hover{
 					.transition(.3s);
 					.box-shadow(0px 18px 28px 5px rgba(0, 0, 0, 0.15));
@@ -115,7 +235,7 @@ body{
 					.border-radius(50%);
 					.absolute();
 					.transition(.3s);
-					z-index: 3;
+					z-index: 99;
 					right: -38px;
 					top: 180px;
 					border: none;
@@ -153,9 +273,113 @@ body{
 				}
 			}
 			.trackInfo{
-				.relative();
-				.fright();
+				.dim(330px);
+				.clr();
+				.fleft();
+				margin-top: 150px;
+				.trackTag{
+					.semibold();
+					color: #333;
+					font-size: .8em;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+				.trackTitle{
+					.semibold();
+					font-size: 1.8em;
+					margin-top: 15px;
+					margin-bottom: 15px;
+				}
+				.trackDescription{
+					font-size: 1.1em;
+					line-height: 1.4em;
+					margin-bottom: 25px;
+				}
 			}
+		}
+		.bullets{
+			.dim(200px);
+			.clr();
+			.absolute();
+			right: 220px;
+			.bullet{
+				.fleft();
+				.relative();
+				margin-left: 10px;
+				margin-right: 10px;
+				font-size: 1.25em;
+				text-align: center;
+				cursor: pointer;
+				&:before{
+					.dim(0px, 2px);
+					.absolute();
+					.transition(.2s);
+					left: 50%;
+					margin-left: -6px;
+					bottom: -10px;
+					background-color: #000;
+					content: ' ';
+					cursor: pointer;
+				}
+				&:hover, &:active{
+					&:before{
+						.dim(12px, 2px);
+						.transition(.2s);
+					}
+				}
+			}
+			.active{
+				&:before{
+					.dim(12px, 2px);
+					.absolute();
+					bottom: -10px;
+					background-color: #000;
+					content: ' ';
+				}
+			}
+		}
+	}
+	.about{
+		.dim(80%);
+		.relative();
+		.clr();
+		padding-left: 10%;
+		margin: 0 auto;
+		.sectionTitle{
+			.dim(500px);
+			.clr();
+			.fleft();
+			.titleh1{
+				color: #111;
+			}
+			.line{
+				background-color: #111;
+			}
+			.sectionText{
+				.dim(400px);
+				.fleft();
+				.light();
+				line-height: 1.5em;
+				font-size: 1.3em;
+				margin-top: 5px;
+				color: #666;
+			}
+			.blackCta{
+				.relative();
+				.fleft();
+				margin-top: 25px;
+				left: 0;
+				bottom: 0;
+			}
+		}
+		.aboutPic{
+			.dim(500px, 400px);
+			.absolute();
+			.box-shadow(0px 15px 25px 5px rgba(0, 0, 0, 0.25));
+			right: -40px;
+			bottom: -100px;
+			background-color: #CCC;
+			overflow: hidden;
 		}
 	}
 }
@@ -166,7 +390,11 @@ body{
 	z-index: 1;
 	padding-top: 320px;
 	.listOfTracks{
+		width: 1000px;
+		height: 460px;
 		.clr();
+		overflow-x: scroll;
+		padding-left: 150px;
 		margin-top: 100px;
 		.homeTrack{
 			.dim(420px, 420px);
@@ -246,12 +474,18 @@ body{
 			.dim(100%, 60px);
 			.light();
 			.placeholder(rgba(255, 255, 255, 0.5));
+			.box-shadow(0px 25px 45px 5px rgba(0, 0, 0, 0.1));
+			.transition(.2s);
 			background: none;
 			border: 1px solid #FFF;
 			line-height: 50px;
 			font-size: 1.4em; 
 			color: #FFF;
 			font-size: 100;
+			&:focus{
+				.transition(.2s);
+				.box-shadow(0px 25px 45px 5px rgba(0, 0, 0, 0.2));
+			}
 		}
 		.homeSubmit{
 			.absolute();
@@ -274,6 +508,7 @@ body{
 	.clr();
 	.relative();
 	margin-top: -250px;
+	margin-bottom: 150px;
 	z-index: 99;
 	padding-top: 105px;
 	.postImg{

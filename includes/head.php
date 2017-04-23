@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale:alternate" content="en_AU">
 
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
 <script type="text/javascript" src="js/main.js"></script>
