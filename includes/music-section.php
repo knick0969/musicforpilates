@@ -10,51 +10,12 @@
 				<span class="trackTags">PILATES</span>
 				<h3 class="trackTitle">Music Title</h3>
 				<p class="trackDescription">Music description goes here hey, that's a 2 line description only.</p>
-				<a href="#" class="cta whiteCta listen">LISTEN</a>
-				<a href="#" class="cta whiteCta">BUY</a>
+				<a href="#" title="Listen to TRACK TITLE HERE" class="cta whiteCta listen">LISTEN</a>
+				<a href="#" title="Buy TRACK TITLE HERE" class="cta whiteCta">BUY</a>
 			</div>
 			<img src="assets/img/pilates1.jpg" class="trackImg">
 		</div>
-		<div class="homeTrack">
-			<div class="trackInfo">
-				<span class="trackTags">PILATES</span>
-				<h3 class="trackTitle">Music Title</h3>
-				<p class="trackDescription">Music description goes here hey, that's a 2 line description only.</p>
-				<a href="#" class="cta whiteCta listen">LISTEN</a>
-				<a href="#" class="cta whiteCta">BUY</a>
-			</div>
-			<img src="assets/img/pilates1.jpg" class="trackImg">
-		</div>
-		<div class="homeTrack">
-			<div class="trackInfo">
-				<span class="trackTags">PILATES</span>
-				<h3 class="trackTitle">Music Title</h3>
-				<p class="trackDescription">Music description goes here hey, that's a 2 line description only.</p>
-				<a href="#" class="cta whiteCta listen">LISTEN</a>
-				<a href="#" class="cta whiteCta">BUY</a>
-			</div>
-			<img src="assets/img/pilates1.jpg" class="trackImg">
-		</div>
-		<div class="homeTrack">
-			<div class="trackInfo">
-				<span class="trackTags">PILATES</span>
-				<h3 class="trackTitle">Music Title</h3>
-				<p class="trackDescription">Music description goes here hey, that's a 2 line description only.</p>
-				<a href="#" class="cta whiteCta listen">LISTEN</a>
-				<a href="#" class="cta whiteCta">BUY</a>
-			</div>
-			<img src="assets/img/pilates1.jpg" class="trackImg">
-		</div>
-		<div class="homeTrack">
-			<div class="trackInfo">
-				<span class="trackTags">PILATES</span>
-				<h3 class="trackTitle">Music Title</h3>
-				<p class="trackDescription">Music description goes here hey, that's a 2 line description only.</p>
-				<a href="#" class="cta whiteCta listen">LISTEN</a>
-				<a href="#" class="cta whiteCta">BUY</a>
-			</div>
-			<img src="assets/img/pilates1.jpg" class="trackImg">
-		</div>
+
 	</div>
 	<section class="freeTrack container">
 		<div class="sectionTitle">

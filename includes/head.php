@@ -19,7 +19,7 @@
 <meta name="googlebot" content="index, follow">
 <meta name="robots" content="index, follow, noodp">
 
-<<link rel="canonical" href="https://www.musicforpilates.com">
+<link rel="canonical" href="https://www.musicforpilates.com">
 <link rel="author" href="Nick & Arthur">
 <link rel="icon" href="">
 

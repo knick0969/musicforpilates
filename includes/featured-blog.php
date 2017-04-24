@@ -5,7 +5,7 @@
 			<div class="line"></div>
 		</div>
 		<div class="postImg">
-			<a href="#" class="cta whiteCta">READ POST</a>
+			<a href="#" title="Read Post post title goes here" class="cta whiteCta">READ POST</a>
 			<img src="assets/img/pilates1.jpg">
 		</div>
 		<div class="postInfo">
@@ -16,6 +16,6 @@
 
 	</article>
 	<div class="darkBlueBackground">
-		<a href="#" class="allposts">ALL POSTS</a>
+		<a href="blogs.php" title="See all Blog posts" class="allposts">ALL POSTS</a>
 	</div>
 </section>

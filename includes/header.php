@@ -2,7 +2,7 @@
 	<nav class="mainNav container">
 		<ul class="leftNav">
 			<li>
-				<a href="#" class="logo">
+				<a href="#" title="Back to Homepage" class="logo">
 					<p>Music<span>For</span>Pilates</p>
 				</a>
 			</li>
@@ -13,22 +13,22 @@
 		<div class="rightNav">
 			<ul class="navLinks">
 				<li>
-					<a href="#" class="navBtn">Music.</a>
+					<a href="music.php" title="List of Tracks" class="navBtn">Music.</a>
 				</li>
 				<li>
-					<a href="#" class="navBtn">About.</a>
+					<a href="about.php" title="About Us" class="navBtn">About.</a>
 				</li>
 				<li>
-					<a href="#" class="navBtn">Blog.</a>
+					<a href="blog.php" title="Our blog" class="navBtn">Blog.</a>
 				</li>
 				<li>
-					<a href="#" class="navBtn">Contact.</a>
+					<a href="contact.php" title="Contact Us" class="navBtn">Contact.</a>
 				</li>
 			</ul>
 			<ul class="navIcons">
 				<li>
-					<a href="#" class="navBtn shoppingCart"></a>
-					<a href="#" class="navBtn search"></a>
+					<a href="#" title="Go to your Shopping Cart" class="navBtn shoppingCart"></a>
+					<a href="#" title="Search within the Website" class="navBtn search"></a>
 				</li>
 			</ul>
 		</div>
