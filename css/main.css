@@ -952,6 +952,97 @@ body {
   float: left;
   left: -40px;
 }
+.contactPage .contact {
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
+}
+.contactPage .contact:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.contactPage .contact .inputContainer {
+  height: auto;
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.contactPage .contact .inputContainer:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.contactPage .contact .inputContainer .contactLabel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2em;
+  color: #C3C3C3;
+}
+.contactPage .contact .inputContainer .contactInput {
+  height: 50px;
+  width: 100%;
+  font-weight: 300;
+  color: #111;
+  font-size: 2em;
+  line-height: 2em;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  background: transparent;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.12);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.contactPage .contact .inputContainer .contactInput:focus {
+  -webkit-box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.3);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.contactPage .contact .inputContainer .contactTextarea {
+  height: 160px;
+  width: 100%;
+}
+.contactPage .contact .inputContainer .error {
+  background: transparent;
+  border-bottom: 3px solid #BF3838;
+  -webkit-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.35);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.contactPage .contact .contactSubmit {
+  float: right;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-weight: 300;
+  margin-right: 9%;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: #AAA;
+  cursor: pointer;
+}
+.contactPage .contact .contactSubmit:hover,
+.contactPage .contact .contactSubmit:active {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #111;
+}
 .homeTracks {
   height: 1500px;
   width: 100%;
@@ -1080,6 +1171,21 @@ body {
   opacity: 0.75;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=75);
   filter: alpha(opacity=75);
+}
+.sereneBackground {
+  height: 800px;
+  width: 100%;
+  background: #6f879e;
+  background: -webkit-linear-gradient(top, #6f879e 0%, #bfcfdc 100%);
+  background: -moz-linear-gradient(top, #6f879e 0%, #bfcfdc 100%);
+  background: -ms-linear-gradient(top, #6f879e 0%, #bfcfdc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6f879e), color-stop(100%, #bfcfdc));
+  background: -o-linear-gradient(top, #6f879e 0%, #bfcfdc 100%);
+  background: linear-gradient(to bottom, #6f879e 0%, #bfcfdc 100%);
+  -pie-background: linear-gradient(#6f879e, #bfcfdc);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  margin-top: -350px;
 }
 .featuredBlog {
   position: relative;

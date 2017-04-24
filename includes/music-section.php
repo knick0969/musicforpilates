@@ -15,7 +15,6 @@
 			</div>
 			<img src="assets/img/pilates1.jpg" class="trackImg">
 		</div>
-
 	</div>
 	<section class="freeTrack container">
 		<div class="sectionTitle">
@@ -35,3 +34,14 @@
 <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
 <script src="js/scrollbar/jquery.mCustomScrollbar.js" type="text/javascript"></script>
 <link href="js/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+
+<script>
+    (function($){
+        $(window).on("load",function(){
+            $(".listOfTracks").mCustomScrollbar({
+		        axis:"x",
+		        setHeight: 620
+		      });
+        });
+    })(jQuery);
+</script>

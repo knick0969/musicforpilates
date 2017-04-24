@@ -493,6 +493,66 @@ body{
 		}
 	}
 }
+//CONTACT PAGE
+.contactPage{
+	.contact{
+		.dim(80%);
+		.clr();
+		margin: 0 auto;
+		.inputContainer{
+			.dim(80%);
+			.relative();
+			.clr();
+			margin: 0 auto;
+			margin-bottom: 40px;
+			.contactLabel{
+				.absolute();
+				top: 10px;
+				left: 10px;
+				font-size: 2em;
+				color: #C3C3C3;
+			}
+			.contactInput{
+				.dim(100%, 50px);
+				.light();
+				color: #111;
+				font-size: 2em;
+				line-height: 2em;
+				border: none;
+				border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+				background: transparent;
+				.transition(.3s);
+				.box-shadow(0px 22px 30px -19px rgba(0, 0, 0, 0.12));
+				&:focus{
+					.box-shadow(0px 22px 35px -19px rgba(0, 0, 0, 0.3));
+				}
+			}
+			.contactTextarea{
+				.dim(100%, 160px);
+			}
+			.error{
+				background: transparent;
+				border-bottom: 3px solid #BF3838;
+				.box-shadow(0px 22px 30px -19px rgba(0, 0, 0, 0.35));
+			}
+		}
+		.contactSubmit{
+			.fright();
+			.transition(.2s);
+			.light();
+			margin-right: 9%;
+			font-size: 2em;
+			background: none;
+			border: none;
+			color: #AAA;
+			cursor: pointer;
+			&:hover, &:active{
+				.transition(.2s);
+				color: #111;
+			}
+		}
+	}
+}
 
 //COMMON STYLES
 .homeTracks{
@@ -566,6 +626,11 @@ body{
 			}
 		}
 	}
+}
+.sereneBackground{
+	.dim(100%, 800px);
+	.gradient(#6F879E, #BFCFDC);
+	margin-top: -350px;
 }
 .featuredBlog{
 	.clr();

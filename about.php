@@ -56,16 +56,5 @@
 
 	<?php include('includes/footer.php'); ?>
 
-	<script>
-	    (function($){
-	        $(window).on("load",function(){
-	            $(".listOfTracks").mCustomScrollbar({
-			        axis:"x",
-			        setHeight: 620
-			      });
-	        });
-	    })(jQuery);
-	</script>
-
 </body>
 </html>
