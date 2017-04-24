@@ -808,6 +808,150 @@ body {
   background-color: #CCC;
   overflow: hidden;
 }
+.freeTrack {
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.freeTrack .sectionTitle {
+  max-width: 500px;
+  float: left;
+  margin-right: 70px;
+}
+.freeTrack .inputHome {
+  height: 60px;
+  width: 500px;
+  position: relative;
+  float: right;
+  max-width: 500px;
+  margin-top: 90px;
+}
+.freeTrack .inputHome .input {
+  height: 60px;
+  width: 100%;
+  font-weight: 300;
+  -webkit-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.1);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background: none;
+  border: 1px solid #FFF;
+  line-height: 50px;
+  font-size: 1.4em;
+  color: #FFF;
+  font-size: 100;
+}
+.freeTrack .inputHome .input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.freeTrack .inputHome .input:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.freeTrack .inputHome .input:focus {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.2);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+}
+.freeTrack .inputHome .homeSubmit {
+  position: absolute;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  height: 60px;
+  border: 0;
+  padding: 0 25px;
+  background-color: #FFF;
+  color: #ACBECD;
+  text-align: center;
+  font-size: 1.2em;
+  right: 0;
+  cursor: pointer;
+  top: 0;
+}
+.aboutPage .aboutText {
+  margin-bottom: 100px;
+}
+.aboutPage .aboutPic {
+  height: 300px;
+  width: 400px;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  float: left;
+  position: relative;
+  left: -40px;
+  background-color: #CCC;
+  overflow: hidden;
+}
+.aboutPage .aboutText1 {
+  height: auto;
+  width: 57%;
+  float: right;
+  padding-right: 5%;
+  font-size: 1.5em;
+  line-height: 1.13em;
+}
+.aboutPage .aboutText1 p {
+  margin-bottom: 20px;
+}
+.aboutPage .dj {
+  height: auto;
+  width: 100%;
+}
+.aboutPage .dj:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.aboutPage .dj .aboutText1 {
+  float: left;
+  padding-left: 5%;
+}
+.aboutPage .dj .aboutText1 .djName {
+  font-weight: bolder;
+  font-weight: 700;
+  font-size: 1.15em;
+  color: #111;
+}
+.aboutPage .dj .djPic {
+  height: 300px;
+  width: 400px;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  float: right;
+  position: relative;
+  right: -40px;
+  background-color: #CCC;
+  overflow: hidden;
+}
+.aboutPage .leftDj {
+  margin-top: 100px;
+}
+.aboutPage .leftDj .aboutText1 {
+  padding-left: 0;
+  padding-right: 10%;
+  float: right;
+}
+.aboutPage .leftDj .djPic {
+  float: left;
+  left: -40px;
+}
 .homeTracks {
   height: 1500px;
   width: 100%;
@@ -936,77 +1080,6 @@ body {
   opacity: 0.75;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=75);
   filter: alpha(opacity=75);
-}
-.freeTrack {
-  height: auto;
-  width: 100%;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-.freeTrack .sectionTitle {
-  max-width: 500px;
-  float: left;
-  margin-right: 70px;
-}
-.freeTrack .inputHome {
-  height: 60px;
-  width: 500px;
-  position: relative;
-  float: right;
-  max-width: 500px;
-  margin-top: 90px;
-}
-.freeTrack .inputHome .input {
-  height: 60px;
-  width: 100%;
-  font-weight: 300;
-  -webkit-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.1);
-  behavior: url(../htc/pie.htc);
-  zoom: 1;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  background: none;
-  border: 1px solid #FFF;
-  line-height: 50px;
-  font-size: 1.4em;
-  color: #FFF;
-  font-size: 100;
-}
-.freeTrack .inputHome .input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-.freeTrack .inputHome .input:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-.freeTrack .inputHome .input:focus {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 25px 45px 5px rgba(0, 0, 0, 0.2);
-  behavior: url(../htc/pie.htc);
-  zoom: 1;
-}
-.freeTrack .inputHome .homeSubmit {
-  position: absolute;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  height: 60px;
-  border: 0;
-  padding: 0 25px;
-  background-color: #FFF;
-  color: #ACBECD;
-  text-align: center;
-  font-size: 1.2em;
-  right: 0;
-  cursor: pointer;
-  top: 0;
 }
 .featuredBlog {
   position: relative;
@@ -1153,4 +1226,57 @@ body {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #232e33;
+}
+.internalPage {
+  height: auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.internalPage:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.internalPage .greyBackground {
+  width: 90%;
+  height: auto;
+  position: relative;
+  min-height: 500px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+.internalPage .greyBackground:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.internalPage .sectionTitle {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 70px;
+}
+.internalPage .sectionTitle .titleh1 {
+  font-weight: bolder;
+  font-weight: 700;
+  color: #000;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+.internalPage .sectionTitle .line {
+  height: 5px;
+  width: 80px;
+  background-color: #000;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.internalPage .sectionTitle .sectionText {
+  font-weight: 300;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  color: #000;
 }
