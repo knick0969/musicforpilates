@@ -9,7 +9,6 @@
 	<link href="js/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	
 	<?php include('includes/header.php'); ?>
 
 	<section class="mainSection">

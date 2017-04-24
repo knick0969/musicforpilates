@@ -708,6 +708,7 @@ body {
   clear: both;
 }
 .mainSection .featured .bullets .bullet {
+  width: 15px;
   float: left;
   position: relative;
   margin-left: 10px;
@@ -822,7 +823,7 @@ body {
   zoom: 1;
   margin-top: -320px;
   z-index: 1;
-  padding-top: 320px;
+  padding-top: 420px;
 }
 .homeTracks .listOfTracks {
   width: 1000px;
