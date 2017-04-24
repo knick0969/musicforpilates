@@ -31,3 +31,7 @@
 		</div>
 	</section>
 </section>
+
+<script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+<script src="js/scrollbar/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+<link href="js/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
