@@ -1040,6 +1040,142 @@ body {
   display: block;
   clear: both;
 }
+.blogPage:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.blogPage .blog {
+  position: relative;
+}
+.blogPage .blog:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.blogPage .blog .blogImg {
+  height: 320px;
+  width: 320px;
+  float: left;
+  position: relative;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  margin-left: -100px;
+  margin-right: 80px;
+  overflow: hidden;
+}
+.blogPage .blog .blogImg img {
+  height: auto;
+  width: 100%;
+}
+.blogPage .blog .blogInfo {
+  height: auto;
+  width: 60%;
+  float: left;
+  padding-top: 40px;
+}
+.blogPage .blog .blogInfo:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.blogPage .blog .blogInfo .blogTags {
+  font-size: .85em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.blogPage .blog .blogInfo .blogTags span {
+  float: left;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-right: 15px;
+  color: #AAA;
+}
+.blogPage .blog .blogInfo .blogTags span:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #333;
+}
+.blogPage .blog .blogInfo .blogTitle {
+  font-weight: bolder;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: #111;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+.blogPage .blog .blogInfo .blogDescription {
+  padding-right: 100px;
+  margin-bottom: 30px;
+  line-height: 1.6em;
+}
+.blogPage .blog .blogInfo .cta {
+  margin-right: 20px;
+}
+.blogPage .blog .blogInfo .listening {
+  background-color: #000;
+  color: #FFF;
+}
+.blogPage .blog .price {
+  font-size: 1em;
+}
+.blogPage .blog .aud {
+  font-size: .7em;
+}
+.blogPage .divider {
+  height: 3px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.blogPage .divider:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.postPage:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.postPage .blogPost {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+.postPage .blogPost:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.postPage .blogPost .blogImg {
+  height: 320px;
+  width: 320px;
+  float: left;
+  position: relative;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  margin-left: -100px;
+  margin-right: 80px;
+  overflow: hidden;
+}
+.postPage .blogPost p {
+  height: auto;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
 .aboutPage .aboutText {
   margin-bottom: 100px;
 }
