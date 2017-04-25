@@ -931,13 +931,20 @@ body {
   -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
-  behavior: url(../htc/pie.htc);
-  zoom: 1;
   text-align: center;
   right: -42px;
   top: 120px;
   z-index: 9999;
-  background-color: #000;
+  background: #6f879e;
+  background: -webkit-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: -moz-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: -ms-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6f879e), color-stop(100%, #3d6d94));
+  background: -o-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: linear-gradient(to bottom, #6f879e 0%, #3d6d94 100%);
+  -pie-background: linear-gradient(#6f879e, #3d6d94);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
   color: #FFF;
   padding-top: 7px;
 }
@@ -1015,7 +1022,44 @@ body {
   line-height: 1.6em;
 }
 .musicPage .track .trackInfo .cta {
+  float: left;
   margin-right: 20px;
+}
+.musicPage .track .trackInfo .trackQuantity {
+  height: auto;
+  width: 200px;
+  position: relative;
+}
+.musicPage .track .trackInfo .trackQuantity:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.musicPage .track .trackInfo .trackQuantity p {
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+}
+.musicPage .track .trackInfo .trackQuantity .add,
+.musicPage .track .trackInfo .trackQuantity .remove {
+  height: 28px;
+  width: 28px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  position: absolute;
+  right: -58px;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+}
+.musicPage .track .trackInfo .trackQuantity .add {
+  top: -10px;
+}
+.musicPage .track .trackInfo .trackQuantity .remove {
+  bottom: -10px;
 }
 .musicPage .track .trackInfo .listening {
   background-color: #000;
@@ -1039,6 +1083,229 @@ body {
   content: " ";
   display: block;
   clear: both;
+}
+.cartPage:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.cartPage .track {
+  position: relative;
+}
+.cartPage .track:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.cartPage .track .trackImg {
+  height: 320px;
+  width: 320px;
+  float: left;
+  position: relative;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  margin-left: -100px;
+  margin-right: 80px;
+}
+.cartPage .track .trackImg .playButton {
+  -webkit-opacity: 0 !important;
+  -khtml-opacity: 0 !important;
+  -moz-opacity: 0 !important;
+  opacity: 0 !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0) !important;
+  filter: alpha(opacity=0) !important;
+}
+.cartPage .track .trackImg .overlayImg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+}
+.cartPage .track .trackImg .priceBox {
+  height: 80px;
+  width: 85px;
+  position: absolute;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  right: -42px;
+  top: 120px;
+  z-index: 9999;
+  background: #6f879e;
+  background: -webkit-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: -moz-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: -ms-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6f879e), color-stop(100%, #3d6d94));
+  background: -o-linear-gradient(top, #6f879e 0%, #3d6d94 100%);
+  background: linear-gradient(to bottom, #6f879e 0%, #3d6d94 100%);
+  -pie-background: linear-gradient(#6f879e, #3d6d94);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  color: #FFF;
+  padding-top: 7px;
+}
+.cartPage .track .trackImg .priceBox .price {
+  height: auto;
+  width: 100%;
+  font-weight: 600;
+  font-size: 2.25em;
+}
+.cartPage .track .trackImg .priceBox .price span {
+  font-weight: 300;
+  font-size: .6em;
+}
+.cartPage .track .trackImg .priceBox .aud {
+  height: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+.cartPage .track .trackInfo {
+  height: auto;
+  width: 60%;
+  float: left;
+  padding-top: 40px;
+}
+.cartPage .track .trackInfo:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.cartPage .track .trackInfo .trackTags {
+  font-size: .85em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.cartPage .track .trackInfo .trackTags span {
+  float: left;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-right: 15px;
+  color: #AAA;
+}
+.cartPage .track .trackInfo .trackTags span:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #333;
+}
+.cartPage .track .trackInfo .trackDuration {
+  font-weight: 300;
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 10px;
+}
+.cartPage .track .trackInfo .trackDuration .trackBpm {
+  font-weight: 300;
+  margin-left: 15px;
+  font-size: 1em;
+  color: #999;
+}
+.cartPage .track .trackInfo .trackTitle {
+  font-weight: bolder;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: #111;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+.cartPage .track .trackInfo .trackDescription {
+  padding-right: 100px;
+  margin-bottom: 30px;
+  line-height: 1.6em;
+}
+.cartPage .track .trackInfo .cta {
+  float: left;
+  margin-right: 20px;
+}
+.cartPage .track .trackInfo .trackQuantity {
+  height: auto;
+  width: 200px;
+  position: relative;
+}
+.cartPage .track .trackInfo .trackQuantity:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.cartPage .track .trackInfo .trackQuantity p {
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+}
+.cartPage .track .trackInfo .trackQuantity .add,
+.cartPage .track .trackInfo .trackQuantity .remove {
+  height: 28px;
+  width: 28px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  position: absolute;
+  right: -58px;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+}
+.cartPage .track .trackInfo .trackQuantity .add {
+  top: -10px;
+}
+.cartPage .track .trackInfo .trackQuantity .remove {
+  bottom: -10px;
+}
+.cartPage .track .trackInfo .listening {
+  background-color: #000;
+  color: #FFF;
+}
+.cartPage .track .price {
+  font-size: 1em;
+}
+.cartPage .track .aud {
+  font-size: .7em;
+}
+.cartPage .divider {
+  height: 3px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.cartPage .divider:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.cartPage .checkout {
+  height: auto;
+  width: 500px;
+  float: right;
+}
+.cartPage .checkout p {
+  float: left;
+  font-size: 1.2em;
+  line-height: 50px;
+}
+.cartPage .checkout p span {
+  font-weight: 600;
+  font-size: 1.8em;
+}
+.cartPage .checkout .cta {
+  float: left;
+  margin-left: 40px;
 }
 .blogPage:after {
   content: " ";
@@ -1147,6 +1414,10 @@ body {
   display: block;
   clear: both;
 }
+.postPage .greyBackground {
+  padding-left: 10%;
+  padding-right: 10%;
+}
 .postPage .blogPost {
   font-size: 1.2em;
   line-height: 1.6em;
@@ -1166,13 +1437,14 @@ body {
   box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
   behavior: url(../htc/pie.htc);
   zoom: 1;
-  margin-left: -100px;
+  margin-left: -300px;
   margin-right: 80px;
   overflow: hidden;
 }
 .postPage .blogPost p {
   height: auto;
-  width: 70%;
+  width: 80%;
+  float: left;
   margin: 0 auto;
   margin-bottom: 15px;
 }
