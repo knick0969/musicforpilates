@@ -879,6 +879,167 @@ body {
   cursor: pointer;
   top: 0;
 }
+.musicPage:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.musicPage .track {
+  position: relative;
+}
+.musicPage .track:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.musicPage .track .trackImg {
+  height: 320px;
+  width: 320px;
+  float: left;
+  position: relative;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  margin-left: -100px;
+  margin-right: 80px;
+}
+.musicPage .track .trackImg .playButton {
+  -webkit-opacity: 0 !important;
+  -khtml-opacity: 0 !important;
+  -moz-opacity: 0 !important;
+  opacity: 0 !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0) !important;
+  filter: alpha(opacity=0) !important;
+}
+.musicPage .track .trackImg .overlayImg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+}
+.musicPage .track .trackImg .priceBox {
+  height: 80px;
+  width: 85px;
+  position: absolute;
+  -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+  behavior: url(../htc/pie.htc);
+  zoom: 1;
+  text-align: center;
+  right: -42px;
+  top: 120px;
+  z-index: 9999;
+  background-color: #000;
+  color: #FFF;
+  padding-top: 7px;
+}
+.musicPage .track .trackImg .priceBox .price {
+  height: auto;
+  width: 100%;
+  font-weight: 600;
+  font-size: 2.25em;
+}
+.musicPage .track .trackImg .priceBox .price span {
+  font-weight: 300;
+  font-size: .6em;
+}
+.musicPage .track .trackImg .priceBox .aud {
+  height: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+.musicPage .track .trackInfo {
+  height: auto;
+  width: 60%;
+  float: left;
+  padding-top: 40px;
+}
+.musicPage .track .trackInfo:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.musicPage .track .trackInfo .trackTags {
+  font-size: .85em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.musicPage .track .trackInfo .trackTags span {
+  float: left;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-right: 15px;
+  color: #AAA;
+}
+.musicPage .track .trackInfo .trackTags span:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #333;
+}
+.musicPage .track .trackInfo .trackDuration {
+  font-weight: 300;
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 10px;
+}
+.musicPage .track .trackInfo .trackDuration .trackBpm {
+  font-weight: 300;
+  margin-left: 15px;
+  font-size: 1em;
+  color: #999;
+}
+.musicPage .track .trackInfo .trackTitle {
+  font-weight: bolder;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: #111;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+.musicPage .track .trackInfo .trackDescription {
+  padding-right: 100px;
+  margin-bottom: 30px;
+  line-height: 1.6em;
+}
+.musicPage .track .trackInfo .cta {
+  margin-right: 20px;
+}
+.musicPage .track .trackInfo .listening {
+  background-color: #000;
+  color: #FFF;
+}
+.musicPage .track .price {
+  font-size: 1em;
+}
+.musicPage .track .aud {
+  font-size: .7em;
+}
+.musicPage .divider {
+  height: 3px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.musicPage .divider:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
 .aboutPage .aboutText {
   margin-bottom: 100px;
 }
@@ -989,22 +1150,23 @@ body {
   font-size: 2em;
   line-height: 2em;
   border: none;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  resize: none;
   background: transparent;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 22px 30px -19px rgba(0, 0, 0, 0.07);
   behavior: url(../htc/pie.htc);
   zoom: 1;
 }
 .contactPage .contact .inputContainer .contactInput:focus {
-  -webkit-box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 22px 35px -19px rgba(0, 0, 0, 0.25);
   behavior: url(../htc/pie.htc);
   zoom: 1;
 }
@@ -1042,6 +1204,21 @@ body {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #111;
+}
+.termsConditions:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.termsConditions .termsText {
+  height: auto;
+  width: 75%;
+  margin: 0 auto;
+}
+.termsConditions .termsText p {
+  font-size: 1.15em;
+  margin-bottom: 20px;
+  line-height: 1.6em;
 }
 .homeTracks {
   height: 1500px;
@@ -1348,6 +1525,7 @@ body {
   width: 90%;
   height: auto;
   position: relative;
+  margin-bottom: 40px;
   min-height: 500px;
   padding-top: 30px;
   padding-bottom: 80px;

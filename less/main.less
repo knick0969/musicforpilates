@@ -434,6 +434,125 @@ body{
 		}
 	}
 }
+//MUSIC List page
+.musicPage{
+	.clr();
+	.track{
+		.relative();
+		.clr();
+		.trackImg{
+			.dim(320px, 320px);
+			.fleft();
+			.relative();
+			.box-shadow(0px 15px 25px 5px rgba(0, 0, 0, 0.25));
+			margin-left: -100px;
+			margin-right: 80px;
+			.playButton{
+				.opacity(0) !important;
+			}
+			.overlayImg{
+				.dim(100%, 100%);
+				.absolute();
+				.transition(.3s);
+				top: 0;
+				left: 0; 
+			}
+			.priceBox{
+				.dim(85px, 80px);
+				.absolute();
+				.box-shadow(0px 15px 25px 5px rgba(0, 0, 0, 0.25));			
+				text-align: center;
+				right: -42px;
+				top: 120px;
+				z-index: 9999;
+				background-color: #000;
+				color: #FFF;
+				padding-top: 7px;
+				.price{
+					.dim(100%);
+					.semibold();
+					font-size: 2.25em;
+					span{
+						.light();
+						font-size: .6em;
+					}
+				}
+				.aud{
+					.dim(100%);
+					text-transform: uppercase;
+					font-size: 1em;
+				}
+			}
+		}
+		.trackInfo{
+			.dim(60%);
+			.clr();
+			.fleft();
+			padding-top: 40px;
+			.trackTags{
+				font-size: .85em;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				span{ 
+					.fleft();
+					.transition(.2s);
+					margin-right: 15px; 
+					color: #AAA;
+					&:hover{
+						.transition(.2s);
+						color: #333;
+					}
+				}
+			}
+			.trackDuration{
+				.light();
+				font-size: 1.1em;
+				color: #666;
+				margin-bottom: 10px;
+				.trackBpm{
+					.light();
+					margin-left: 15px;
+					font-size: 1em;
+					color: #999;
+				}
+			}
+			.trackTitle{
+				.bold();
+				font-size: 2.2em;
+				color: #111;
+				margin-bottom: 15px;				
+				margin-right: 20px;				
+			}
+			.trackDescription{
+				padding-right: 100px;
+				margin-bottom: 30px;
+				line-height: 1.6em;
+			}
+			.cta{
+				margin-right: 20px;
+			}
+			.listening{
+				background-color: #000;
+				color: #FFF;
+			}
+		}
+		.price{
+			font-size: 1em;
+		}
+		.aud{
+			font-size: .7em;
+		}
+	}
+	.divider{
+		.dim(80%, 3px);
+		.clr();
+		margin: 0 auto;
+		background-color: rgba(0, 0, 0, 0.05);
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+}
+
 
 
 //ABOUT PAGE
@@ -519,12 +638,13 @@ body{
 				font-size: 2em;
 				line-height: 2em;
 				border: none;
-				border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+				resize: none;
 				background: transparent;
+				border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 				.transition(.3s);
-				.box-shadow(0px 22px 30px -19px rgba(0, 0, 0, 0.12));
+				.box-shadow(0px 22px 30px -19px rgba(0, 0, 0, 0.07));
 				&:focus{
-					.box-shadow(0px 22px 35px -19px rgba(0, 0, 0, 0.3));
+					.box-shadow(0px 22px 35px -19px rgba(0, 0, 0, 0.25));
 				}
 			}
 			.contactTextarea{
@@ -551,6 +671,16 @@ body{
 				color: #111;
 			}
 		}
+	}
+}
+
+//Terms and Conditions
+.termsConditions{
+	.clr();
+	.termsText{
+		.dim(75%);
+		margin: 0 auto;
+		p{ font-size: 1.15em; margin-bottom: 20px; line-height: 1.6em; }
 	}
 }
 
@@ -724,6 +854,7 @@ body{
 		height: auto;
 		.clr();
 		.relative();
+		margin-bottom: 40px;
 		min-height: 500px;
 		padding-top: 30px;
 		padding-bottom: 80px;
