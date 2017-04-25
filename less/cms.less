@@ -121,18 +121,24 @@ nav.sidebar{
 		background-position: 50% 50%;
 		background-image: url(../assets/svg/menuButton.svg);
 	}
+	.dividerCms{
+		.dim(70%, 1px);
+		margin: 0 auto;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	    background-color: rgba(255, 255, 255, 0.1);
+	}
 	.user{
-		.dim(100%, 270px);
+		.dim(100%, 160px);
 		.box-sizing();
-		padding-top: 30px;
 		.profilePic{
-			.dim(130px, 130px);
+			.dim(100px, 100px);
 			.border-radius(50%);
 			.box-shadow(0px 0px 25px 5px #2C80B9);
 			overflow: hidden;
 			margin: 0px auto;
 			border: 2px solid #337EB1;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 		.welcome{
 			text-align: center;
@@ -604,10 +610,10 @@ nav.sidebar{
 		.buttonsContainer{
 			.opacity(0);
 			.transition(.5s);
+			top: -200px;
 			.user{
 				.transition(0) !important;
 			}
-			top: -200px;
 		}
 	}
 	nav.open{

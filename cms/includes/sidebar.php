@@ -10,7 +10,7 @@
 			</div>
 			<p class="welcome">Welcome back,</br> <span class="user">Nick</span></p>
 		</div>
-		<div class="divider"></div>
+		<div class="dividerCms"></div>
 		<div class="navButton">
 			<a href="homepage-edit.php" class="btnHome" title="CMS Homepage">
 				Home
