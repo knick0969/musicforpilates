@@ -1675,10 +1675,11 @@ body {
   overflow-x: hidden;
 }
 .homeTracks .listOfTracks {
-  width: 8000px;
+  height: auto;
+  width: 100%;
+  position: relative;
+  overflow: auto;
   height: 550px;
-  right: -400px;
-  padding-left: 150px;
   margin-top: 100px;
 }
 .homeTracks .listOfTracks:after {
@@ -1686,10 +1687,12 @@ body {
   display: block;
   clear: both;
 }
+.homeTracks .listOfTracks:first-child {
+  margin-left: 300px !important;
+}
 .homeTracks .listOfTracks .homeTrack {
   height: 420px;
   width: 420px;
-  float: left;
   -webkit-box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.2);
@@ -1699,12 +1702,17 @@ body {
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  position: relative;
+  float: left;
   overflow: hidden;
   background-color: #000;
-  margin-right: 70px;
+  margin-right: 80px;
 }
-.homeTracks .listOfTracks .homeTrack .trackInfo {
+.homeTracks .listOfTracks .homeTrack .trackBox {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.homeTracks .listOfTracks .homeTrack .trackBox .trackInfo {
   height: auto;
   width: 100%;
   position: absolute;
@@ -1716,38 +1724,38 @@ body {
   bottom: 0;
   color: #FFF;
 }
-.homeTracks .listOfTracks .homeTrack .trackInfo:after {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackInfo:after {
   content: " ";
   display: block;
   clear: both;
 }
-.homeTracks .listOfTracks .homeTrack .trackInfo .trackTags {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackInfo .trackTags {
   font-size: .9em;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.homeTracks .listOfTracks .homeTrack .trackInfo .trackTitle {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackInfo .trackTitle {
   font-size: 1.9em;
   margin-top: 12px;
   margin-bottom: 12px;
 }
-.homeTracks .listOfTracks .homeTrack .trackInfo .trackDescription {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackInfo .trackDescription {
   font-weight: 300;
   line-height: 1.5em;
   font-size: .9em;
   margin-bottom: 30px;
 }
-.homeTracks .listOfTracks .homeTrack .trackInfo .listen {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackInfo .listen {
   margin-right: 15px;
 }
-.homeTracks .listOfTracks .homeTrack .trackImg {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackImg {
   height: 100%;
   width: 100%;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  position: absolute;
+  position: relative;
   -webkit-opacity: 0.9;
   -khtml-opacity: 0.9;
   -moz-opacity: 0.9;
@@ -1756,8 +1764,12 @@ body {
   filter: alpha(opacity=90);
   z-index: 1;
 }
-.homeTracks .listOfTracks .homeTrack:hover,
-.homeTracks .listOfTracks .homeTrack:active {
+.homeTracks .listOfTracks .homeTrack .trackBox .trackImg img {
+  height: 100%;
+  width: 100%;
+}
+.homeTracks .listOfTracks .homeTrack .trackBox:hover,
+.homeTracks .listOfTracks .homeTrack .trackBox:active {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -1768,8 +1780,8 @@ body {
   behavior: url(../htc/pie.htc);
   zoom: 1;
 }
-.homeTracks .listOfTracks .homeTrack:hover .trackImg,
-.homeTracks .listOfTracks .homeTrack:active .trackImg {
+.homeTracks .listOfTracks .homeTrack .trackBox:hover .trackImg,
+.homeTracks .listOfTracks .homeTrack .trackBox:active .trackImg {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;

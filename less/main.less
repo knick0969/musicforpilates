@@ -981,69 +981,77 @@ body{
 	padding-top: 420px;
 	overflow-x: hidden;
 	.listOfTracks{
-		width: 8000px;
-		height: 550px;
-		right: -400px;
+		.dim(100%);
+		.relative();
 		.clr();
-		padding-left: 150px;
+		overflow: auto;
+		height: 550px;
 		margin-top: 100px;
+		&:first-child{
+			margin-left: 300px !important;
+		}
 		.homeTrack{
 			.dim(420px, 420px);
-			.fleft();
 			.box-shadow(0px 8px 25px 5px rgba(0, 0, 0, 0.2));
 			.transition(.4s);
-			.relative();
+			.fleft();
 			overflow: hidden;
 			background-color: #000;
-			margin-right: 70px;
-			.trackInfo{
-				.dim(100%);
-				.absolute();
-				.clr();
-				.semibold();
-				z-index: 90;
-				padding-bottom: 20px;
-				padding-left: 20px;
-				padding-right: 20px;
-				bottom: 0;
-				color: #FFF;
-				.trackTags{
-					font-size: .9em;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-				}
-				.trackTitle{
-					font-size: 1.9em;
-					margin-top: 12px;
-					margin-bottom: 12px;
-				}
-				.trackDescription{
-					.light();
-					line-height: 1.5em; 
-					font-size: .9em;
-					margin-bottom: 30px;
-				}
-				.listen{
-					margin-right: 15px;
-				}
-			}
-			.trackImg{
+			margin-right: 80px;
+			.trackBox{
 				.dim(100%, 100%);
-				.transition(.4s);
-				.absolute();
-				.opacity(.9);
-				z-index: 1;
-			}
-			&:hover, &:active{
-				.transition(.4s);
-				.box-shadow(0px 25px 45px 5px rgba(0, 0, 0, 0.5));
-				.trackImg{
-					.transition(.4s);
-					.scale(1.1);
-					.opacity(.75);
+				.relative();
+				.trackInfo{
+					.dim(100%);
+					.absolute();
+					.clr();
+					.semibold();
+					z-index: 90;
+					padding-bottom: 20px;
+					padding-left: 20px;
+					padding-right: 20px;
+					bottom: 0;
+					color: #FFF;
+					.trackTags{
+						font-size: .9em;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+					}
+					.trackTitle{
+						font-size: 1.9em;
+						margin-top: 12px;
+						margin-bottom: 12px;
+					}
+					.trackDescription{
+						.light();
+						line-height: 1.5em; 
+						font-size: .9em;
+						margin-bottom: 30px;
+					}
+					.listen{
+						margin-right: 15px;
+					}
 				}
-			}
+				.trackImg{
+					.dim(100%, 100%);
+					.transition(.4s);
+					.relative();
+					.opacity(.9);
+					z-index: 1;
+					img{ .dim(100%, 100%); }
+				}
+				&:hover, &:active{
+					.transition(.4s);
+					.box-shadow(0px 25px 45px 5px rgba(0, 0, 0, 0.5));
+					.trackImg{
+						.transition(.4s);
+						.scale(1.1);
+						.opacity(.75);
+					}
+				}
+			}			
 		}
+
 	}
 }
 .sereneBackground{
