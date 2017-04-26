@@ -53,38 +53,37 @@ $function = $_POST['function'];
 		$aboutUsId = 1;
 		//the PAGE table has - id, content, description
 		$results = $db->prepare("
-			SELECT *
+			SELECT id, content
 			FROM page
 			WHERE id = ?
 			");	
 		$results->bind_param('i', $aboutUsId);
 		$results->execute();
-		$results->bind_result($id, $content, $description);
+		$results->bind_result($id, $content);
 		$results->store_result();
 		while ($results->fetch()) {
 			$aboutus['id']			= $id;
 			$aboutus['content'] 	= $content;
-			$aboutus['description'] = $description;
 			//the PAGEIMAGE table has - id, pageid, type, fileid
 			$imageResult = $db->prepare("
-				SELECT *
+				SELECT fileid
 				FROM pageimage
 				WHERE pageid = ?
 				");
 			$imageResult->bind_param('i', $id);
 			$imageResult->execute();
-			$imageResult->bind_result($pid, $pageid, $type, $fileid);
+			$imageResult->bind_result($fileid);
 			$imageResult->store_result();
 			while($imageResult->fetch()){
 				//the FILE table has - id, link, uploaddate, type
 				$imageFile = $db->prepare("
-					SELECT *
+					SELECT link, uploaddate
 					FROM file
 					WHERE id = ?
 					");
 				$imageFile->bind_param('i', $fileid);
 				$imageFile->execute();
-				$imageFile->bind_result($fid, $link, $uploaddate, $type);
+				$imageFile->bind_result($link, $uploaddate);
 				$imageFile->store_result();
 				while($imageFile->fetch()){
 					$aboutus['image'] = $link;
@@ -97,16 +96,158 @@ $function = $_POST['function'];
 		//EDIT ABOUT US DETAILS
 	} elseif ($function == 'editaboutus') {
 		$editaboutus = array();
-		if ((!empty($_POST['content'])) || (!empty['description'] || (!empty($_POST['link']))){
+		$aboutusid = 1;
+		if ((!empty($_POST['content'])) || (!empty($_POST['link']))){
 			$content = $_POST['content'];
 			$link	 = $_POST['link'];
-
-
+				$editaboutus['content'] = $content;
+				$imageResult=$db->prepare("
+					SELECT fileid
+					FROM pageimage
+					WHERE pageid = $aboutusid
+					");
+				$imageResult->execute();
+				$imageResult->bind_result($fileid);
+				$imageResult->store_result();
+				while($imageResult->fetch()){
+				//Updating the link in the file table
+					echo "UPDATE file
+						SET link = ?
+						WHERE id = $fileid
+						";
+					$insertFile=$db->prepare("
+						UPDATE file
+						SET link = ?
+						WHERE id = $fileid
+						");
+					if (!$insertFile) {
+						printf("Error updating file table");
+						printf("Errormessage: %s\n", $db->error);
+					} else {
+						echo "Link updated <br>";
+						$insertFile->bind_param('s', $link);
+						$insertFile->execute();
+					}
+					//Updating the content into the page file
+					$insertContent=$db->prepare("
+						UPDATE page
+						SET content = ?
+						WHERE id = $aboutusid
+						");
+					if (!$insertContent) {
+						printf("Error updating page table");
+						printf("Errormessage: %s\n", $db->error);
+					} else {
+						echo "Content updated <br>";
+						$insertContent->bind_param('s', $content);
+						$insertContent->execute();
+					}
+				}
+			$returnData = $editaboutus;
 		}
 
 		
 		//NO FUNCTION SELECTED
-	} else {
+	} elseif ($function == 'homepage') {
+		$aboutus = array();
+		$homepageid = 2;
+		//the PAGE table has - id, content, description
+		$results = $db->prepare("
+			SELECT id, content
+			FROM page
+			WHERE id = ?
+			");	
+		$results->bind_param('i', $homepageid);
+		$results->execute();
+		$results->bind_result($id, $content);
+		$results->store_result();
+		while ($results->fetch()) {
+			$aboutus['id']			= $id;
+			$aboutus['content'] 	= $content;
+			//the PAGEIMAGE table has - id, pageid, type, fileid
+			$imageResult = $db->prepare("
+				SELECT fileid
+				FROM pageimage
+				WHERE pageid = ?
+				");
+			$imageResult->bind_param('i', $id);
+			$imageResult->execute();
+			$imageResult->bind_result($fileid);
+			$imageResult->store_result();
+			while($imageResult->fetch()){
+				//the FILE table has - id, link, uploaddate, type
+				$imageFile = $db->prepare("
+					SELECT link, uploaddate
+					FROM file
+					WHERE id = ?
+					");
+				$imageFile->bind_param('i', $fileid);
+				$imageFile->execute();
+				$imageFile->bind_result($link, $uploaddate);
+				$imageFile->store_result();
+				while($imageFile->fetch()){
+					$aboutus['image'] = $link;
+					$aboutus['uploaddate'] = $uploaddate;	
+				}
+			}
+	    }
+	    $returnData = $aboutus;
+		
+		//EDIT ABOUT US DETAILS
+	} elseif ($function == 'editaboutus') {
+		$editaboutus = array();
+		$aboutusid = 1;
+		if ((!empty($_POST['content'])) || (!empty($_POST['link']))){
+			$content = $_POST['content'];
+			$link	 = $_POST['link'];
+				$editaboutus['content'] = $content;
+				$imageResult=$db->prepare("
+					SELECT fileid
+					FROM pageimage
+					WHERE pageid = $aboutusid
+					");
+				$imageResult->execute();
+				$imageResult->bind_result($fileid);
+				$imageResult->store_result();
+				while($imageResult->fetch()){
+				//Updating the link in the file table
+					echo "UPDATE file
+						SET link = ?
+						WHERE id = $fileid
+						";
+					$insertFile=$db->prepare("
+						UPDATE file
+						SET link = ?
+						WHERE id = $fileid
+						");
+					if (!$insertFile) {
+						printf("Error updating file table");
+						printf("Errormessage: %s\n", $db->error);
+					} else {
+						echo "Link updated <br>";
+						$insertFile->bind_param('s', $link);
+						$insertFile->execute();
+					}
+					//Updating the content into the page file
+					$insertContent=$db->prepare("
+						UPDATE page
+						SET content = ?
+						WHERE id = $aboutusid
+						");
+					if (!$insertContent) {
+						printf("Error updating page table");
+						printf("Errormessage: %s\n", $db->error);
+					} else {
+						echo "Content updated <br>";
+						$insertContent->bind_param('s', $content);
+						$insertContent->execute();
+					}
+				}
+			$returnData = $editaboutus;
+		}
+
+
+	 else {
 		$returnData = "No function selected";
 	}
 

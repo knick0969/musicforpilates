@@ -60,7 +60,7 @@
 			send['disabled'] = 'Hide';  //setting this variable will HIDE deleted blogs
 
 */
-			//SINGLE BLOG REQUIREMENTS
+/*			//SINGLE BLOG REQUIREMENTS
 			send['function'] = 'blog';
 			send['id'] = 2;
 
@@ -105,11 +105,16 @@
 /*			//ABOUT US DETAILS
 			send['function'] = 'aboutus';
 			send['id'] = 1;
-*/
+
+*/			//UPDATE ABOUT US DETAILS
+			send['function'] = 'editaboutus';
+			send['content'] = 'This is new content LALALALALALALA';
+			send['link'] = 'google.images.com/newimage.jpeg';
+
 			
 			$.ajax({
 				type:"POST",
-				url:"app/contentApi.php",
+				url:"contentApi.php",
 				dataType:"JSON",
 				data:send,
 				success: function(data) {
