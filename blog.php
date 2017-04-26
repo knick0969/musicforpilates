@@ -5,7 +5,6 @@
 	<title>Music For Pilates | Royalty Free Music for Pilates</title>
 	<?php include('includes/head.php'); ?>
     <script src="http://w.soundcloud.com/player/api.js"></script>
-
 </head>
 <body>
 	<?php include('includes/header.php'); ?>

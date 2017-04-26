@@ -16,6 +16,7 @@
 				<div class="line"></div>
 				<p class="sectionText">Short post description</p>
 			</div>
+			
 			<article class="blogPost">
 				<img src="assets/img/pilates1.jpg" class="blogImg" align="left">
 				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good.</p>
