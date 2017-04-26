@@ -213,9 +213,17 @@ body{
 	.featured{
 		.dim(100%, 600px);
 		.relative();
+		.transition(.3s);
 		margin: 0 auto;
+		.showing{
+			left: 40px;
+			.transition(.3s);
+			.opacity(1) !important;
+		}
 		.featuredTrack{
 			.clr();
+			.opacity(0);
+			.absolute();
 			.trackImage{
 				.dim(550px, 450px);
 				.relative();

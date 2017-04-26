@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Music For Pilates | Royalty Free Music for Pilates</title>
 	<?php include('includes/head.php'); ?>
+	<script src="js/home.js" type="text/javascript"></script>
 </head>
 <body>
 	
@@ -11,7 +12,19 @@
 
 	<section class="mainSection">
 		<article class="featured container">
-			<div class="featuredTrack">
+			<div class="featuredTrack" id="slide0">
+				<div class="trackImage">
+					<img src="assets/img/pilates1.jpg">
+					<div class="playBtn"></div>
+				</div>
+				<div class="trackInfo">
+					<span class="trackTag">PILATES</span>
+					<h1 class="trackTitle">Creation of our Dreams</h1>
+					<p class="trackDescription">A beautiful, chilled download with calmin piano, flute and pan pipes.</p>
+					<a href="#" class="cta blackCta">Buy</a>
+				</div>
+			</div>
+			<div class="featuredTrack" id="slide1">
 				<div class="trackImage">
 					<img src="assets/img/pilates1.jpg">
 					<div class="playBtn"></div>
@@ -24,10 +37,7 @@
 				</div>
 			</div>
 			<ul class="bullets">
-				<li class="bullet">1</li>
-				<li class="bullet">2</li>
-				<li class="bullet">3</li>
-				<li class="bullet active">4</li>
+
 			</ul>
 		</article>
 		<article class="about container">
