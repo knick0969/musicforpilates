@@ -186,10 +186,10 @@ $function = $_POST['function'];
 	    }
 	    $returnData = $homepage;
 		
-		//EDIT ABOUT US DETAILS
-	} elseif ($function == 'editaboutus') {
+		//EDIT HOME PAGE DETAILS
+	} elseif ($function == 'edithomepage') {
 		$editaboutus = array();
-		$aboutusid = 1;
+		$homepageid = 2;
 		if ((!empty($_POST['content'])) || (!empty($_POST['link']))){
 			$content = $_POST['content'];
 			$link	 = $_POST['link'];
@@ -197,17 +197,13 @@ $function = $_POST['function'];
 				$imageResult=$db->prepare("
 					SELECT fileid
 					FROM pageimage
-					WHERE pageid = $aboutusid
+					WHERE pageid = $homepageid
 					");
 				$imageResult->execute();
 				$imageResult->bind_result($fileid);
 				$imageResult->store_result();
 				while($imageResult->fetch()){
 				//Updating the link in the file table
-					echo "UPDATE file
-						SET link = ?
-						WHERE id = $fileid
-						";
 					$insertFile=$db->prepare("
 						UPDATE file
 						SET link = ?
@@ -225,7 +221,7 @@ $function = $_POST['function'];
 					$insertContent=$db->prepare("
 						UPDATE page
 						SET content = ?
-						WHERE id = $aboutusid
+						WHERE id = $homepageid
 						");
 					if (!$insertContent) {
 						printf("Error updating page table");
