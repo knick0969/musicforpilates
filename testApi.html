@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Testing Api</title>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="resultArea">
+			No data yet, bitches.
+		</div>
+		<script>
+			var send = {};
+
+/*			//TRACKLIST REQUIREMENTS
+			send['function'] = 'tracklist';
+			send['disabled'] = 'dfg';  //setting this variable will HIDE deleted tracks
+
+/*			//SINGLE TRACK REQUIREMENTS
+			send['function'] = 'track';
+			send['id'] = 17;
+*/
+/*			//ADD TRACK REQUIREMENTS
+			send['function'] = 'addtrack';
+			send['title'] = 'Song number 4';
+			send['description'] = 'Third song';
+			send['soundcloudurl'] = 'soundcloud.com/music/thirdsong.wav';
+			send['tracklink'] = 'google.com/music/thirdsong.wav'; //not the linking id, the actual file/location
+			send['coverlink'] = 'googleimages.com/thirdsong';  //not the linking id, the actual file/location
+			send['price'] = 2;  //can be int or float
+			send['bpm'] = 123;
+			send['orderposition'] = '0';  //if no position number selected, please use 0
+			send['discountcode'] = '';  //can be empty
+			send['enabled'] = 1;  //will need to be set to true, but may change this to be added automatically
+*/		
+/*			//EDIT TRACK REQUIREMENTS
+			send['function'] = 'edittrack';
+			send['id'] = 17;
+			send['title'] = 'Editted song3';
+			send['description'] = 'This is a song that needs to be DELETED';
+			send['soundcloudurl'] = 'soundcloud.com/music/deletemeplz.wav';
+			send['tracklinkid'] = '42';  //NOTE this is the linking ID and not file/location
+			send['tracklinkfile'] = 'google.com/music/deleted2.wav';
+			send['coverlinkid'] = '43';  //NOTE this is the linking ID and not file/location
+			send['coverlinkfile'] = 'googleimages.com/deleteimg4';
+			send['price'] = 2;
+			send['bpm'] = 123;
+			send['orderposition'] = '0';
+			send['discountcode'] = '';
+			send['enabled'] = 1;
+*/		
+/*			//DELETE TRACK
+			send['function'] = 'deletetrack';
+			send['id'] = 25;
+*/
+
+
+
+/*			//BLOGS REQUIREMENTS
+			send['function'] = 'bloglist';
+			send['disabled'] = 'Hide';  //setting this variable will HIDE deleted blogs
+
+/*
+			//SINGLE BLOG REQUIREMENTS
+			send['function'] = 'blog';
+			send['id'] = 2;
+
+			//ADD BLOG REQUIREMENTS
+			send['function'] = 'addblog';
+			send['title'] = 'Untitled Blog 2.';
+			send['description'] = 'This is my new Blog post diddly dawg!';
+			send['content'] = 'This is my blog.  It is my blog.  I must look after this blog.  It has content.  Its not good though';
+			send['author'] = 'Nick Big Daddy Kington';
+			send['deliver'] = '20-04-2017';
+			send['coverlink'] = 'googleimages.com/blogcoverimg';  //NOT the linking id, the actual file/location
+			send['enabled'] = 1;  //will need to be set to true, but may change this to be added automatically
+*/
+/*			//EDIT TRACK REQUIREMENTS
+			send['function'] = 'editblog';
+			send['id'] = 5;
+			send['title'] = 'Editted blog 3';
+			send['description'] = 'This blog has been editted twice';
+			send['content'] = 'This is my NEW editted Blog post diddly dawg!';
+			send['author'] = 'Nick Big Daddy Kington';
+			send['deliver'] = '23-04-2017';
+			send['coverlinkid'] = '109';  //NOTE this is the linking ID and not file/location
+			send['coverlinkfile'] = 'googleimages.com/newblogimage4';
+			send['enabled'] = 1;
+*/
+/*			//DELETE BLOG
+			send['function'] = 'deleteblog';
+			send['id'] = 5;
+*/
+
+/*			//CONTACT DETAILS
+			send['function'] = 'contact';
+*/
+
+/*			//UPDATE CONTACT DETAILS
+			send['function'] = 'editcontact';
+			send['streetaddress'] = 'New address';
+			send['email'] = 'new email';
+			send['hours'] = 'new hours';
+*/
+
+			//ABOUT US DETAILS
+			send['function'] = 'aboutus';
+			send['id'] = 1;
+
+			
+			$.ajax({
+				type:"POST",
+				url:"app/contentApi.php",
+				dataType:"JSON",
+				data:send,
+				success: function(data) {
+					console.log(data);
+					console.log(data['return']);
+					$('#resultArea').html(data['data']);
+				},
+				error: function (xhr, ajaxOptions, thrownError){
+			        alert(xhr.statusText);
+			        alert(thrownError);
+			        $('#resultArea').html(xhr['responseText']);
+			        console.log(ajaxOptions);
+			        console.log(thrownError);
+			    }  
+			});
+		</script>
+	</body>
+</html>
