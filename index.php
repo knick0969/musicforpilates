@@ -36,6 +36,30 @@
 					<a href="#" class="cta blackCta">Buy</a>
 				</div>
 			</div>
+			<div class="featuredTrack" id="slide2">
+				<div class="trackImage">
+					<img src="assets/img/pilates1.jpg">
+					<div class="playBtn"></div>
+				</div>
+				<div class="trackInfo">
+					<span class="trackTag">PILATES</span>
+					<h1 class="trackTitle">Creation of our Dreams</h1>
+					<p class="trackDescription">A beautiful, chilled download with calmin piano, flute and pan pipes.</p>
+					<a href="#" class="cta blackCta">Buy</a>
+				</div>
+			</div>
+			<div class="featuredTrack" id="slide3">
+				<div class="trackImage">
+					<img src="assets/img/pilates1.jpg">
+					<div class="playBtn"></div>
+				</div>
+				<div class="trackInfo">
+					<span class="trackTag">PILATES</span>
+					<h1 class="trackTitle">Creation of our Dreams</h1>
+					<p class="trackDescription">A beautiful, chilled download with calmin piano, flute and pan pipes.</p>
+					<a href="#" class="cta blackCta">Buy</a>
+				</div>
+			</div>
 			<ul class="bullets">
 
 			</ul>

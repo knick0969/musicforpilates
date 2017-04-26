@@ -546,7 +546,7 @@ body {
   margin: 0 auto;
 }
 .mainSection .featured .showing {
-  left: 40px;
+  left: 0px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -726,6 +726,7 @@ body {
   height: auto;
   width: 200px;
   position: absolute;
+  bottom: 120px;
   right: 220px;
 }
 .mainSection .featured .bullets:after {
