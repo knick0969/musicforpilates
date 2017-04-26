@@ -79,7 +79,7 @@
 			<form method="post" name="tracks-edit">
 				<div class="inputBox">
 					<label for="page-title">Page Title <span>(SEO)</span></label>
-					<input type="text" class="input error" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
+					<input type="text" class="input" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
 				</div>
 				<div class="inputBox">
 					<label for="page-keywords">Page Keywords <span>(SEO)</span></label>
@@ -100,6 +100,8 @@
 			</form>
 		</div>
 	</section>
+
+	<?php include('includes/overlayMessages.php'); ?>
 
 </body>
 </html>

@@ -793,6 +793,12 @@ nav.sidebar .navButton.active a:before {
   float: right;
   background-color: #000;
 }
+.container .itemsContainer .itemBox .inputSelect {
+  width: 350px;
+  height: 40px;
+  font-size: 1.15em;
+  margin-top: 2px;
+}
 .container .tracksList {
   padding-bottom: 10px;
 }

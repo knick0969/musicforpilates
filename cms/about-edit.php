@@ -20,7 +20,7 @@
 			<form name="about-edit" method="post">
 				<div class="inputBox">
 					<label>Page Title <span>(SEO)</span></label>
-					<input type="text" class="input error" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
+					<input type="text" class="input" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
 				</div>
 				<div class="inputBox">
 					<label>Page Keywords <span>(SEO)</span></label>
@@ -41,8 +41,7 @@
 		</div>
 	</section>
 
-	
-
+	<?php include('includes/overlayMessages.php'); ?>
 
 </body>
 </html>

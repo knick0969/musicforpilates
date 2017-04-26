@@ -67,5 +67,7 @@
 		</div>
 	</section>
 
+	<?php include('includes/overlayMessages.php'); ?>
+
 </body>
 </html>

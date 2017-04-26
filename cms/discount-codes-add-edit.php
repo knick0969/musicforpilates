@@ -44,5 +44,7 @@
 	<script src="../js/inputfile/custom-file-input.js"></script>
 	<script src="../js/inputfile/jquery.custom-file-input.js"></script>
 
+	<?php include('includes/overlayMessages.php'); ?>
+
 </body>
 </html>
