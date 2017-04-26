@@ -111,10 +111,6 @@ $function = $_POST['function'];
 				$imageResult->store_result();
 				while($imageResult->fetch()){
 				//Updating the link in the file table
-					echo "UPDATE file
-						SET link = ?
-						WHERE id = $fileid
-						";
 					$insertFile=$db->prepare("
 						UPDATE file
 						SET link = ?
@@ -147,11 +143,10 @@ $function = $_POST['function'];
 		}
 
 		
-		//NO FUNCTION SELECTED
+		//VIEW HOMEPAGE DETAILS
 	} elseif ($function == 'homepage') {
-		$aboutus = array();
+		$homepage = array();
 		$homepageid = 2;
-		//the PAGE table has - id, content, description
 		$results = $db->prepare("
 			SELECT id, content
 			FROM page
@@ -162,9 +157,8 @@ $function = $_POST['function'];
 		$results->bind_result($id, $content);
 		$results->store_result();
 		while ($results->fetch()) {
-			$aboutus['id']			= $id;
-			$aboutus['content'] 	= $content;
-			//the PAGEIMAGE table has - id, pageid, type, fileid
+			$homepage['id']			= $id;
+			$homepage['content'] 	= $content;
 			$imageResult = $db->prepare("
 				SELECT fileid
 				FROM pageimage
@@ -175,7 +169,6 @@ $function = $_POST['function'];
 			$imageResult->bind_result($fileid);
 			$imageResult->store_result();
 			while($imageResult->fetch()){
-				//the FILE table has - id, link, uploaddate, type
 				$imageFile = $db->prepare("
 					SELECT link, uploaddate
 					FROM file
@@ -186,12 +179,12 @@ $function = $_POST['function'];
 				$imageFile->bind_result($link, $uploaddate);
 				$imageFile->store_result();
 				while($imageFile->fetch()){
-					$aboutus['image'] = $link;
-					$aboutus['uploaddate'] = $uploaddate;	
+					$homepage['image'] = $link;
+					$homepage['uploaddate'] = $uploaddate;	
 				}
 			}
 	    }
-	    $returnData = $aboutus;
+	    $returnData = $homepage;
 		
 		//EDIT ABOUT US DETAILS
 	} elseif ($function == 'editaboutus') {
@@ -246,8 +239,8 @@ $function = $_POST['function'];
 			$returnData = $editaboutus;
 		}
 
-
-	 else {
+		//NO FUNCTION SELECTED
+	 } else {
 		$returnData = "No function selected";
 	}
 
