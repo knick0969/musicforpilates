@@ -808,6 +808,8 @@ nav.sidebar .navButton.active a:before {
   margin: 0 auto;
   padding: 15px;
   padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .container .tracksList .itemBox .item:after {
   content: " ";
