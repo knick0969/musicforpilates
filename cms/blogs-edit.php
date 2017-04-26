@@ -80,11 +80,11 @@
 				</div>
 				<div class="inputBox">
 					<label>Post Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-keywords">
+					<input type="text" class="input" name="page_keywords">
 				</div>
 				<div class="inputBox">
 					<label>Page Text<span>(SEO)</span></label>
-					<input type="text" class="input" data-myrules="required" name="page-description">
+					<input type="text" class="input" data-myrules="required" name="page_description">
 				</div>
 				<div class="divider"></div>
 				<input type="submit" value="SAVE" class="cta newpost">

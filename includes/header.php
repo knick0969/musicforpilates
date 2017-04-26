@@ -1,5 +1,6 @@
 <header class="header">
 	<nav class="mainNav container">
+		<div class="openToggle"></div>
 		<ul class="leftNav">
 			<li>
 				<a href="index.php" title="Back to Homepage" class="logo">

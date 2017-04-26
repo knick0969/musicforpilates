@@ -26,7 +26,7 @@
 				</div>
 				<div class="inputBox">
 					<label>Post Brief Description <span>(SEO)</span></label>
-					<input type="text" class="input" name="blogs-brief-description">
+					<input type="text" class="input" name="blogs-brief_description">
 				</div>
 				<div class="inputBox">
 					<label>Post Featured Image</label>

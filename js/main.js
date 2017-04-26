@@ -7,7 +7,7 @@ $(document).ready(function() {
     // Toggle Sidebar/Menu for Mobile
     $('.openToggle').click(function(e){
     	e.preventDefault();
-    	$(".sidebar").toggleClass('open');
+    	$(".mainNav").toggleClass('open');
     });
 
     // $('.play').click(function(e){

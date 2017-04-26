@@ -9,6 +9,21 @@ body{
 	.mainNav{
 		padding-top: 25px;
 		li{ .iblock(); .fleft(); }
+		.openToggle{
+			.dim(40px, 40px);
+			.absolute();
+			.transition(.1s);
+			cursor: pointer;
+			visibility: hidden;
+			right: 10px;
+			top: 15px;
+			background-repeat: no-repeat;
+			background-size: 70% 100%;
+			background-position: 50% 50%;
+			background-image: url(../assets/svg/menuButton.svg);
+			background-color: #444;
+			padding: 4px;
+		}
 		.leftNav{
 			.dim(450px);
 			.clr();
@@ -1242,6 +1257,41 @@ body{
 	}
 }
 @media only screen and (max-width : 900px){
+	.mainNav .openToggle{
+		visibility: visible !important;
+	}
+	nav.open .openToggle{
+		.transition(.1s);
+		.scale(.8);
+		top: 15px;
+	}
+	.rightNav{
+		visibility: hidden;
+	}
+	nav.open .rightNav{
+		.dim(100%) !important;
+		.absolute();
+		left: 0;
+		top: 70px;
+		min-height: 300px;
+		z-index: 9999999999;
+		visibility: hidden;
+		ul{ .dim(100%); }
+		li{
+			z-index: 999999;
+			.dim(100%, 100px);
+			padding-top: 20px;
+			padding-bottom: 20px;
+			background: #F9F9F9;
+			text-align: center;
+			a{ .dim(100%, 100%); text-align: center;}
+		}
+	}
+	nav.open{
+		.rightNav{
+			visibility: visible;
+		}
+	}
 	.musicPage{
 		.track{
 			.trackImg{
