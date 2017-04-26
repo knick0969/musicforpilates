@@ -31,7 +31,7 @@
 				</div>
 				<div class="trackInfo">
 					<span class="trackTag">PILATES</span>
-					<h1 class="trackTitle">Creation of our Dreams</h1>
+					<h1 class="trackTitle">2 Creation of our Dreams</h1>
 					<p class="trackDescription">A beautiful, chilled download with calmin piano, flute and pan pipes.</p>
 					<a href="#" class="cta blackCta">Buy</a>
 				</div>
@@ -43,7 +43,7 @@
 				</div>
 				<div class="trackInfo">
 					<span class="trackTag">PILATES</span>
-					<h1 class="trackTitle">Creation of our Dreams</h1>
+					<h1 class="trackTitle">3 Creation of our Dreams</h1>
 					<p class="trackDescription">A beautiful, chilled download with calmin piano, flute and pan pipes.</p>
 					<a href="#" class="cta blackCta">Buy</a>
 				</div>
@@ -55,7 +55,7 @@
 				</div>
 				<div class="trackInfo">
 					<span class="trackTag">PILATES</span>
-					<h1 class="trackTitle">Creation of our Dreams</h1>
+					<h1 class="trackTitle">4 Creation of our Dreams</h1>
 					<p class="trackDescription">A beautiful, chilled download with calmin piano, flute and pan pipes.</p>
 					<a href="#" class="cta blackCta">Buy</a>
 				</div>
@@ -84,16 +84,20 @@
 
 	<?php include('includes/footer.php'); ?>
 
-	<script>
-	    (function($){
-	        $(window).on("load",function(){
-	            $(".listOfTracks").mCustomScrollbar({
-			        axis:"x",
-			        setHeight: 620
-			      });
-	        });
-	    })(jQuery);
-	</script>
+	<script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+<script src="js/scrollbar/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+<link href="js/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+
+<script>
+    (function($){
+        $(window).on("load",function(){
+            $(".listOfTracks").mCustomScrollbar({
+		        axis:"y",
+		        theme: 'dark-3'
+		      });
+        });
+    })(jQuery);
+</script>
 
 </body>
 </html>

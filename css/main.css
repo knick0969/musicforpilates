@@ -296,11 +296,11 @@ body {
 }
 .header .mainNav .rightNav {
   height: auto;
-  width: 550px;
+  width: 410px;
   float: right;
 }
 .header .mainNav .rightNav .navLinks {
-  float: left;
+  float: right;
 }
 .header .mainNav .rightNav .navLinks .navBtn {
   position: relative;
@@ -329,6 +329,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 .header .mainNav .rightNav .navIcons {
+  display: none;
   float: right;
 }
 .header .mainNav .rightNav .navIcons .shoppingCart {
@@ -929,7 +930,7 @@ body {
   box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
   behavior: url(../htc/pie.htc);
   zoom: 1;
-  margin-left: -100px;
+  margin-left: -40px;
   margin-right: 80px;
 }
 .musicPage .track .trackImg .playButton {
@@ -1357,7 +1358,7 @@ body {
   box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
   behavior: url(../htc/pie.htc);
   zoom: 1;
-  margin-left: -100px;
+  margin-left: -40px;
   margin-right: 80px;
   overflow: hidden;
 }
@@ -1406,7 +1407,7 @@ body {
   margin-right: 20px;
 }
 .blogPage .blog .blogInfo .blogDescription {
-  padding-right: 100px;
+  padding-right: 20px;
   margin-bottom: 30px;
   line-height: 1.6em;
 }
@@ -1671,11 +1672,12 @@ body {
   margin-top: -320px;
   z-index: 1;
   padding-top: 420px;
+  overflow-x: hidden;
 }
 .homeTracks .listOfTracks {
-  width: 1000px;
-  height: 460px;
-  overflow-x: scroll;
+  width: 8000px;
+  height: 550px;
+  right: -400px;
   padding-left: 150px;
   margin-top: 100px;
 }
@@ -1998,4 +2000,327 @@ body {
   font-size: 1.1em;
   line-height: 1.6em;
   color: #000;
+}
+@media only screen and (max-width: 1100px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .header .leftNav {
+    height: auto !important;
+    width: 250px !important;
+  }
+  .header .leftNav .slogan {
+    display: none;
+  }
+  .freeTrack {
+    text-align: center;
+  }
+  .freeTrack .sectionTitle {
+    margin: 0 auto;
+    float: none;
+  }
+  .freeTrack .sectionTitle .line {
+    margin: 0 auto;
+    margin-top: 23px;
+    margin-bottom: 23px;
+  }
+  .freeTrack .inputHome {
+    margin: 0 auto;
+    float: none;
+    margin-top: 40px;
+  }
+  .darkBlueBackground {
+    height: 410px;
+  }
+  .featuredBlog {
+    padding-top: 50px;
+  }
+  .featuredBlog .postImg {
+    height: 270px;
+    width: 360px;
+    margin-left: 40px;
+  }
+}
+@media only screen and (max-width: 1001px) {
+  .musicPage .track .trackImg {
+    height: 250px;
+    width: 250px;
+  }
+  .blogPage .blog .blogInfo {
+    height: auto;
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .musicPage .track .trackImg {
+    height: 250px;
+    width: 450px;
+    float: none;
+    margin: 0 auto;
+  }
+  .musicPage .track .trackInfo {
+    height: auto;
+    width: 80%;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .musicPage .track .trackInfo .trackTags {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .musicPage .track .trackInfo .trackDescription {
+    padding-right: 0px;
+  }
+  .musicPage .track .trackInfo .cta {
+    float: left;
+    margin-right: 20px;
+  }
+  .musicPage .track .trackInfo .play {
+    margin-left: 20%;
+  }
+  .musicPage .track .trackInfo .trackQuantity {
+    height: auto;
+    width: 200px;
+    position: relative;
+  }
+  .musicPage .track .trackInfo .trackQuantity:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .musicPage .track .trackInfo .trackQuantity p {
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+  }
+  .musicPage .track .trackInfo .trackQuantity .add,
+  .musicPage .track .trackInfo .trackQuantity .remove {
+    height: 28px;
+    width: 28px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    behavior: url(../htc/pie.htc);
+    zoom: 1;
+    position: absolute;
+    right: -58px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0;
+  }
+  .musicPage .track .trackInfo .trackQuantity .add {
+    top: -10px;
+  }
+  .musicPage .track .trackInfo .trackQuantity .remove {
+    bottom: -10px;
+  }
+  .musicPage .track .trackInfo .listening {
+    background-color: #000;
+    color: #FFF;
+  }
+  .aboutPage .aboutText {
+    margin-bottom: 100px;
+  }
+  .aboutPage .aboutPic {
+    height: 220px;
+    width: 350px;
+    margin: 0 auto;
+    float: none;
+    left: 0;
+    margin-bottom: 40px;
+  }
+  .aboutPage .aboutText1 {
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+    float: none;
+  }
+  .aboutPage .dj {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .aboutPage .dj:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .aboutPage .dj .aboutText1 {
+    float: none;
+    padding-left: 0;
+  }
+  .aboutPage .dj .aboutText1 .djName {
+    text-align: center;
+  }
+  .aboutPage .dj .djPic {
+    height: 300px;
+    width: 400px;
+    -webkit-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 15px 25px 5px rgba(0, 0, 0, 0.25);
+    behavior: url(../htc/pie.htc);
+    zoom: 1;
+    float: none;
+    right: 0;
+    margin: 0 auto;
+    position: relative;
+    background-color: #CCC;
+    overflow: hidden;
+  }
+  .aboutPage .leftDj {
+    margin-top: 100px;
+  }
+  .aboutPage .leftDj .aboutText1 {
+    padding-left: 0;
+    padding-right: 10%;
+    float: right;
+  }
+  .aboutPage .leftDj .djPic {
+    float: none;
+    left: 0px;
+  }
+  .darkBlueBackground {
+    min-height: 550px;
+    max-height: 630px;
+  }
+  .internalPage .sectionTitle .sectionText {
+    height: auto;
+    width: 90%;
+  }
+  .featuredBlog {
+    padding-top: 50px;
+  }
+  .featuredBlog .postImg {
+    float: none;
+    height: 250px;
+    width: 400px;
+    margin: 0 auto;
+  }
+  .featuredBlog .postInfo {
+    height: auto;
+    width: 70%;
+    float: none;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .featuredBlog .allposts {
+    height: 50px;
+    width: 30%;
+    position: absolute;
+    color: #FFF;
+    padding: 5px 10px;
+    margin: 0 auto;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url(../htc/pie.htc);
+    zoom: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    line-height: 40px;
+  }
+  .blogPage .blog .blogTags {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .blogPage .blog .blogTags span {
+    display: list-item;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    float: none;
+  }
+  .blogPage .blog .blogImg {
+    position: relative;
+    float: none;
+    margin: 0 auto;
+  }
+  .blogPage .blog .blogInfo {
+    height: auto;
+    width: 80%;
+    float: none;
+    margin: 0 auto;
+    text-align: center !important;
+  }
+  .footer {
+    height: 90px;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .footer:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .footer .logo {
+    height: auto;
+    width: 100%;
+    float: none !important;
+  }
+  .footer .logo .mfp {
+    text-align: center;
+  }
+  .footer .logo .slogan {
+    text-align: center;
+  }
+  .footer .socialMedia {
+    height: auto;
+    width: 200px;
+    position: relative;
+    margin: 0 auto;
+    display: list-item;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .footer .socialMedia:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .footer .socialMedia .socialBtn {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    background-color: #CCC;
+  }
+  .footer .socialMedia .twitter {
+    margin-right: 0;
+  }
+  .footer .copyright {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .musicPage .track .trackInfo .play {
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .musicPage .track .trackInfo .play {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 40px;
+    margin-bottom: 10px;
+  }
+  .musicPage .track .trackInfo .cta {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+    margin-bottom: 25px;
+  }
 }

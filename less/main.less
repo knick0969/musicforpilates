@@ -34,10 +34,10 @@ body{
 				}
 		}
 		.rightNav{
-			.dim(550px);
+			.dim(410px);
 			.fright();
 			.navLinks{
-				.fleft();
+				.fright();
 				.navBtn{
 					.relative();
 					font-size: 1.3em;
@@ -59,6 +59,7 @@ body{
 				}
 			}
 			.navIcons{
+				display: none;
 				.fright();
 				.shoppingCart{
 					.dim(30px, 30px);
@@ -454,7 +455,7 @@ body{
 			.fleft();
 			.relative();
 			.box-shadow(0px 15px 25px 5px rgba(0, 0, 0, 0.25));
-			margin-left: -100px;
+			margin-left: -40px;
 			margin-right: 80px;
 			.playButton{
 				.opacity(0) !important;
@@ -742,7 +743,6 @@ body{
 	}
 }
 
-
 //BLOG List page
 .blogPage{
 	.clr();
@@ -754,7 +754,7 @@ body{
 			.fleft();
 			.relative();
 			.box-shadow(0px 15px 25px 5px rgba(0, 0, 0, 0.25));
-			margin-left: -100px;
+			margin-left: -40px;
 			margin-right: 80px;
 			overflow: hidden;
 			img{ .dim(100%); }
@@ -787,7 +787,7 @@ body{
 				margin-right: 20px;				
 			}
 			.blogDescription{
-				padding-right: 100px;
+				padding-right: 20px;
 				margin-bottom: 30px;
 				line-height: 1.6em;
 			}
@@ -842,7 +842,6 @@ body{
 		}
 	}
 }
-
 
 //ABOUT PAGE
 .aboutPage{
@@ -980,11 +979,12 @@ body{
 	margin-top: -320px;
 	z-index: 1;
 	padding-top: 420px;
+	overflow-x: hidden;
 	.listOfTracks{
-		width: 1000px;
-		height: 460px;
+		width: 8000px;
+		height: 550px;
+		right: -400px;
 		.clr();
-		overflow-x: scroll;
 		padding-left: 150px;
 		margin-top: 100px;
 		.homeTrack{
@@ -1176,5 +1176,313 @@ body{
 	}
 }
 
+@media only screen and (max-width : 1100px){
+	.header{
+		padding-left: 10px;
+		padding-right: 10px;
+		.leftNav{
+			.dim(250px) !important;
+			.slogan{ display: none; }
+		}
+	}
+	.freeTrack{
+		text-align: center;
+		.sectionTitle{
+			margin: 0 auto;
+			float: none;
+			.line{
+				margin: 0 auto;
+				margin-top: 23px;
+				margin-bottom: 23px;
+			}
+		}
+		.inputHome{
+			margin: 0 auto;
+			float: none;
+			margin-top: 40px;
+		}
+	}
+	.darkBlueBackground{
+		height: 410px;
+	}
+	.featuredBlog{
+		padding-top: 50px;
+		.postImg{
+			.dim(360px, 270px);
+			margin-left: 40px;
+		}
+	}
+}
+@media only screen and (max-width : 1001px){
+	.musicPage{
+		.track{
+			.trackImg{
+				.dim(250px, 250px);
+			}
+		}
+	}
+	.featuredBlog{
 
+	}
+	.blogPage{
+		.blog{
+			
+			.blogInfo{
+				.dim(55%);
+			}
+		}
+	}
+}
+@media only screen and (max-width : 900px){
+	.musicPage{
+		.track{
+			.trackImg{
+				.dim(450px, 250px);
+				float: none;
+				margin: 0 auto;
+			}
+			.trackInfo{
+				.dim(80%);
+				float: none;
+				margin: 0 auto;
+				text-align: center;
+				.trackTags{
+					.iblock();
+				}
+				.trackDuration{
+				}
+				.trackTitle{
+		
+				}
+				.trackDescription{
+					padding-right: 0px;
+				}
+				.cta{
+					.fleft();
+					margin-right: 20px;
+				}
+				.play{
+					margin-left: 20%;
+				}
+				.trackQuantity{
+					.dim(200px);
+					.clr();
+					.relative();
+					p{ .semibold(); font-size: 1em; text-align: center; }
+					.add, .remove{
+						.dim(28px, 28px);
+						.border-radius(50%);
+						.absolute();
+						right: -58px;
+						line-height: 22px;
+						text-align: center;
+						padding: 0;
+					}
+					.add{
+						top: -10px;
+					}
+					.remove{
+						bottom: -10px;
+					}
+				}
+				.listening{
+					background-color: #000;
+					color: #FFF;
+				}
+			}
+		}
+	}
+	.aboutPage{
+		.aboutText{
+			margin-bottom: 100px;
+		}
+		.aboutPic{
+			.dim(350px, 220px);
+			margin: 0 auto;
+			float: none;
+			left: 0;
+			margin-bottom: 40px;
+		}
+		.aboutText1{
+			.dim(75%);
+			margin: 0 auto;
+			float: none;
+		}
+		.dj{
+			.dim(90%);
+			.clr();
+			margin: 0 auto;
+			.aboutText1{
+				float: none;
+				padding-left: 0;
+				.djName{
+					text-align: center;
+				}
+			}
+			.djPic{
+				.dim(400px, 300px);
+				.box-shadow(0px 15px 25px 5px rgba(0, 0, 0, 0.25));
+				float: none;
+				right: 0;
+				margin: 0 auto;
+				.relative();
+				background-color: #CCC;
+				overflow: hidden;
+			}
+		}
+		.leftDj{
+			margin-top: 100px;
+			.aboutText1{
+				padding-left: 0;
+				padding-right: 10%;
+				.fright();
+			}
+			.djPic{
+				float: none;
+				left: 0px;
+			}
+		}
+	}
+	.darkBlueBackground{
+		min-height: 550px;
+		max-height: 630px;
+	}
+	.internalPage .sectionTitle{
+		.sectionText{
+			.dim(90%);
+		}
+	}
+	.featuredBlog{
+		padding-top: 50px;
+		.postImg{
+			float: none;
+			.dim(400px, 250px);
+			margin: 0 auto;
+		}
+		.postInfo{
+			.dim(70%);
+			float: none;
+			margin: 0 auto;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.allposts{
+			.dim(30%, 50px);
+			.absolute();
+			color: #FFF;
+			padding: 5px 10px;
+			margin: 0 auto;
+			bottom: 40px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			.border-radius(10px);
+			background-color: rgba(0, 0, 0, 0.2);
+			line-height: 40px;
+		}
+	}
+	.blogPage{
+		.blog{
+			.blogTags{
+				.dim(80%);
+				margin: 0 auto;
+				text-align: center;
+				span{
+					display: list-item;
+					.iblock();
+					text-align: center;
+					float: none;
+				}
+			}
+			.blogImg{
+				.relative();
+				float: none;
+				margin: 0 auto;
+			}
+			.blogInfo{
+				.dim(80%);
+				float: none;
+				margin: 0 auto;
+				text-align: center !important;
+			}
+		}
+	}
+	.footer{
+		.dim(100%, 90px);
+		.clr();
+		padding-bottom: 20px;
+		.logo{
+			.dim(100%);
+			float: none !important;
+			.mfp{
+				text-align: center;
+			}
+			.slogan{
+				text-align: center;
+			}
+		}
+		.socialMedia{
+			.dim(200px);
+			.clr();
+			.relative();
+			margin: 0 auto;
+			display: list-item;
+			text-align: center;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			.socialBtn{
+				.dim(30px, 30px);
+				.iblock();
+				margin-right: 15px;
+				background-color: #CCC;
+			}
+			.facebook{
+
+			}
+			.linkedin{
+
+			}
+			.twitter{
+				margin-right: 0;
+
+			}
+		}
+		.copyright{
+			.dim(100%);
+			text-align: center;
+			float: none;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media only screen and (max-width : 620px){
+	.musicPage{
+		.track{
+			.trackInfo{
+				.play{
+					margin-left: 10%;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width : 550px){
+	.musicPage{
+		.track{
+			.trackInfo{
+				.play{
+					.iblock();
+					margin-right: 40px;
+					margin-bottom: 10px;
+				}
+				.cta{
+					.iblock();
+					float: none;
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+}
 

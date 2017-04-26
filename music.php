@@ -23,7 +23,7 @@
 						<p class="price"><span>$</span>25</p>
 						<p class="aud">aud</p>
 					</div>
-					<iframe id="soundcloud_widget" width="100%" height="320" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+					<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 					<img src="assets/img/pilates1.jpg" class="overlayImg">
 				</figure>
 				<div class="trackInfo">
@@ -47,7 +47,7 @@
 						<p class="price"><span>$</span>25</p>
 						<p class="aud">aud</p>
 					</div>
-					<iframe id="soundcloud_widget" width="100%" height="320" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+					<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 					<img src="assets/img/pilates1.jpg" class="overlayImg">
 				</figure>
 				<div class="trackInfo">
@@ -71,7 +71,7 @@
 						<p class="price"><span>$</span>25</p>
 						<p class="aud">aud</p>
 					</div>
-					<iframe id="soundcloud_widget" width="100%" height="320" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+					<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 					<img src="assets/img/pilates1.jpg" class="overlayImg">
 				</figure>
 				<div class="trackInfo">

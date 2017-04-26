@@ -2,7 +2,7 @@
 	<nav class="mainNav container">
 		<ul class="leftNav">
 			<li>
-				<a href="#" title="Back to Homepage" class="logo">
+				<a href="index.php" title="Back to Homepage" class="logo">
 					<p>Music<span>For</span>Pilates</p>
 				</a>
 			</li>

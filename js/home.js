@@ -84,11 +84,17 @@ $(document).ready(function(){
             currentSlider = sliderNumber;
 
             interval = window.setInterval(nextSlider, 7000);
+
         }
     }
 
     //initalise slider 
     mainSlider();
+
+    var width = $('.listOfTracks').width();
+
+    
+    $('.listOfTracks').css({ 'width' : width});
 
 
 });
