@@ -9,10 +9,11 @@
 <body>
 	<?php include('includes/header.php'); ?>
 
+
 	<section class="internalPage postPage">
 		<div class="greyBackground">
 			<div class="sectionTitle container">
-				<h1 class="titleh1">Post title goes here.</h1>
+				<h1 class="titleh1" id="title">Post title goes here.</h1>
 				<div class="line"></div>
 				<p class="sectionText">Short post description</p>
 			</div>
@@ -31,6 +32,32 @@
 	</section>
 
 	<?php include('includes/footer.php'); ?>
+<script>
 
+	var send = {};
+	send['function'] = 'blog';
+	send['id'] = 5;
+	var returndata = {};
+
+	$.ajax({
+		type:"POST",
+		url:"blogsApi.php",
+		dataType:"JSON",
+		data:send,
+		success: function(data) {
+			console.log(data['return']);
+			returndata = data['return'];
+			$('#resultArea').html(data['data']);
+			$('#title').html(data['return'][0]['title'])
+		},
+		error: function (xhr, ajaxOptions, thrownError){
+	        alert(xhr.statusText);
+	        alert(thrownError);
+	        $('#resultArea').html(xhr['responseText']);
+	        console.log(ajaxOptions);
+	        console.log(thrownError);
+	    }  
+	});
+</script>
 </body>
 </html>
