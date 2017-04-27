@@ -60,7 +60,7 @@
 			send['disabled'] = 'Hide';  //setting this variable will HIDE deleted blogs
 
 */
-			//SINGLE BLOG REQUIREMENTS
+/*			//SINGLE BLOG REQUIREMENTS
 			send['function'] = 'blog';
 			send['id'] = 2;
 
@@ -104,12 +104,40 @@
 
 /*			//ABOUT US DETAILS
 			send['function'] = 'aboutus';
-			send['id'] = 1;
+
+
+			//UPDATE ABOUT US DETAILS
+			send['function'] = 'editaboutus';
+			send['content'] = 'This is new content LALALALALALALA';
+			send['link'] = 'google.images.com/newimage.jpeg';
+
+
+			//HOMEPAGE DETAILS
+			send['function'] = 'homepage';
+
+			//UPDATE HOMEPAGE DETAILS
+			send['function'] = 'edithomepage';
+			send['content'] = 'New Homepage deets yoloswag!';
+			send['link'] = 'google.images.com/homepagg.jpeg';
+
+
+			//VIEW AUTHORS DETAILS
+			send['function'] = 'authors';
 */
+			//UPDATE AUTHORS DETAILS
+			send['function'] = 'editauthors';
+			send['perryname'] = 'New Perry!';
+			send['perryimg'] = 'myspace.com/perry.jpg';
+			send['perryblurb'] = 'This is Perrys NEW and UPDATED profile blurb';
+			send['lisaname'] = 'The new and improved Lisa!';
+			send['lisaimg'] = 'myspace.com/lisa.jpg';
+			send['lisablurb'] = 'This is Lisas NEW and UPDATED profile blurb';
+
+
 			
 			$.ajax({
 				type:"POST",
-				url:"app/contentApi.php",
+				url:"contentApi.php",
 				dataType:"JSON",
 				data:send,
 				success: function(data) {
