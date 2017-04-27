@@ -114,11 +114,24 @@
 
 			//HOMEPAGE DETAILS
 			send['function'] = 'homepage';
-*/
+
 			//UPDATE HOMEPAGE DETAILS
 			send['function'] = 'edithomepage';
 			send['content'] = 'New Homepage deets yoloswag!';
 			send['link'] = 'google.images.com/homepagg.jpeg';
+*/
+
+			//VIEW AUTHORS DETAILS
+			send['function'] = 'authors';
+
+/*			//UPDATE AUTHORS DETAILS
+			send['function'] = 'editauthors';
+			send['perryimg'] = 'myspace.com/perry.jpg';
+			send['perryprofile'] = 'This is Perrys NEW and UPDATED profile blurb';
+			send['lisaimg'] = 'myspace.com/lisa.jpg';
+			send['lisaprofile'] = 'This is Lisas NEW and UPDATED profile blurb';
+*/
+
 			
 			$.ajax({
 				type:"POST",

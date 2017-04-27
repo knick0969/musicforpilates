@@ -234,9 +234,112 @@ $function = $_POST['function'];
 				}
 			$returnData = $editaboutus;
 		}
+		//VIEW AUTHORS DETAILS
+	 } elseif ($function = 'authors'){
+	 	$authors = array();
+	 	$member = 1;
+	 	$results = $db->prepare("
+	 		SELECT *
+	 		FROM team 
+	 		WHERE id = ?
+	 		");
+	 	$results->bind_param('i', $member);
+	 	$results->execute();
+	 	$results->bind_result($id1, $perryname, $perryblurb, $perryimgid);
+	 	$results->store_result();
+	 	while($results->fetch()){
+	 		$authors['perryname'] = $perryname;
+	 		$authors['perryblurb'] = $perryblurb;
+	 		$secondresult = $db->prepare("
+	 			SELECT link
+	 			FROM file 
+	 			WHERE id = $perryimgid
+	 			");
+	 		$secondresult->execute();
+	 		$secondresult->bind_result($perryimg);
+	 		$secondresult->store_result();
+	 		while ($secondresult->fetch()){
+	 			$authors['perryimg'] = $perryimg;
+	 		}
+	 	}
+	 	$results = $db->prepare("
+	 		SELECT *
+	 		FROM team 
+	 		WHERE id = ?
+	 		");
+	 	$results->bind_param('i', $member);
+	 	$results->execute();
+	 	$results->bind_result($id1, $lisaname, $lisablurb, $lisaimgid);
+	 	$results->store_result();
+	 	while($results->fetch()){
+	 		$authors['lisaname'] = $lisaname;
+	 		$authors['lisablurb'] = $lisablurb;
+	 		$secondresult = $db->prepare("
+	 			SELECT link
+	 			FROM file 
+	 			WHERE id = $lisaimgid
+	 			");
+	 		$secondresult->execute();
+	 		$secondresult->bind_result($lisaimg);
+	 		$secondresult->store_result();
+	 		while ($secondresult->fetch()){
+	 			$authors['lisaimg'] = $lisaimg;
+	 		}
+	 	}
+	 	$returnData = $authors;
+
+
+
+		//EDIT AUTHORS DETAILS
+	 } elseif ($function == 'editauthors') {
+		$authors = array();
+		if ((!empty($_POST['perryname'])) || (!empty($_POST['perryimg'])) || (!empty($_POST['perryblurb'])) || (!empty($_POST['lisaname'])) || (!empty($_POST['lisaimg'])) || (!empty($_POST['lisablurb']))){
+			$content = $_POST['content'];
+			$link	 = $_POST['link'];
+				$editaboutus['content'] = $content;
+				$imageResult=$db->prepare("
+					SELECT fileid
+					FROM pageimage
+					WHERE pageid = $homepageid
+					");
+				$imageResult->execute();
+				$imageResult->bind_result($fileid);
+				$imageResult->store_result();
+				while($imageResult->fetch()){
+				//Updating the link in the file table
+					$insertFile=$db->prepare("
+						UPDATE file
+						SET link = ?
+						WHERE id = $fileid
+						");
+					if (!$insertFile) {
+						printf("Error updating file table");
+						printf("Errormessage: %s\n", $db->error);
+					} else {
+						echo "Link updated <br>";
+						$insertFile->bind_param('s', $link);
+						$insertFile->execute();
+					}
+					//Updating the content into the page file
+					$insertContent=$db->prepare("
+						UPDATE page
+						SET content = ?
+						WHERE id = $homepageid
+						");
+					if (!$insertContent) {
+						printf("Error updating page table");
+						printf("Errormessage: %s\n", $db->error);
+					} else {
+						echo "Content updated <br>";
+						$insertContent->bind_param('s', $content);
+						$insertContent->execute();
+					}
+				}
+			$returnData = $editaboutus;
+		}
 
 		//NO FUNCTION SELECTED
-	 } else {
+	 }else {
 		$returnData = "No function selected";
 	}
 
