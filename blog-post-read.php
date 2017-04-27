@@ -13,14 +13,14 @@
 	<section class="internalPage postPage">
 		<div class="greyBackground">
 			<div class="sectionTitle container">
-				<h1 class="titleh1" id="title">Post title goes here.</h1>
+				<h1 class="titleh1" id="db-title">Post title goes here.</h1>
 				<div class="line"></div>
 				<p class="sectionText">Short post description</p>
 			</div>
 			
 			<article class="blogPost">
 				<img src="assets/img/pilates1.jpg" class="blogImg" align="left">
-				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good.</p>
+				<p id="db-content">Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good.</p>
 				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it.</p>
 				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good.</p>
 				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it.</p>
@@ -48,7 +48,8 @@
 			console.log(data['return']);
 			returndata = data['return'];
 			$('#resultArea').html(data['data']);
-			$('#title').html(data['return'][0]['title'])
+			$('#db-title').html(data['return'][0]['title']);
+			$('#db-content').html(data['return'][0]['content']);
 		},
 		error: function (xhr, ajaxOptions, thrownError){
 	        alert(xhr.statusText);
