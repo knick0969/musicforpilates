@@ -235,7 +235,7 @@ $function = $_POST['function'];
 			$returnData = $editaboutus;
 		}
 		//VIEW AUTHORS DETAILS
-	 } elseif ($function = 'authors'){
+	 } elseif ($function == 'authors'){
 	 	$authors = array();
 	 	$member = 1;
 	 	$results = $db->prepare("
@@ -292,54 +292,80 @@ $function = $_POST['function'];
 
 		//EDIT AUTHORS DETAILS
 	 } elseif ($function == 'editauthors') {
-		$authors = array();
+	 	echo "Running function?";
+		$editauthors = array();
+		$perryid = 1;
+		$lisaid = 2;
+		$perryimgid = 111;
+		$lisaimgid = 112;
 		if ((!empty($_POST['perryname'])) || (!empty($_POST['perryimg'])) || (!empty($_POST['perryblurb'])) || (!empty($_POST['lisaname'])) || (!empty($_POST['lisaimg'])) || (!empty($_POST['lisablurb']))){
-			$content = $_POST['content'];
-			$link	 = $_POST['link'];
-				$editaboutus['content'] = $content;
-				$imageResult=$db->prepare("
-					SELECT fileid
-					FROM pageimage
-					WHERE pageid = $homepageid
-					");
-				$imageResult->execute();
-				$imageResult->bind_result($fileid);
-				$imageResult->store_result();
-				while($imageResult->fetch()){
-				//Updating the link in the file table
-					$insertFile=$db->prepare("
-						UPDATE file
-						SET link = ?
-						WHERE id = $fileid
-						");
-					if (!$insertFile) {
-						printf("Error updating file table");
-						printf("Errormessage: %s\n", $db->error);
-					} else {
-						echo "Link updated <br>";
-						$insertFile->bind_param('s', $link);
-						$insertFile->execute();
-					}
-					//Updating the content into the page file
-					$insertContent=$db->prepare("
-						UPDATE page
-						SET content = ?
-						WHERE id = $homepageid
-						");
-					if (!$insertContent) {
-						printf("Error updating page table");
-						printf("Errormessage: %s\n", $db->error);
-					} else {
-						echo "Content updated <br>";
-						$insertContent->bind_param('s', $content);
-						$insertContent->execute();
-					}
+			$perryname 	= $_POST['perryname'];
+			$perryimg	= $_POST['perryimg'];
+			$perryblurb	= $_POST['perryblurb'];
+			$lisaname 	= $_POST['lisaname'];
+			$lisaimg	= $_POST['lisaimg'];
+			$lisablurb 	= $_POST['lisablurb'];
+			echo "Received data";
+			$insertFile = $db->prepare("
+				UPDATE file
+				SET link = ?
+				WHERE id = $perryimgid
+				");
+			if (!$insertFile) {
+					printf("Error updating file table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Link updated <br>";
+					$insertFile->bind_param('s', $perryimg);
+					$insertFile->execute();
 				}
-			$returnData = $editaboutus;
+			$insertauthor = $db->prepare("
+				UPDATE team
+				SET name = ?, profile = ?
+				WHERE id = $perryid
+				");
+			if (!$insertauthor) {
+					printf("Error updating file table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Link updated <br>";
+					$insertauthor->bind_param('ss', $perryname, $perryblurb);
+					$insertauthor->execute();
+				}
+			$insertFile = $db->prepare("
+				UPDATE file
+				SET link = ?
+				WHERE id = $lisaimgid
+				");
+			if (!$insertFile) {
+					printf("Error updating file table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Link updated <br>";
+					$insertFile->bind_param('s', $lisaimg);
+					$insertFile->execute();
+				}
+			$insertauthor = $db->prepare("
+				UPDATE team
+				SET name = ?, profile = ?
+				WHERE id = $lisaid
+				");
+			if (!$insertauthor) {
+					printf("Error updating file table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Link updated <br>";
+					$insertauthor->bind_param('ss', $lisaname, $lisablurb);
+					$insertauthor->execute();
+				}
+
+				
+			$returnData = $editauthors;
 		}
+		echo "Finished";
 
 		//NO FUNCTION SELECTED
-	 }else {
+	 } else {
 		$returnData = "No function selected";
 	}
 
