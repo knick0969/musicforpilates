@@ -49,6 +49,9 @@
 			returndata = data['return'];
 			$('#resultArea').html(data['data']);
 			$('#title').html(data['return'][0]['title'])
+			/* For each loop {
+				$('#trackContainer').append('<div class="track"><img src="img/'+data['return'][i]['image']+'"><h3>'+data['return'][i]['title']+'</h3><div class="description">'+data['return'][i]['description']+'</div><div class="price">'+data['return'][i]['cost']+'</div><a href="track.php?id='+data['return'][i]['id']+'"><button class="moreInfo">More info</button></div>')
+			} */
 		},
 		error: function (xhr, ajaxOptions, thrownError){
 	        alert(xhr.statusText);
