@@ -56,5 +56,30 @@
 
 	<?php include('includes/footer.php'); ?>
 
+	<script>
+
+		var send = {};
+		send['function'] = 'about';
+		send['id'] = 5;
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"blogsApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				returndata = data['return'];
+				$('#resultArea').html(data['data']);
+				$('#title').html(data['return'][0]['title'])
+				$('#content').html(data['return'][1]['content'])
+				$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('#resultArea').html(xhr['responseText']);
+		    }  
+		});
+	</script>
+
 </body>
 </html>

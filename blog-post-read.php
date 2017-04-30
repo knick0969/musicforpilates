@@ -9,55 +9,47 @@
 <body>
 	<?php include('includes/header.php'); ?>
 
-
 	<section class="internalPage postPage">
 		<div class="greyBackground">
 			<div class="sectionTitle container">
-				<h1 class="titleh1" id="title">Post title goes here.</h1>
+				<h1 class="titleh1" id="title"></h1>
 				<div class="line"></div>
 				<p class="sectionText">Short post description</p>
 			</div>
 			
-			<article class="blogPost">
-				<img src="assets/img/pilates1.jpg" class="blogImg" align="left">
-				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good.</p>
-				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it.</p>
-				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it, definitely recommend people doing that hey, so good.</p>
-				<p>Pilates is the new black. love it, definitely recommend people doing that hey, so good. Pilates is the new black. love it.</p>
+			<article class="blogPost" id="throwImageHere">
+				<img src="assets/img/pilates1.jpg" id="image" class="blogImg" align="left">
+				<p id="content"></p>
 			</article>
-			
-
-
 		</div>
 	</section>
 
 	<?php include('includes/footer.php'); ?>
-<script>
 
-	var send = {};
-	send['function'] = 'blog';
-	send['id'] = 5;
-	var returndata = {};
+	<script>
 
-	$.ajax({
-		type:"POST",
-		url:"blogsApi.php",
-		dataType:"JSON",
-		data:send,
-		success: function(data) {
-			console.log(data['return']);
-			returndata = data['return'];
-			$('#resultArea').html(data['data']);
-			$('#title').html(data['return'][0]['title'])
-		},
-		error: function (xhr, ajaxOptions, thrownError){
-	        alert(xhr.statusText);
-	        alert(thrownError);
-	        $('#resultArea').html(xhr['responseText']);
-	        console.log(ajaxOptions);
-	        console.log(thrownError);
-	    }  
-	});
-</script>
+		var send = {};
+		send['function'] = 'blog';
+		send['id'] = 5;
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"blogsApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				returndata = data['return'];
+				$('#resultArea').html(data['data']);
+				$('#title').html(data['return'][0]['title'])
+				$('#content').html(data['return'][1]['content'])
+				$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('#resultArea').html(xhr['responseText']);
+		    }  
+		});
+	</script>
+
 </body>
 </html>

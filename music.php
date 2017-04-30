@@ -89,8 +89,6 @@
 				</div>
 			</article>
 			<div class="divider"></div>
-
-
 		</div>
 	</section>
 
@@ -125,6 +123,31 @@
 				widget.toggle();
 			});
 
+		});
+	</script>
+
+	<script>
+
+		var send = {};
+		send['function'] = 'tracksApi.php';
+		send['id'] = 2;
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"blogsApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				returndata = data['return'];
+				$('#resultArea').html(data['data']);
+				$('#title').html(data['return'][0]['title'])
+				$('#content').html(data['return'][1]['content'])
+				$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('#resultArea').html(xhr['responseText']);
+		    }  
 		});
 	</script>
 
