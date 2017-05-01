@@ -15,7 +15,11 @@
 			<div class="featuredTrack" id="slide0">
 				<div class="trackImage">
 					<img src="assets/img/pilates1.jpg">
-					<div class="playBtn"></div>
+					<div class="playBtn">
+						<div class="centralCircle"></div>
+						<div class="smallerCircle"></div>
+						<div class="biggerCircle"></div>
+					</div>
 				</div>
 				<div class="trackInfo">
 					<span class="trackTag">PILATES</span>

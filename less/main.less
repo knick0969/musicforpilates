@@ -107,7 +107,7 @@ body{
 		}
 	}
 	.socialMedia{
-		.dim(200px);
+		.dim(120px);
 		.clr();
 		.absolute();
 		left: 0;
@@ -117,17 +117,19 @@ body{
 			.dim(30px, 30px);
 			.fleft();
 			margin-right: 15px;
-			background-color: #CCC;
+			background-size: 100% 100%;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
 		}
 		.facebook{
-
+			background-image: url(../assets/svg/social-media-facebook.svg);
 		}
-		.linkedin{
-
+		.instagram{
+			background-image: url(../assets/svg/social-media-instagram.svg);
 		}
 		.twitter{
+			background-image: url(../assets/svg/social-media-twitter.svg);
 			margin-right: 0;
-
 		}
 	}
 	.copyright{
@@ -253,6 +255,7 @@ body{
 			.clr();
 			.opacity(0);
 			.absolute();
+			z-index: 1;
 			.trackImage{
 				.dim(550px, 450px);
 				.relative();
@@ -269,44 +272,51 @@ body{
 					.box-shadow(0px 18px 28px 5px rgba(0, 0, 0, 0.15));
 				}
 				.playBtn{
-					.dim(76px, 76px);
-					.border-radius(50%);
+					.dim(250px, 250px);
 					.absolute();
 					.transition(.3s);
-					z-index: 99;
-					right: -38px;
-					top: 180px;
+					z-index: 0;
+					right: -210px;
+					top: 120px;
 					border: none;
-					background-color: #999;
-					&:hover{
-						.transition(.3s);
-						.scale(1.1);
-						&:before, &:after{
-							.scale(.72);
-							.transition(.3s);
-						}
+					.centralCircle{
+						.dim(76px, 76px);
+						.border-radius(50%);
+						.absolute();
+						top: 85px;
+						left: 85px;
+						z-index: 0;
+						background-color: #000;
 					}
-					&:before{
+					.smallerCircle{
 						.dim(150px, 150px);
 						.border-radius(50%);
 						.absolute();
 						.transition(.3s);
 						z-index: -1;
-						top: -37px;
-						left: -37px;
+						top: 50px;
+						left: 50px;
 						content: ' ';
 						background-color: rgba(59,153,216, 0.3);
 					}
-					&:after{
+					.biggerCircle{
 						.dim(250px, 250px);
 						.border-radius(50%);
 						.absolute();
 						.transition(.3s);
-						z-index: -0;
-						top: -85px;
-						left: -85px;
+						z-index: -2;
+						top: 0px;
+						left: 0px;
 						content: ' ';
 						background-color: rgba(59,153,216, 0.3);
+					}
+					&:hover{
+						.transition(.3s);
+						.scale(1.1);
+						.smallerCircle, .biggerCircle{
+							.scale(.72);
+							.transition(.3s);
+						}
 					}
 				}
 			}
@@ -1450,6 +1460,7 @@ body{
 	}
 	.blogPage{
 		.blog{
+			margin-bottom: 75px;
 			.blogTags{
 				.dim(80%);
 				margin: 0 auto;
@@ -1489,7 +1500,7 @@ body{
 			}
 		}
 		.socialMedia{
-			.dim(200px);
+			.dim(120px);
 			.clr();
 			.relative();
 			margin: 0 auto;
@@ -1501,17 +1512,19 @@ body{
 				.dim(30px, 30px);
 				.iblock();
 				margin-right: 15px;
-				background-color: #CCC;
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
 			}
 			.facebook{
-
+				background-image: url(../assets/svg/social-media-facebook.svg);
 			}
 			.linkedin{
-
+				background-image: url(../assets/svg/social-media-linkedin.svg);
 			}
 			.twitter{
 				margin-right: 0;
-
+				background-image: url(../assets/svg/social-media-twitter.svg);
 			}
 		}
 		.copyright{

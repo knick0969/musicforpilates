@@ -96,42 +96,7 @@
 		</div>
 	</section>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-	       
-	        var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-    		var isPlaying = false;
-
-			widget.bind(SC.Widget.Events.READY, function() {
-				console.log('Ready...');
-				console.log('click...');
-			});
-
-			widget.bind(SC.Widget.Events.PLAY , function() {
-
-	            $('.play2').trigger('click');
-	        });
-		
-			$('.play').click(function(e) {
-
-				e.preventDefault();
-				var isPlaying = true;
-				$(this).toggleClass('listening');
-	            $(this).text(function(i, v){
-	               return v === 'LISTEN' ? 'LISTENING' : 'LISTEN'
-	            });
-				$(this).closest('.track').find('.overlayImg').css({
-		           'opacity' : '0',
-		           'z-index' : '-1'
-		        });
-				widget.toggle();
-			});
-
-		});
-	</script>
-
 	<script>
-
 		var send = {};
 		send['function'] = 'tracklist';
 		//send['enabled'] = 1;
@@ -154,7 +119,7 @@
 				// loop attempt 2
 
 				for (var i = 0; i < alltracks;  i++) {
-					$('#tracksContainer').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud>aud</p></div><iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="img/'+data[i]['coverlink'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
+					$('#tracksContainer').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud">aud</p></div><iframe id="soundcloud_widget_'+i+'" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="img/'+data[i]['coverlinkfile'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
 				};
 
 			},
@@ -163,7 +128,45 @@
 
 		    }  
 		});
+	</script>
 
+	<script type="text/javascript">
+		$(document).ready(function() {
+	       
+	        var widget = SC.Widget(document.getElementById('soundcloud_widget_0'));
+	        var widget = SC.Widget(document.getElementById('soundcloud_widget_1'));
+	        var widget = SC.Widget(document.getElementById('soundcloud_widget_2'));
+
+    		var isPlaying = false;
+
+
+
+			widget.bind(SC.Widget.Events.READY, function() {
+				console.log(widget);
+
+			});
+			widget.bind(SC.Widget.Events.PLAY , function() {
+
+	            $('.play2').trigger('click');
+
+	        });
+		
+			$('.play').click(function(e) {
+
+				e.preventDefault();
+				var isPlaying = true;
+				$(this).toggleClass('listening');
+	            $(this).text(function(i, v){
+	               return v === 'LISTEN' ? 'LISTENING' : 'LISTEN'
+	            });
+				$(this).closest('.track').find('.overlayImg').css({
+		           'opacity' : '0',
+		           'z-index' : '-1'
+		        });
+				widget.toggle();
+			});
+
+		});
 	</script>
 
 	<!-- <?php include('includes/featured-blog.php'); ?>-->

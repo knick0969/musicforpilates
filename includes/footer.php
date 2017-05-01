@@ -8,7 +8,7 @@
 			<li class="socialBtn facebook">
 				<a href="https://www.facebook.com/pages/Music-For-Pilates/546958182087725" target="_blank" title="Like our Page on Facebook"></a>
 			</li>
-			<li class="socialBtn linkedin">
+			<li class="socialBtn instagram">
 				<a href="" target="_blank" title="Follow us on LinkedIn"></a>
 			</li>
 			<li class="socialBtn twitter">
