@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2017 at 12:06 PM
+-- Generation Time: Apr 27, 2017 at 10:53 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `musicforpilates`
 --
+CREATE DATABASE IF NOT EXISTS `musicforpilates` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `musicforpilates`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `blog`
 --
 
+DROP TABLE IF EXISTS `blog`;
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -38,6 +41,11 @@ CREATE TABLE `blog` (
   `enabled` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `blog`
+--
+
+TRUNCATE TABLE `blog`;
 --
 -- Dumping data for table `blog`
 --
@@ -52,6 +60,7 @@ INSERT INTO `blog` (`id`, `title`, `description`, `content`, `author`, `deliver`
 -- Table structure for table `contact`
 --
 
+DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
   `streetaddress` varchar(255) NOT NULL,
@@ -59,6 +68,11 @@ CREATE TABLE `contact` (
   `hours` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `contact`
+--
+
+TRUNCATE TABLE `contact`;
 --
 -- Dumping data for table `contact`
 --
@@ -72,6 +86,7 @@ INSERT INTO `contact` (`id`, `streetaddress`, `email`, `hours`) VALUES
 -- Table structure for table `file`
 --
 
+DROP TABLE IF EXISTS `file`;
 CREATE TABLE `file` (
   `id` int(11) NOT NULL,
   `link` varchar(255) NOT NULL,
@@ -79,6 +94,11 @@ CREATE TABLE `file` (
   `type` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `file`
+--
+
+TRUNCATE TABLE `file`;
 --
 -- Dumping data for table `file`
 --
@@ -105,6 +125,7 @@ INSERT INTO `file` (`id`, `link`, `uploaddate`, `type`) VALUES
 -- Table structure for table `meta`
 --
 
+DROP TABLE IF EXISTS `meta`;
 CREATE TABLE `meta` (
   `id` int(11) NOT NULL,
   `pageid` int(11) NOT NULL,
@@ -112,18 +133,29 @@ CREATE TABLE `meta` (
   `description` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `meta`
+--
+
+TRUNCATE TABLE `meta`;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `page`
 --
 
+DROP TABLE IF EXISTS `page`;
 CREATE TABLE `page` (
   `id` int(11) NOT NULL,
   `content` text NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `page`
+--
+
+TRUNCATE TABLE `page`;
 --
 -- Dumping data for table `page`
 --
@@ -138,6 +170,7 @@ INSERT INTO `page` (`id`, `content`, `description`) VALUES
 -- Table structure for table `pageimage`
 --
 
+DROP TABLE IF EXISTS `pageimage`;
 CREATE TABLE `pageimage` (
   `id` int(11) NOT NULL,
   `pageid` int(11) NOT NULL,
@@ -145,6 +178,11 @@ CREATE TABLE `pageimage` (
   `fileid` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `pageimage`
+--
+
+TRUNCATE TABLE `pageimage`;
 --
 -- Dumping data for table `pageimage`
 --
@@ -159,6 +197,7 @@ INSERT INTO `pageimage` (`id`, `pageid`, `type`, `fileid`) VALUES
 -- Table structure for table `tag`
 --
 
+DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag` (
   `id` int(11) NOT NULL,
   `type` varchar(255) NOT NULL,
@@ -166,12 +205,18 @@ CREATE TABLE `tag` (
   `tag` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `tag`
+--
+
+TRUNCATE TABLE `tag`;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `team`
 --
 
+DROP TABLE IF EXISTS `team`;
 CREATE TABLE `team` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -179,6 +224,11 @@ CREATE TABLE `team` (
   `fileid` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `team`
+--
+
+TRUNCATE TABLE `team`;
 --
 -- Dumping data for table `team`
 --
@@ -193,6 +243,7 @@ INSERT INTO `team` (`id`, `name`, `profile`, `fileid`) VALUES
 -- Table structure for table `track`
 --
 
+DROP TABLE IF EXISTS `track`;
 CREATE TABLE `track` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -209,6 +260,11 @@ CREATE TABLE `track` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
+-- Truncate table before insert `track`
+--
+
+TRUNCATE TABLE `track`;
+--
 -- Dumping data for table `track`
 --
 
@@ -224,12 +280,18 @@ INSERT INTO `track` (`id`, `title`, `description`, `soundcloudurl`, `tracklink`,
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `users`
+--
+
+TRUNCATE TABLE `users`;
 --
 -- Dumping data for table `users`
 --
