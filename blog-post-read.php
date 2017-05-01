@@ -29,8 +29,11 @@
 	<script>
 
 		var send = {};
+		var postid = <?php	echo $id; ?>
+
 		send['function'] = 'blog';
-		send['id'] = 5;
+		send['id'] = postid;
+
 		var returndata = {};
 
 		$.ajax({
@@ -41,41 +44,17 @@
 			success: function(data) {
 				returndata = data['return'];
 				$('#resultArea').html(data['data']);
-				$('#title').html(data['return'][0]['title'])
-				$('#content').html(data['return'][1]['content'])
-				$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+				$('#db-title').html(data['return'][0]['title'])
+				$('#db-content').html(data['return'][0]['content'])
+				$('#db-description').html(data['return'][0]['description'])
+				$('#db-author').html(data['return'][0]['author'])
+				$('#db-deliver').html(data['return'][0]['deliver'])
+				//$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
 			},
 			error: function (xhr, ajaxOptions, thrownError){
 		        $('#resultArea').html(xhr['responseText']);
 		    }  
 		});
 	</script>
-
-<<<<<<< HEAD
-=======
-	$.ajax({
-		type:"POST",
-		url:"blogsApi.php",
-		dataType:"JSON",
-		data:send,
-		success: function(data) {
-			console.log(data['return']);
-			returndata = data['return'];
-			$('#resultArea').html(data['data']);
-			$('#title').html(data['return'][0]['title'])
-			/* For each loop {
-				$('#trackContainer').append('<div class="track"><img src="img/'+data['return'][i]['image']+'"><h3>'+data['return'][i]['title']+'</h3><div class="description">'+data['return'][i]['description']+'</div><div class="price">'+data['return'][i]['cost']+'</div><a href="track.php?id='+data['return'][i]['id']+'"><button class="moreInfo">More info</button></div>')
-			} */
-		},
-		error: function (xhr, ajaxOptions, thrownError){
-	        alert(xhr.statusText);
-	        alert(thrownError);
-	        $('#resultArea').html(xhr['responseText']);
-	        console.log(ajaxOptions);
-	        console.log(thrownError);
-	    }  
-	});
-</script>
->>>>>>> e0a7a36be30d59a2884f2cb321c284cbad8f81e5
 </body>
 </html>
