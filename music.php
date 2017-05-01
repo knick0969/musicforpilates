@@ -13,82 +13,86 @@
 	<section class="internalPage musicPage">
 		<div class="greyBackground">
 			<div class="sectionTitle container">
-					<h1 class="titleh1">Music.</h1>
-					<div class="line"></div>
-					<p class="sectionText">Check out our complete list of royalty free tracks</p>
-				</div>
-			<article class="track">
-				<figure class="trackImg" id="">
-					<div class="priceBox">
-						<p class="price"><span>$</span>25</p>
-						<p class="aud">aud</p>
+				<h1 class="titleh1">Music.</h1>
+				<div class="line"></div>
+				<p class="sectionText">Check out our complete list of royalty free tracks</p>
+			</div>
+			<div id="tracksContainer" class="resultarea">
+
+				<!-- <article class="track">
+					<figure class="trackImg" id="">
+						<div class="priceBox">
+							<p class="price"><span>$</span>25</p>
+							<p class="aud">aud</p>
+						</div>
+						<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+						<img src="assets/img/pilates1.jpg" class="overlayImg">
+					</figure>
+					<div class="trackInfo">
+						<p class="trackTags">
+							<span><a href="#">pilates</a></span>
+							<span><a href="#">yoga</a></span>
+							<span><a href="#">zumba</a></span>
+							<span><a href="#">jump</a></span>
+						</p>
+						<p class="trackTitle">Track title goes here</p>
+						<p class="trackDuration">Duration: 15min 52s<span class="trackBpm">68 BPM</span></p>
+						<p class="trackDescription">Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here. Track title goes here Track Track title goes here Track.</p>
+						<a href="#" class="cta blackCta play">LISTEN</a>
+						<a href="#" class="cta blackCta">ADD TO CART</a>
 					</div>
-					<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-					<img src="assets/img/pilates1.jpg" class="overlayImg">
-				</figure>
-				<div class="trackInfo">
-					<p class="trackTags">
-						<span><a href="#">pilates</a></span>
-						<span><a href="#">yoga</a></span>
-						<span><a href="#">zumba</a></span>
-						<span><a href="#">jump</a></span>
-					</p>
-					<p class="trackTitle">Track title goes here</p>
-					<p class="trackDuration">Duration: 15min 52s<span class="trackBpm">68 BPM</span></p>
-					<p class="trackDescription">Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here. Track title goes here Track Track title goes here Track.</p>
-					<a href="#" class="cta blackCta play">LISTEN</a>
-					<a href="#" class="cta blackCta">ADD TO CART</a>
-				</div>
-			</article>
-			<div class="divider"></div>
-			<article class="track">
-				<figure class="trackImg" id="">
-					<div class="priceBox">
-						<p class="price"><span>$</span>25</p>
-						<p class="aud">aud</p>
+				</article>
+				<div class="divider"></div>
+				<article class="track">
+					<figure class="trackImg" id="">
+						<div class="priceBox">
+							<p class="price"><span>$</span>25</p>
+							<p class="aud">aud</p>
+						</div>
+						<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+						<img src="assets/img/pilates1.jpg" class="overlayImg">
+					</figure>
+					<div class="trackInfo">
+						<p class="trackTags">
+							<span><a href="#">pilates</a></span>
+							<span><a href="#">yoga</a></span>
+							<span><a href="#">zumba</a></span>
+							<span><a href="#">jump</a></span>
+						</p>
+						<p class="trackTitle">Track title goes here</p>
+						<p class="trackDuration">Duration: 15min 52s<span class="trackBpm">68 BPM</span></p>
+						<p class="trackDescription">Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here. Track title goes here Track Track title goes here Track.</p>
+						<a href="#" class="cta blackCta play">LISTEN</a>
+						<a href="#" class="cta blackCta">ADD TO CART</a>
 					</div>
-					<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-					<img src="assets/img/pilates1.jpg" class="overlayImg">
-				</figure>
-				<div class="trackInfo">
-					<p class="trackTags">
-						<span><a href="#">pilates</a></span>
-						<span><a href="#">yoga</a></span>
-						<span><a href="#">zumba</a></span>
-						<span><a href="#">jump</a></span>
-					</p>
-					<p class="trackTitle">Track title goes here</p>
-					<p class="trackDuration">Duration: 15min 52s<span class="trackBpm">68 BPM</span></p>
-					<p class="trackDescription">Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here. Track title goes here Track Track title goes here Track.</p>
-					<a href="#" class="cta blackCta play">LISTEN</a>
-					<a href="#" class="cta blackCta">ADD TO CART</a>
-				</div>
-			</article>
-			<div class="divider"></div>
-			<article class="track">
-				<figure class="trackImg" id="">
-					<div class="priceBox">
-						<p class="price"><span>$</span>25</p>
-						<p class="aud">aud</p>
+				</article>
+				<div class="divider"></div>
+				<article class="track">
+					<figure class="trackImg" id="">
+						<div class="priceBox">
+							<p class="price"><span>$</span>25</p>
+							<p class="aud">aud</p>
+						</div>
+						<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+						<img src="assets/img/pilates1.jpg" class="overlayImg">
+					</figure>
+					<div class="trackInfo">
+						<p class="trackTags">
+							<span><a href="#">pilates</a></span>
+							<span><a href="#">yoga</a></span>
+							<span><a href="#">zumba</a></span>
+							<span><a href="#">jump</a></span>
+						</p>
+						<p class="trackTitle">Track title goes here</p>
+						<p class="trackDuration">Duration: 15min 52s<span class="trackBpm">68 BPM</span></p>
+						<p class="trackDescription">Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here. Track title goes here Track Track title goes here Track.</p>
+						<a href="#" class="cta blackCta play">LISTEN</a>
+						<a href="#" class="cta blackCta">ADD TO CART</a>
 					</div>
-					<iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/150050099&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-					<img src="assets/img/pilates1.jpg" class="overlayImg">
-				</figure>
-				<div class="trackInfo">
-					<p class="trackTags">
-						<span><a href="#">pilates</a></span>
-						<span><a href="#">yoga</a></span>
-						<span><a href="#">zumba</a></span>
-						<span><a href="#">jump</a></span>
-					</p>
-					<p class="trackTitle">Track title goes here</p>
-					<p class="trackDuration">Duration: 15min 52s<span class="trackBpm">68 BPM</span></p>
-					<p class="trackDescription">Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here Track title goes here. Track title goes here Track Track title goes here Track.</p>
-					<a href="#" class="cta blackCta play">LISTEN</a>
-					<a href="#" class="cta blackCta">ADD TO CART</a>
-				</div>
-			</article>
-			<div class="divider"></div>
+				</article>
+				<div class="divider"></div> -->
+
+			</div>
 		</div>
 	</section>
 
@@ -129,26 +133,37 @@
 	<script>
 
 		var send = {};
-		send['function'] = 'tracksApi.php';
-		send['id'] = 2;
-		var returndata = {};
+		send['function'] = 'tracklist';
+		//send['enabled'] = 1;
+		var data = {};
 
 		$.ajax({
 			type:"POST",
-			url:"blogsApi.php",
-			dataType:"JSON",
+			url:"tracksApi.php",
+			//dataType:"JSON",
 			data:send,
 			success: function(data) {
-				returndata = data['return'];
-				$('#resultArea').html(data['data']);
-				$('#title').html(data['return'][0]['title'])
-				$('#content').html(data['return'][1]['content'])
-				$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+				//console.log(data['return']);
+				data = jQuery.parseJSON(data);
+				data = data['return'];
+
+				//console.log(data.length + 'tracks found in total')
+
+				var alltracks = data.length;
+				
+				// loop attempt 2
+
+				for (var i = 0; i < alltracks;  i++) {
+					$('#tracksContainer').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud>aud</p></div><iframe id="soundcloud_widget" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="img/'+data[i]['coverlink'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
+				};
+
 			},
 			error: function (xhr, ajaxOptions, thrownError){
-		        $('#resultArea').html(xhr['responseText']);
+		        $('resultarea').html(xhr['responseText']);
+
 		    }  
 		});
+
 	</script>
 
 	<!-- <?php include('includes/featured-blog.php'); ?>-->

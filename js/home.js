@@ -6,7 +6,7 @@ $(document).ready(function(){
         var interval;
         var slideWidth;
         var numBullets = $('.featuredTrack').length;
-        console.log(numBullets);
+        //console.log(numBullets);
         //$('#slider0').css('opacity', 1);
 
         $(document).ready(function() {

@@ -14,7 +14,8 @@
 				<div class="sectionTitle container">
 					<h1 class="titleh1">Contact.</h1>
 					<div class="line"></div>
-					<p class="sectionText">It's easy to get in touch with us, simply write the form below or reach us out at music@musicforpilates.com</p>
+					<p class="sectionText" id="db-streetaddress"></p>
+					<p class="sectionText" id="db-hours"></p>
 				</div>
 				<form name="contact_form" method="post" action="">
 					<div class="inputContainer">
@@ -46,6 +47,39 @@
 	<?php include('includes/featured-blog.php'); ?>
 
 	<?php include('includes/footer.php'); ?>
+
+	<script>
+
+		var send = {};
+		send['function'] = 'contact';
+		send['id'] = 2;
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"contentApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				returndata = data['return'];
+				$('#resultArea').html(data['data'])
+				//$('#title').html(data['return'][0]['title'])
+				$('#db-streetaddress').html(data['return']['streetaddress'])
+				$('#db-hours').html(data['return']['hours'])
+				$('#db-description').html(data['return']['description'])
+				//$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('#resultArea').html(xhr['responseText']);
+		        alert(xhr.statusText);
+		        alert(thrownError);
+		        $('#resultArea').html(xhr['responseText']);
+		        console.log(ajaxOptions);
+		        console.log(thrownError);
+		    }  
+		});
+		
+	</script>
 
 </body>
 </html>

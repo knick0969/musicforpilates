@@ -544,6 +544,18 @@ body {
   font-size: 1.1em;
   color: #FFF;
 }
+.sectionTitle .author-date {
+  font-size: .8em;
+}
+.sectionTitle .author-date span {
+  margin-left: 0px;
+  padding-right: 10px;
+  border-right: 1px solid #999;
+}
+.sectionTitle .author-date span:last-child {
+  border: none;
+  margin-left: 10px;
+}
 .mainSection {
   height: 1000px;
   width: 100%;
@@ -1512,6 +1524,9 @@ body {
   background-color: #CCC;
   overflow: hidden;
 }
+.aboutPage .aboutPic img {
+  height: 100%;
+}
 .aboutPage .aboutText1 {
   height: auto;
   width: 57%;
@@ -1868,6 +1883,7 @@ body {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  z-index: 9;
 }
 .featuredBlog .postImg .cta {
   -webkit-opacity: 0;

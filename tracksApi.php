@@ -47,7 +47,7 @@ $function = $_POST['function'];
 					$newTrack['tracklinkfile'] = $link;
 					$newTrack['tracklinkupload'] = $uploaddate;
 				} else{
-					$newTrack['coverklinkfile'] = $link;
+					$newTrack['coverlinkfile'] = $link;
 				} 
 			}
 			$tracks[] = $newTrack;
@@ -92,7 +92,7 @@ $function = $_POST['function'];
 					$newTrack['tracklinkfile'] = $link;
 					$newTrack['tracklinkupload'] = $uploaddate;
 				} else{
-					$newTrack['coverklinkfile'] = $link;
+					$newTrack['coverlinkfile'] = $link;
 				} 
 			}
 			$track[] = $newTrack;

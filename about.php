@@ -14,16 +14,14 @@
 				<div class="sectionTitle container">
 					<h1 class="titleh1">About.</h1>
 					<div class="line"></div>
-					<p class="sectionText">Music description goes here hey, that's a 2 line description only. Music description goes here hey, that's a 2 line description only.</p>
+					<p class="sectionText" id="db-description"></p>
 				</div>
 				<div class="aboutText">
 					<div class="aboutPic">
-						<img alt="About Music for Pilates" src="assets/img/pilates1.jpg">
+
 					</div>
-					<div class="aboutText1">
-						<p>Lisa Horner, a founder member has been working in the fitness industry for over 22 years, initially training and teaching Aerobics and various different mat classes, but the past 13 years her passion has been in Pilates. She has always struggled to find really good usable music for her classes.</p>
-						<p>After many wasted CD purchases and hours spent searching for the ideal download, she decided to create her own music. What better time to embark on a new venture as she emigrated to Brisbane, Australia from the UK in 2012. The beautiful scenery and tranquil days inspiring the creation of calming and relaxing music.</p>
-						<p>Lisa is now teaching in amazing places, some classes are out in the open with beautiful Australian backdrops. These tranquil settings are in perfect harmony with ‘Music for Pilates’ albums. Lisa has rigourously tested all the products and they have proven to be highly successful with her clients and professional colleagues.</p>
+					<div class="aboutText1" id="db-content">
+
 					</div>
 				</div>
 				<div class="dj">
@@ -56,29 +54,69 @@
 
 	<?php include('includes/footer.php'); ?>
 
-	<script>
+	<!--<script>
 
 		var send = {};
-		send['function'] = 'about';
-		send['id'] = 5;
+		send['function'] = 'aboutus';
+		send['id'] = 1;
 		var returndata = {};
 
 		$.ajax({
 			type:"POST",
-			url:"blogsApi.php",
+			url:"contentApi.php",
 			dataType:"JSON",
 			data:send,
 			success: function(data) {
 				returndata = data['return'];
-				$('#resultArea').html(data['data']);
-				$('#title').html(data['return'][0]['title'])
-				$('#content').html(data['return'][1]['content'])
-				$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+				$('#resultArea').html(data['data'])
+				//$('#title').html(data['return'][0]['title'])
+				$('#db-content').html(data['return'][0]['content'])
+				$('#db-description').html(data['return'][0]['description'])
+				//$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
 			},
 			error: function (xhr, ajaxOptions, thrownError){
 		        $('#resultArea').html(xhr['responseText']);
+		        alert(xhr.statusText);
+	        alert(thrownError);
+	        $('#resultArea').html(xhr['responseText']);
+	        console.log(ajaxOptions);
+	        console.log(thrownError);
 		    }  
 		});
+	</script> -->
+
+	<script>
+
+		var send = {};
+		send['function'] = 'aboutus';
+		send['id'] = 1;
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"contentApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				//returndata = data['return'];
+				//$('#resultArea').html(data['data']);
+				$('#db-description').html(data['return']['description'])
+				$('#db-content').html(data['return']['content']);
+				$('.aboutPic').append('<img src="' + data['return']['image'] + '" class="" align="left">')
+			
+				/* For each loop {
+					$('#trackContainer').append('<div class="track"><img src="img/'+data['return'][i]['image']+'"><h3>'+data['return'][i]['title']+'</h3><div class="description">'+data['return'][i]['description']+'</div><div class="price">'+data['return'][i]['cost']+'</div><a href="track.php?id='+data['return'][i]['id']+'"><button class="moreInfo">More info</button></div>')
+				} */
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        //alert(xhr.statusText);
+		        //alert(thrownError);
+		        //$('#resultArea').html(xhr['responseText']);
+		        //console.log(ajaxOptions);
+		        //console.log(thrownError);
+		    }  
+		});
+
 	</script>
 
 </body>
