@@ -47,6 +47,7 @@ $function = $_POST['function'];
 			$blogs[] = $newBlog;
 	    }
 	    $returnData = $blogs;
+	    
 	    //DISPLAY SINGLE BLOG DATA
 	} elseif ($function == 'blog') {
 		$blog = array();
@@ -57,13 +58,13 @@ $function = $_POST['function'];
 			");	
 		$results->bind_param('i', $_POST['id']);
 		$results->execute();
-		$results->bind_result($id, $title, $blurb, $keywords, $content, $author, $deliver, $coverlink, $uploaddate, $enabled);
+		$results->bind_result($id, $title, $keywords, $blurb, $content, $author, $deliver, $coverlink, $uploaddate, $enabled);
 		$results->store_result();
 		while ($results->fetch()) {
 			$newBlog['id'] 			= $id;
 			$newBlog['title'] 		= $title;
-			$newBlog['blurb'] 		= $blurb;
-			$newBlog['keywords']	= $keywords;
+			$newBlog['keywords'] 	= $keywords;
+			$newBlog['blurb']		= $blurb;
 			$newBlog['content'] 	= $content;
 			$newBlog['author'] 		= $author;
 			$newBlog['deliver'] 	= $deliver;
