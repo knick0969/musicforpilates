@@ -103,56 +103,5 @@
 
 	<?php include('includes/overlayMessages.php'); ?>
 
-	<script>
-		var send = {};
-		send['function'] = 'tracklist';
-		//send['enabled'] = 1;
-		var data = {};
-
-		$.ajax({
-			type:"POST",
-			url:"../tracksApi.php",
-			//dataType:"JSON",
-			data:send,
-			success: function(data) {
-				//console.log(data['return']);
-				data = jQuery.parseJSON(data);
-				data = data['return'];
-
-				//console.log(data.length + 'tracks found in total')
-
-				var alltracks = data.length;
-				
-				// loop attempt 2
-
-				for (var i = 0; i < alltracks;  i++) {
-					$('.tracksList').append('<div class="itemBox"><div class="item"><div class="')
-
-					$('.tracksList').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud">aud</p></div><iframe id="soundcloud_widget_'+i+'" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="img/'+data[i]['coverlinkfile'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
-				};
-
-				<div class="itemBox">
-					<div class="item">
-						<div class="itemImage">
-							<img src="../assets/img/user.png" width="100%" height="100%" alt="track-file-name" class="trackImg">
-						</div>
-						<div class="itemInfos">
-							<p class="title">Track Title</p>
-							<p class="duration"><span>Duration: </span> 1:52</p>
-							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
-							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
-						</div>
-						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
-					</div>
-				</div>
-
-			},
-			error: function (xhr, ajaxOptions, thrownError){
-		        $('resultarea').html(xhr['responseText']);
-
-		    }  
-		});
-	</script>
-
 </body>
 </html>
