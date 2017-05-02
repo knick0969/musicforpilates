@@ -11,14 +11,14 @@
 		<script>
 			var send = {};
 
-/*			//TRACKLIST REQUIREMENTS
+			//TRACKLIST REQUIREMENTS
 			send['function'] = 'tracklist';
-			send['disabled'] = 'dfg';  //setting this variable will HIDE deleted tracks
+			//send['disabled'] = 'dfg';  //setting this variable will HIDE deleted tracks
 
 /*			//SINGLE TRACK REQUIREMENTS
 			send['function'] = 'track';
 			send['id'] = 17;
-*/
+
 /*			//ADD TRACK REQUIREMENTS
 			send['function'] = 'addtrack';
 			send['title'] = 'Song number 4';
@@ -31,7 +31,7 @@
 			send['orderposition'] = '0';  //if no position number selected, please use 0
 			send['discountcode'] = '';  //can be empty
 			send['enabled'] = 1;  //will need to be set to true, but may change this to be added automatically
-*/		
+		
 /*			//EDIT TRACK REQUIREMENTS
 			send['function'] = 'edittrack';
 			send['id'] = 17;
@@ -51,15 +51,15 @@
 /*			//DELETE TRACK
 			send['function'] = 'deletetrack';
 			send['id'] = 25;
-*/
 
 
 
-/*			//BLOGS REQUIREMENTS
+
+			//BLOGS REQUIREMENTS
 			send['function'] = 'bloglist';
 
 
-			//SINGLE BLOG REQUIREMENTS
+/*			//SINGLE BLOG REQUIREMENTS
 			send['function'] = 'blog';
 			send['id'] = 2;
 
@@ -114,7 +114,7 @@
 			send['description'] = 'Having experience in music production, Lisa and PJ have created music designed for pilates classes for several years.';
 			send['content'] = 'WE are an officially authorised online retail website providing high quality music tracks to professional Pilates and Fitness Instructors.';
 			send['link'] = 'google.images.com/aboutuspagge.jpeg';
-*/
+
 
 			//HOMEPAGE DETAILS
 			send['function'] = 'homepage';
@@ -154,7 +154,7 @@
 			
 			$.ajax({
 				type:"POST",
-				url:"contentApi.php",
+				url:"tracksApi.php",
 				dataType:"JSON",
 				data:send,
 				success: function(data) {
@@ -163,7 +163,7 @@
 					$('#resultArea').html(data['data']);
 				},
 				error: function (xhr, ajaxOptions, thrownError){
-			        alert(xhr.statusText);
+			        console.log(xhr);
 			        alert(thrownError);
 			        $('#resultArea').html(xhr['responseText']);
 			        console.log(ajaxOptions);
