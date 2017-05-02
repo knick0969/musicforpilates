@@ -47,8 +47,9 @@ $function = $_POST['function'];
 			}
 
 	    $returnData = $editcontact;
-	    
+
 	    //VIEW TRACKS PAGE CONTENT 
+
 	} elseif ($function == 'musicdescription') {
 		$musicPageDescription = array();
 		$musicPageDescriptionId = 3;
@@ -177,6 +178,7 @@ $function = $_POST['function'];
 		$returnData = $editblogspage;
 
 		//VIEW ABOUT US DETAILS
+
 	} elseif ($function == 'aboutus') {
 		$aboutus = array();
 		$aboutUsId = 1;
