@@ -1135,7 +1135,7 @@ and dependencies (minified).
 			}
 			if(o.axis!=="y"){
 				if(d.overflowed[1] && !disabled){
-					scrollbar[1].add(mCSB_dragger[1]).add(scrollbar[1].children("a")).css("display","block");
+					scrollbar[1].add(mCSB_dragger[1]).add(scrollbar[1].children(".homeTrack")).css("display","block");
 					content.removeClass(classes[9]+" "+classes[11]);
 				}else{
 					if(o.alwaysShowScrollbar){

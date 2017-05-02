@@ -9,10 +9,6 @@ $function = $_POST['function'];
 	//DISPLAY LIST OF BLOGS
 	$today = date('Y-m-d');
 	if ($function == 'bloglist') {
-		//$disabledSQL = 'WHERE enabled = 1';
-		//if (empty($_POST['disabled'])) {
-		//	$disabledSQL = '';
-		//}
 		$blogs = array();
 		$results = $db->prepare("
 			SELECT *

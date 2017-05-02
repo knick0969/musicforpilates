@@ -4,16 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Homepage Edit | Music For Pilates CMS</title>
 	<?php include('includes/head-cms.php'); ?>
-	<script src='../js/chosen/chosen.jquery.min.js' type="text/javascript"></script>
-	<link rel="stylesheet" href="../js/chosen/chosen.css" />
 </head>
 <body>
-	<div class="overlayMessage overlaySuccess">
-		<p>Done! Your changes were successfully saved!</p>
-	</div>
-	<div class="overlayMessage overlayError">
-		<p>Oops, something went wrong! We couldn't save your changes!</p>
-	</div>
 
 	<!-- Includes the blue common sidebar :) -->
 	<?php include('includes/sidebar.php'); ?>
@@ -43,42 +35,72 @@
 					<textarea class="input textarea" name="page_brief_description"></textarea>
 				</div>
 				<div class="inputBox">
-					<label for="track_order_select">List of Tracks <span>(Displayed on the Homepage)</span></label>
+					<label for="track_order_select">Featured Tracks <span>(Displayed on the Homepage)</span></label>
 					<p class="sectionDescription">Select the tracks and the order you want them to be displayed on the Homepage:</p>
-					<div class="tracksContainer">
-						<div class="trackBox">
+					<div class="itemsContainer">
+						<div class="itemBox">
 							<p class="trackOrder">1st</p>
 							<div class="track">
-								<p class="trackTitle">Track Title</p>
 								<div class="selectContainer">
-									<select class="chosen-select" name="track_order_select">
-										<option> HEY O HEY O HEY OOO HEY</option>
-										<option> HEY O HEY O HEEEEEEEY O</option>
-										<option> HEY O HEY O HEEEEEEEY O</option>
-										<option> HEY O HEY O HEEEEEEEY O</option>
-										<option> HEY O HEY O HEEEEEEEY O</option>
-										<option> HEY O HEY O HEEEEEEEY O</option>
-										<option> HEY O HEY O HEEEEEEEY O</option>
+									<select class="inputSelect" name="track_order_select_1">
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
 									</select>
 								</div>
 							</div>
 						</div>
-						<div class="trackBox">
+						<div class="itemBox">
 							<p class="trackOrder">2nd</p>
 							<div class="track">
-								
+								<div class="selectContainer">
+									<select class="inputSelect" name="track_order_select_2">
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+									</select>
+								</div>
 							</div>
 						</div>
-						<div class="trackBox">
+						<div class="itemBox">
 							<p class="trackOrder">3rd</p>
 							<div class="track">
-								
+								<div class="selectContainer">
+									<select class="inputSelect" name="track_order_select_3">
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+									</select>
+								</div>
 							</div>
 						</div>
-						<div class="trackBox">
+						<div class="itemBox">
 							<p class="trackOrder">4th</p>
 							<div class="track">
-								
+								<div class="selectContainer">
+									<select class="inputSelect" name="track_order_select_4">
+										<option>Select a Track</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+										<option>Track 25 - Music For Pilates</option>
+									</select>
+								</div>
 							</div>
 						</div>
 
@@ -90,10 +112,7 @@
 		</div>
 	</section>
 
-	<script type="text/javascript">
-		$(".chosen-select").chosen();
-	</script>
-
+	<?php include('includes/overlayMessages.php'); ?>
 
 </body>
 </html>

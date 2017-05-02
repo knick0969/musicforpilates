@@ -4,7 +4,7 @@ ini_set('display_errors', 'On');
 
 define('APP_ROOT', __DIR__);
 define('VIEW_ROOT', APP_ROOT . '/views');
-define('BASE_URL', 'http://localhost:8080');
+define('BASE_URL', 'http://localhost:8888');
 
 $host = "localhost";
 $user = "admin";

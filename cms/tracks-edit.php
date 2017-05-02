@@ -78,21 +78,21 @@
 			<div class="divider"></div>
 			<form method="post" name="tracks-edit">
 				<div class="inputBox">
-					<label for="page-title">Page Title <span>(SEO)</span></label>
-					<input type="text" class="input error" name="page-title" placeholder="Type the page title, for example: Music For Pilates">
+					<label for="page_title">Page Title <span>(SEO)</span></label>
+					<input type="text" class="input" name="page_title" placeholder="Type the page title, for example: Music For Pilates">
 				</div>
 				<div class="inputBox">
-					<label for="page-keywords">Page Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-keywords">
+					<label for="page_keywords">Page Keywords <span>(SEO)</span></label>
+					<input type="text" class="input" name="page_keywords">
 				</div>
 				<div class="inputBox">
-					<label for="page-description">Page Description <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-description">
+					<label for="page_description">Page Description <span>(SEO)</span></label>
+					<input type="text" class="input" name="page_description">
 				</div>
 				<div class="divider"></div>
 				<div class="inputBox">
-					<label for="brief-description">Brief Description <span>(Displayed on the Homepage)</span></label>
-					<textarea class="input textarea" name="brief-description"></textarea>
+					<label for="brief_description">Brief Description <span>(Displayed on the Homepage)</span></label>
+					<textarea class="input textarea" name="brief_description"></textarea>
 				</div>
 				<div class="submitContainer">
 					<input type="submit" value="SAVE" class="cta newTrack">
@@ -100,6 +100,8 @@
 			</form>
 		</div>
 	</section>
+
+	<?php include('includes/overlayMessages.php'); ?>
 
 </body>
 </html>

@@ -6,7 +6,7 @@ $(document).ready(function(){
         var interval;
         var slideWidth;
         var numBullets = $('.featuredTrack').length;
-        console.log(numBullets);
+        //console.log(numBullets);
         //$('#slider0').css('opacity', 1);
 
         $(document).ready(function() {
@@ -19,19 +19,28 @@ $(document).ready(function(){
         });
 
         function nextSlider() {
-            specificSlider((currentSlider + 1) % numSliders);
+            if (currentSlider !== 3) {
+                specificSlider((currentSlider + 1));
+            } else{
+              specificSlider(0);
+            }
         }
 
         interval = window.setInterval(nextSlider, 7000);
 
         //arrow, bullet and autoplay functions
 
+        function previousSlider() {
+            if (currentSlider !== 0) {
+                specificSlider((currentSlider - 1));
+            }
+        }
 
         function generateBullets() {
             var bullet = $('.mainSection .featured .bullets');
            
             for (var i = 0; i < numBullets; i++) {
-                bullet.append('<li class="bullet" id="' + i + '"> ' + i + '</li>');
+                bullet.append('<li class="bullet" id="' + i + '"> ' + (i + 1) + '</li>');
             }
 
             $('.bullets #0').addClass("active");
@@ -57,9 +66,9 @@ $(document).ready(function(){
 
             // move old slide off, 
             $('#slide' + currentSlider).animate({
-                left: '-20px',
+                left: '0px',
                 opacity: 0
-            }, 500, null);
+            }, 300, null);
             $('#slide' + currentSlider).removeClass("showing");
             $('.bullets #' + currentSlider).removeClass("active");
 
@@ -68,18 +77,24 @@ $(document).ready(function(){
                 left: '0px',
                 top: '0px',
                 opacity: 1
-            }, 200, null);
+            }, 800, null);
             $('#slide' + sliderNumber).addClass("showing");
             $('.bullets #' + sliderNumber).addClass("active");
 
             currentSlider = sliderNumber;
 
             interval = window.setInterval(nextSlider, 7000);
+
         }
     }
 
     //initalise slider 
     mainSlider();
+
+    var width = $('.listOfTracks').width();
+
+    
+    $('.listOfTracks').css({ 'width' : width});
 
 
 });

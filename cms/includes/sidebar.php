@@ -16,18 +16,18 @@
 				Home
 			</a>
 		</div>
-		<div class="navButton active">
+		<div class="navButton">
 			<a href="tracks-edit.php" class="btnTracks" title="Add & Edit Tracks">
 				Tracks
 			</a>
 		</div>
 		<div class="navButton">
-			<a href="blogs-edit.php" class="btnAbout" title="Manage your Blog Posts">
+			<a href="blogs-edit.php" class="btnBlogs" title="Manage your Blog Posts">
 				Blogs
 			</a>
 		</div>	
 		<div class="navButton">
-			<a href="about-edit.php" class="btnBlogs" title="Manage the About Us page">
+			<a href="about-edit.php" class="btnAbout" title="Manage the About Us page">
 				About us
 			</a>
 		</div>	

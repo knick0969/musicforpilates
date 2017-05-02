@@ -29,7 +29,7 @@
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
 							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
-						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+						<a href="blogs-post-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>
 				<div class="itemBox">
@@ -42,7 +42,7 @@
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
 							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother This is a pretty chilled out song to make your performance smoother This is a pretty chilled out song to make your performance smoother This is a pretty chilled out song to make your performance smoother </p>
 						</div>
-						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+						<a href="blogs-post-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>
 				<div class="itemBox">
@@ -55,7 +55,7 @@
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
 							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
-						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+						<a href="blogs-post-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>
 				<div class="itemBox">
@@ -68,7 +68,7 @@
 							<p class="keywords"><span>Tags: </span> Chill, calm, serenity, stuff, goes, here, keywords</p>
 							<p class="description"><span>Description: </span>This is a pretty chilled out song to make your performance smoother</p>
 						</div>
-						<a href="tracks-add-edit.php" class="cta editBtn">EDIT</a>
+						<a href="blogs-post-edit.php" class="cta editBtn">EDIT</a>
 					</div>
 				</div>		
 			</div>		
@@ -80,17 +80,19 @@
 				</div>
 				<div class="inputBox">
 					<label>Post Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="page-keywords">
+					<input type="text" class="input" name="page_keywords">
 				</div>
 				<div class="inputBox">
 					<label>Page Text<span>(SEO)</span></label>
-					<input type="text" class="input" data-myrules="required" name="page-description">
+					<input type="text" class="input" data-myrules="required" name="page_description">
 				</div>
 				<div class="divider"></div>
 				<input type="submit" value="SAVE" class="cta newpost">
 			</form>
 		</div>
 	</section>
+
+	<?php include('includes/overlayMessages.php'); ?>
 
 </body>
 </html>

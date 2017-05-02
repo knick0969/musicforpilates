@@ -40,6 +40,8 @@ CONTENTS:
 		overflow: hidden;
 		width: auto;
 		height: auto;
+		min-height: 550px;
+		padding-left: 150px;
 	}
 
 
@@ -83,12 +85,12 @@ y-axis
 	.mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools{ left: -26px; } /* RTL direction/left-side scrollbar (scrollbar position: outside) */
 
 	.mCSB_scrollTools .mCSB_draggerContainer{ /* contains the draggable element and dragger rail markup */
+		width: 80%;
+		height: 50px;
 		position: absolute;
 		top: 0;
-		left: 0;
 		bottom: 0;
 		right: 0; 
-		height: auto;
 	}
 
 	.mCSB_scrollTools a + .mCSB_draggerContainer{ margin: 20px 0; }
@@ -155,7 +157,7 @@ x-axis
 
 	.mCSB_scrollTools.mCSB_scrollTools_horizontal{
 		width: auto;
-		height: 16px;
+		height: 50px;
 		top: auto;
 		right: 0;
 		bottom: 0;
@@ -422,9 +424,15 @@ yx-axis
 
 	/* theme: "dark" */
 
-	.mCS-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
+	.mCS-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #F1F1F1; background-color: rgba(255,255,255,0.15); }
 
-	.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+	.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		height: 30px;
+		top: -15px;
+		background-color: #000; 
+		background-color: rgba(255,255,255, 0.85); 
+		border-radius: 0;
+	}
 
 	.mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: rgba(0,0,0,0.85); }
 
@@ -449,7 +457,6 @@ yx-axis
 	.mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail{
 		width: 4px;
 		background-color: #fff; background-color: rgba(255,255,255,0.1);
-		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
 	}
 
 	.mCS-light-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
@@ -482,79 +489,8 @@ yx-axis
 	.mCS-light-2.mCSB_scrollTools .mCSB_buttonRight{ background-position: -40px -56px; }
 	
 	
-	/* theme: "dark-2" */
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail{
-		background-color: #000; background-color: rgba(0,0,0,0.1);
-		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
-	}
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		background-color: #000; background-color: rgba(0,0,0,0.75);
-		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
-	}
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
-	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonUp{ background-position: -112px 0; }
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonDown{ background-position: -112px -20px; }
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -120px -40px; }
-
-	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonRight{	background-position: -120px -56px; }
 	
-	/* ---------------------------------------- */
 	
-
-
-	/* theme: "light-thick", "dark-thick" */
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_draggerRail, 
-	.mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail{
-		width: 4px;
-		background-color: #fff; background-color: rgba(255,255,255,0.1);
-		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
-	}
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
-	.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		width: 6px;
-		background-color: #fff; background-color: rgba(255,255,255,0.75);
-		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
-	}
-
-	.mCS-light-thick.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
-	.mCS-dark-thick.mCSB_scrollTools_horizontal .mCSB_draggerRail{
-		width: 100%;
-		height: 4px;
-		margin: 6px 0;
-	}
-
-	.mCS-light-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
-	.mCS-dark-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
-		width: 100%;
-		height: 6px;
-		margin: 5px auto;
-	}
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.85); }
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
-	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonUp{ background-position: -16px 0; }
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonDown{	background-position: -16px -20px; }
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonLeft{	background-position: -20px -40px; }
-
-	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonRight{ background-position: -20px -56px; }
-
-
 	/* theme: "dark-thick" */
 	
 	.mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail{
