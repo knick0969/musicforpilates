@@ -48,6 +48,53 @@ $function = $_POST['function'];
 
 	    $returnData = $editcontact;
 	    //VIEW ABOUT US CONTENT 
+	} elseif ($function == 'musicdescription') {
+		$musicPageDescription = array();
+		$musicPageDescriptionId = 3;
+		//the PAGE table has - id, content, description
+		$results = $db->prepare("
+			SELECT id, content, description
+			FROM page
+			WHERE id = ?
+			");	
+		$results->bind_param('i', $musicPageDescriptionId);
+		$results->execute();
+		$results->bind_result($id, $content, $description);
+		$results->store_result();
+		while ($results->fetch()) {
+			$musicPageDescription['id']			= $id;
+			$musicPageDescription['content'] 	= $content;
+			$musicPageDescription['description'] 	= $description;
+			//the PAGEIMAGE table has - id, pageid, type, fileid
+			$imageResult = $db->prepare("
+				SELECT fileid
+				FROM pageimage
+				WHERE pageid = ?
+				");
+			$imageResult->bind_param('i', $id);
+			$imageResult->execute();
+			$imageResult->bind_result($fileid);
+			$imageResult->store_result();
+			while($imageResult->fetch()){
+				//the FILE table has - id, link, uploaddate, type
+				$imageFile = $db->prepare("
+					SELECT link, uploaddate
+					FROM file
+					WHERE id = ?
+					");
+				$imageFile->bind_param('i', $fileid);
+				$imageFile->execute();
+				$imageFile->bind_result($link, $uploaddate);
+				$imageFile->store_result();
+				while($imageFile->fetch()){
+					$musicPageDescription['image'] = $link;
+					$musicPageDescription['uploaddate'] = $uploaddate;	
+				}
+			}
+	    }
+	    $returnData = $musicPageDescription;
+		
+		//EDIT ABOUT US DETAILS
 	} elseif ($function == 'aboutus') {
 		$aboutus = array();
 		$aboutUsId = 1;

@@ -1,3 +1,7 @@
+<?php 
+	$id = $_GET['id'];
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -17,15 +21,15 @@
 			<form name="track-edit" method="post">
 				<div class="inputBox">
 					<label>Track Title</label>
-					<input type="text" class="input" name="track-title" placeholder="Type the post title, for example: How music can improve your Pilates performance">
+					<input type="text" class="input" name="track-title" id="db-title" placeholder="Type the post title, for example: How music can improve your Pilates performance">
 				</div>
 				<div class="inputBox">
 					<label>Track Tags</label>
-					<input type="text" class="input" name="track-tags">
+					<input type="text" class="input" name="track-tags" id="db-tags" >
 				</div>
 				<div class="inputBox">
 					<label>Track Description <span>(SEO)</span></label>
-					<input type="text" class="input" name="track-description">
+					<input type="text" class="input" name="track-description" id="db-description" >
 				</div>
 				<div class="divider"></div>
 				<div class="inputBox">
@@ -45,11 +49,11 @@
 				</div>
 				<div class="inputBox">
 					<label>Track Duration <span>XX : XX : XX  -  hours:minutes:seconds</span></label>
-					<input type="text" class="input" name="track-duration">
+					<input type="text" class="input" name="track-duration" id="db-duration" >
 				</div>
 				<div class="inputBox">
 					<label>Track BPM <span>(Beats per Minute)</span></label>
-					<input type="text" class="input" name="track-bpm">
+					<input type="text" class="input" name="track-bpm" id="db-bpm" >
 				</div>
 				<div class="divider"></div>
 				<input type="submit" value="SAVE TRACK" class="cta newTrack">
@@ -61,6 +65,41 @@
 	<script src="../js/inputfile/jquery.custom-file-input.js"></script>
 
 	<?php include('includes/overlayMessages.php'); ?>
+
+	<script>
+
+		var send = {};
+		var postid = <?php echo $id; ?>
+
+		send['function'] = 'track';
+		send['id'] = postid;
+
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"../tracksApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				returndata = data['return'];
+				//$('#resultArea').html(data['data']);
+				$('#db-title').val(data['return'][0]['title']);
+				$('#db-description').val(data['return'][0]['description']);
+				$('#db-bpm').val(data['return'][0]['bpm']);
+				$('#db-duration').val(data['return'][0]['duration']);
+				$('#db-author').html(data['return'][0]['author']);
+				$('#db-deliver').html(data['return'][0]['deliver']);
+				console.log(data);
+				//$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('#resultArea').html(xhr['responseText']);
+		    }  
+		});
+
+	</script>
 
 </body>
 </html>

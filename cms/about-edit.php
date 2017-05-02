@@ -43,7 +43,7 @@
 				</div>
 			</div>		
 			<div class="divider"></div>
-			<form name="about-edit" method="post">
+			<form name="about-edit" method="post" action="">
 				<div class="inputBox">
 					<label>Page Title <span>(SEO)</span></label>
 					<input type="text" class="input" name="page_title" placeholder="Type the page title, for example: Music For Pilates">
@@ -65,8 +65,8 @@
 					</div>
 				</div>
 				<div class="inputBox">
-					<label>About Us <span>(Displayed on the About Us page)</span></label>
-					<textarea class="input textarea" name="about_us_text"></textarea>
+					<label>About Us <span>(Displayed on the About Us page and Homepage)</span></label>
+					<textarea class="input textarea" name="about_us_text" id="db-content"></textarea>
 				</div>
 				<div class="divider"></div>
 				<input type="submit" value="SAVE" class="cta">
@@ -75,6 +75,40 @@
 	</section>
 
 	<?php include('includes/overlayMessages.php'); ?>
+
+	<script>
+
+		var send = {};
+		send['function'] = 'aboutus';
+		send['id'] = 1;
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"../contentApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				//returndata = data['return'];
+				console.log(data);
+				//$('#resultArea').html(data['data']);
+				$('#db-description').html(data['return']['description'])
+				$('#db-content').html(data['return']['content']);
+				//$('.aboutPic').append('<img src="' + data['return']['image'] + '" class="" align="left">')
+			
+				/* For each loop {
+					$('#trackContainer').append('<div class="track"><img src="img/'+data['return'][i]['image']+'"><h3>'+data['return'][i]['title']+'</h3><div class="description">'+data['return'][i]['description']+'</div><div class="price">'+data['return'][i]['cost']+'</div><a href="track.php?id='+data['return'][i]['id']+'"><button class="moreInfo">More info</button></div>')
+				} */
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        //alert(xhr.statusText);
+		        //alert(thrownError);
+		        //$('#resultArea').html(xhr['responseText']);
+		        //console.log(ajaxOptions);
+		        //console.log(thrownError);
+		    }  
+		});
+	</script>
 
 </body>
 </html>

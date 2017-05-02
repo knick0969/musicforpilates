@@ -1,3 +1,7 @@
+<?php 
+	$id = $_GET['id'];
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,15 +22,15 @@
 			<form name="blog-post-edit" method="post">
 				<div class="inputBox">
 					<label>Post Title</label>
-					<input type="text" class="input" name="blogs-post-title" placeholder="Type the post title, for example: How music can improve your Pilates performance">
+					<input type="text" class="input" name="blogs-post-title" placeholder="Type the post title, for example: How music can improve your Pilates performance" id="db-title">
 				</div>
 				<div class="inputBox">
 					<label>Post Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="blogs-post-keywords">
+					<input type="text" class="input" name="blogs-post-keywords" id="db-keywords">
 				</div>
 				<div class="inputBox">
 					<label>Post Brief Description <span>(SEO)</span></label>
-					<input type="text" class="input" name="blogs-brief_description">
+					<input type="text" class="input" name="blogs-brief_description" id="db-description">
 				</div>
 				<div class="inputBox">
 					<label>Post Featured Image</label>
@@ -38,7 +42,7 @@
 				<div class="divider"></div>
 				<div class="inputBox">
 					<label>Post Content</label>
-					<textarea class="input textarea" name="blogs-post-content"></textarea>
+					<textarea class="input textarea" name="blogs-post-content" id="db-content"></textarea>
 				</div>
 				<div class="divider"></div>
 				<input type="submit" value="SAVE POST" class="cta">
@@ -47,6 +51,41 @@
 	</section>
 
 	<?php include('includes/overlayMessages.php'); ?>
+
+	<script>
+
+		var send = {};
+		var postid = <?php echo $id; ?>
+
+		send['function'] = 'blog';
+		send['id'] = postid;
+
+		var returndata = {};
+
+		$.ajax({
+			type:"POST",
+			url:"../blogsApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+				returndata = data['return'];
+				$('#resultArea').html(data['data']);
+				$('#db-title').val(data['return'][0]['title'])
+				$('#db-content').val(data['return'][0]['content']);
+				$('#db-description').val(data['return'][0]['description']);
+				$('#db-author').html(data['return'][0]['author'])
+				$('#db-deliver').html(data['return'][0]['deliver'])
+				console.log(data);
+				//$('#throwImageHere').html('<img src="' . data['return'][1]['coverlink'] . '" class="blogImg" align="left">')
+
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('#resultArea').html(xhr['responseText']);
+		    }  
+		});
+
+	</script>
+
 
 </body>
 </html>
