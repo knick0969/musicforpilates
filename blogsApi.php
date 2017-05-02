@@ -16,12 +16,13 @@ $function = $_POST['function'];
 			WHERE enabled = 1 AND NOW() > deliver
 			");	
 		$results->execute();
-		$results->bind_result($id, $title, $description, $content, $author, $deliver, $coverlink, $uploaddate, $enabled);
+		$results->bind_result($id, $title, $blurb, $keywords, $content, $author, $deliver, $coverlink, $uploaddate, $enabled);
 		$results->store_result();
 		while ($results->fetch()) {
 			$newBlog['id'] = $id;
 			$newBlog['title'] = $title;
-			$newBlog['description'] = $description;
+			$newBlog['blurb'] = $blurb;
+			$newBlog['keywords'] = $keywords;
 			$newBlog['content'] = $content;
 			$newBlog['author'] = $author;
 			$newBlog['deliver'] = $deliver;
@@ -56,12 +57,13 @@ $function = $_POST['function'];
 			");	
 		$results->bind_param('i', $_POST['id']);
 		$results->execute();
-		$results->bind_result($id, $title, $description, $content, $author, $deliver, $coverlink, $uploaddate, $enabled);
+		$results->bind_result($id, $title, $blurb, $keywords, $content, $author, $deliver, $coverlink, $uploaddate, $enabled);
 		$results->store_result();
 		while ($results->fetch()) {
 			$newBlog['id'] 			= $id;
 			$newBlog['title'] 		= $title;
-			$newBlog['description'] = $description;
+			$newBlog['blurb'] 		= $blurb;
+			$newBlog['keywords']	= $keywords;
 			$newBlog['content'] 	= $content;
 			$newBlog['author'] 		= $author;
 			$newBlog['deliver'] 	= $deliver;
@@ -91,9 +93,10 @@ $function = $_POST['function'];
 		$addblog = array();
 		$today = date('Y-m-d');
 		//check to see if post data has been entered in
-		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['content'])) || (!empty($_POST['author'])) || (!empty($_POST['deliver'])) || (!empty($_POST['coverlink'])) ||  (!empty($_POST['enabled']))){
+		if ((!empty($_POST['title'])) || (!empty($_POST['blurb'])) || (!empty($_POST['keywords'])) || (!empty($_POST['content'])) || (!empty($_POST['author'])) || (!empty($_POST['deliver'])) || (!empty($_POST['coverlink'])) ||  (!empty($_POST['enabled']))){
 			$title 			= $_POST['title'];
-			$description 	= $_POST['description'];
+			$blurb		 	= $_POST['blurb'];
+			$keywords		= $_POST['keywords'];
 			$content 		= $_POST['content'];
 			$author 		= $_POST['author'];
 			$deliver		= date('Y-m-d',strtotime($_POST['deliver']));
@@ -125,15 +128,15 @@ $function = $_POST['function'];
 
 			$insertblog = $db->prepare("
 				INSERT INTO blog 
-				(title, description, content, author, deliver, coverlink, uploaddate, enabled)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+				(title, blurb, content, keywords, author, deliver, coverlink, uploaddate, enabled)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 				");
 
 			if (!$insertblog) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
 				echo "Inserting into the blog table <br>";
-				$insertblog->bind_param('sssssiss', $title, $description, $content, $author, $deliver, $coverlinkid, $uploaddate, $enabled);
+				$insertblog->bind_param('ssssssiss', $title, $blurb, $keywords, $content, $author, $deliver, $coverlinkid, $uploaddate, $enabled);
 				$insertblog->execute();
 			}
 
@@ -147,11 +150,12 @@ $function = $_POST['function'];
 
 		$addtrack = array();
 		//check to see if post data has been entered in
-		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['content'])) || (!empty($_POST['author'])) || (!empty($_POST['deliver'])) || (!empty($_POST['coverlinkid'])) || (!empty($_POST['coverlinkfile'])) || (!empty($_POST['uploaddate'])) || (!empty($_POST['enabled']))){
+		if ((!empty($_POST['title'])) || (!empty($_POST['blurb'])) || (!empty($_POST['keywords'])) || (!empty($_POST['content'])) || (!empty($_POST['author'])) || (!empty($_POST['deliver'])) || (!empty($_POST['coverlinkid'])) || (!empty($_POST['coverlinkfile'])) || (!empty($_POST['uploaddate'])) || (!empty($_POST['enabled']))){
 			echo "Teh Bewbies haveth beenith receivedith <br>";
 			$id 			= $_POST['id'];
 			$title 			= $_POST['title'];
-			$description 	= $_POST['description'];
+			$blurb 			= $_POST['blurb'];
+			$keywords		= $_POST['keywords'];
 			$content 		= $_POST['content'];
 			$author			= $_POST['author'];
 			$deliver		= date('Y-m-d',strtotime($_POST['deliver']));
@@ -185,7 +189,7 @@ $function = $_POST['function'];
 
 			$inserttrack = $db->prepare("
 				UPDATE blog 
-				SET title = ?, description = ?, content = ?, author = ?, deliver = ?, coverlink = ?, enabled = ?
+				SET title = ?, blurb = ?, keywords = ?, content = ?, author = ?, deliver = ?, coverlink = ?, enabled = ?
 				WHERE id = $id
 				");
 
@@ -193,7 +197,7 @@ $function = $_POST['function'];
 				printf("Errormessage: %s\n", $db->error);
 			} else {
 				echo "Insertted into blog table <br>";
-				$inserttrack->bind_param('sssssii', $title, $description, $content, $author, $deliver, $coverlinkid, $enabled);
+				$inserttrack->bind_param('ssssssii', $title, $blurb, $keywords, $content, $author, $deliver, $coverlinkid, $enabled);
 				$inserttrack->execute();
 			}
 
