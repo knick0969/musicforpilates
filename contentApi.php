@@ -47,7 +47,9 @@ $function = $_POST['function'];
 			}
 
 	    $returnData = $editcontact;
-	    //VIEW ABOUT US CONTENT 
+
+	    //VIEW TRACKS PAGE CONTENT 
+
 	} elseif ($function == 'musicdescription') {
 		$musicPageDescription = array();
 		$musicPageDescriptionId = 3;
@@ -94,22 +96,107 @@ $function = $_POST['function'];
 	    }
 	    $returnData = $musicPageDescription;
 		
-		//EDIT ABOUT US DETAILS
+		//EDIT TRACKS PAGE DETAILS
+	} elseif ($function == 'editmusicpage') {
+		$editaboutus = array();
+		$aboutusid = 3;
+		if ((!empty($_POST['title'])) || (!empty($_POST['keywords'])) || (!empty($_POST['description'])) || (!empty($_POST['content']))){
+			$title			= $_POST['title'];
+			$keywords		= $_POST['keywords'];
+			$description 	= $_POST['description'];
+			$content 		= $_POST['content'];
+			$editaboutus['title']		= $title;
+			$editaboutus['keywords']	= $keywords;
+			$editaboutus['description']	= $description;
+			$editaboutus['content'] 	= $content;
+			//Updating the content into the page file
+			$insertContent=$db->prepare("
+				UPDATE page
+				SET title = ?, keywords = ?, description = ?, content = ?
+				WHERE id = $aboutusid
+				");
+			if (!$insertContent) {
+				printf("Error updating page table");
+				printf("Errormessage: %s\n", $db->error);
+			} else {
+				echo "Content updated <br>";
+				$insertContent->bind_param('ssss', $title, $keywords, $description, $content);
+				$insertContent->execute();
+			}
+		}
+		$returnData = $editaboutus;
+
+		//VIEW BLOGS PAGE CONTENT 
+	} elseif ($function == 'blogspage') {
+		$blogspage = array();
+		$blogspageid = 4;
+		//the PAGE table has - id, content, description
+		$results = $db->prepare("
+			SELECT id, title, keywords, content, description
+			FROM page
+			WHERE id = ?
+			");	
+		$results->bind_param('i', $blogspageid);
+		$results->execute();
+		$results->bind_result($id, $title, $keywords, $content, $description);
+		$results->store_result();
+		while ($results->fetch()) {
+			$blogspage['id']			= $id;
+			$blogspage['title']			= $title;
+			$blogspage['keywords']			= $keywords;
+			$blogspage['content'] 	= $content;
+			$blogspage['description'] 	= $description;
+	    }
+	    $returnData = $blogspage;
+		
+		//EDIT BLOGS PAGE DETAILS
+	} elseif ($function == 'editblogspage') {
+		$editblogspage = array();
+		$blogspageid = 4;
+		if ((!empty($_POST['title'])) || (!empty($_POST['keywords'])) || (!empty($_POST['description']))){
+			$title			= $_POST['title'];
+			$keywords		= $_POST['keywords'];
+			$description 	= $_POST['description'];
+			$editblogspage['title']			= $title;
+			$editblogspage['keywords']		= $keywords;
+			$editblogspage['description']	= $description;
+			//Updating the content into the page file
+			$insertContent=$db->prepare("
+				UPDATE page
+				SET title = ?, keywords = ?, description = ?
+				WHERE id = $blogspageid
+				");
+			if (!$insertContent) {
+				printf("Error updating page table");
+				printf("Errormessage: %s\n", $db->error);
+			} else {
+				echo "Content updated <br>";
+				$insertContent->bind_param('sss', $title, $keywords, $description);
+				$insertContent->execute();
+			}
+		}
+		$returnData = $editblogspage;
+
+		//VIEW ABOUT US DETAILS
+
 	} elseif ($function == 'aboutus') {
 		$aboutus = array();
 		$aboutUsId = 1;
 		//the PAGE table has - id, content, description
 		$results = $db->prepare("
-			SELECT id, content
+			SELECT id, title, keywords, description, content
 			FROM page
 			WHERE id = ?
 			");	
 		$results->bind_param('i', $aboutUsId);
 		$results->execute();
-		$results->bind_result($id, $content);
+		$results->bind_result($id, $title, $keywords, $description, $content);
 		$results->store_result();
 		while ($results->fetch()) {
 			$aboutus['id']			= $id;
+			$aboutus['title']		= $title;
+			$aboutus['keywords']	= $keywords;
+			$aboutus['description']	= $description;
 			$aboutus['content'] 	= $content;
 			//the PAGEIMAGE table has - id, pageid, type, fileid
 			$imageResult = $db->prepare("
@@ -144,10 +231,16 @@ $function = $_POST['function'];
 	} elseif ($function == 'editaboutus') {
 		$editaboutus = array();
 		$aboutusid = 1;
-		if ((!empty($_POST['content'])) || (!empty($_POST['link']))){
-			$content = $_POST['content'];
-			$link	 = $_POST['link'];
-				$editaboutus['content'] = $content;
+		if ((!empty($_POST['title'])) || (!empty($_POST['keywords'])) || (!empty($_POST['description'])) || (!empty($_POST['content'])) || (!empty($_POST['link']))){
+			$title			= $_POST['title'];
+			$keywords		= $_POST['keywords'];
+			$description 	= $_POST['description'];
+			$content 		= $_POST['content'];
+			$link	 		= $_POST['link'];
+				$editaboutus['title']		= $title;
+				$editaboutus['keywords']	= $keywords;
+				$editaboutus['description']	= $description;
+				$editaboutus['content'] 	= $content;
 				$imageResult=$db->prepare("
 					SELECT fileid
 					FROM pageimage
@@ -174,7 +267,7 @@ $function = $_POST['function'];
 					//Updating the content into the page file
 					$insertContent=$db->prepare("
 						UPDATE page
-						SET content = ?
+						SET title = ?, keywords = ?, description = ?, content = ?
 						WHERE id = $aboutusid
 						");
 					if (!$insertContent) {
@@ -182,7 +275,7 @@ $function = $_POST['function'];
 						printf("Errormessage: %s\n", $db->error);
 					} else {
 						echo "Content updated <br>";
-						$insertContent->bind_param('s', $content);
+						$insertContent->bind_param('ssss', $title, $keywords, $description, $content);
 						$insertContent->execute();
 					}
 				}
@@ -195,17 +288,20 @@ $function = $_POST['function'];
 		$homepage = array();
 		$homepageid = 2;
 		$results = $db->prepare("
-			SELECT id, content
+			SELECT id, title, keywords, content, description
 			FROM page
 			WHERE id = ?
 			");	
 		$results->bind_param('i', $homepageid);
 		$results->execute();
-		$results->bind_result($id, $content);
+		$results->bind_result($id, $title, $keywords, $content, $description);
 		$results->store_result();
 		while ($results->fetch()) {
-			$homepage['id']			= $id;
-			$homepage['content'] 	= $content;
+			$homepage['id']			 = $id;
+			$homepage['title']		 = $title;
+			$homepage['keywords']	 = $keywords;
+			$homepage['content'] 	 = $content;
+			$homepage['description'] = $description;
 			$imageResult = $db->prepare("
 				SELECT fileid
 				FROM pageimage
@@ -235,51 +331,53 @@ $function = $_POST['function'];
 		
 		//EDIT HOME PAGE DETAILS
 	} elseif ($function == 'edithomepage') {
-		$editaboutus = array();
+		$edithomepage = array();
 		$homepageid = 2;
-		if ((!empty($_POST['content'])) || (!empty($_POST['link']))){
-			$content = $_POST['content'];
-			$link	 = $_POST['link'];
-				$editaboutus['content'] = $content;
-				$imageResult=$db->prepare("
-					SELECT fileid
-					FROM pageimage
-					WHERE pageid = $homepageid
+		if ((!empty($_POST['title'])) || (!empty($_POST['keywords'])) || (!empty($_POST['description'])) || (!empty($_POST['content'])) || (!empty($_POST['link']))){
+			$title			= $_POST['title'];
+			$keywords 		= $_POST['keywords'];
+			$description 	= $_POST['description'];
+			$content 		= $_POST['content'];
+			$link	 		= $_POST['link'];
+			$imageResult=$db->prepare("
+				SELECT fileid
+				FROM pageimage
+				WHERE pageid = $homepageid
+				");
+			$imageResult->execute();
+			$imageResult->bind_result($fileid);
+			$imageResult->store_result();
+			while($imageResult->fetch()){
+			//Updating the link in the file table
+				$insertFile=$db->prepare("
+					UPDATE file
+					SET link = ?
+					WHERE id = $fileid
 					");
-				$imageResult->execute();
-				$imageResult->bind_result($fileid);
-				$imageResult->store_result();
-				while($imageResult->fetch()){
-				//Updating the link in the file table
-					$insertFile=$db->prepare("
-						UPDATE file
-						SET link = ?
-						WHERE id = $fileid
-						");
-					if (!$insertFile) {
-						printf("Error updating file table");
-						printf("Errormessage: %s\n", $db->error);
-					} else {
-						echo "Link updated <br>";
-						$insertFile->bind_param('s', $link);
-						$insertFile->execute();
-					}
-					//Updating the content into the page file
-					$insertContent=$db->prepare("
-						UPDATE page
-						SET content = ?
-						WHERE id = $homepageid
-						");
-					if (!$insertContent) {
-						printf("Error updating page table");
-						printf("Errormessage: %s\n", $db->error);
-					} else {
-						echo "Content updated <br>";
-						$insertContent->bind_param('s', $content);
-						$insertContent->execute();
-					}
+				if (!$insertFile) {
+					printf("Error updating file table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Link updated <br>";
+					$insertFile->bind_param('s', $link);
+					$insertFile->execute();
 				}
-			$returnData = $editaboutus;
+				//Updating the content into the page file
+				$insertContent=$db->prepare("
+					UPDATE page
+					SET title = ?, keywords = ?, content = ?, description = ?
+					WHERE id = $homepageid
+					");
+				if (!$insertContent) {
+					printf("Error updating page table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Content updated <br>";
+					$insertContent->bind_param('ssss', $title, $keywords, $content, $description);
+					$insertContent->execute();
+				}
+			}
+			$returnData = $edithomepage;
 		}
 		//VIEW AUTHORS DETAILS
 	 } elseif ($function == 'authors'){

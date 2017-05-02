@@ -57,41 +57,40 @@
 
 /*			//BLOGS REQUIREMENTS
 			send['function'] = 'bloglist';
-			send['disabled'] = 'Hide';  //setting this variable will HIDE deleted blogs
 
-*/
-/*			//SINGLE BLOG REQUIREMENTS
+
+			//SINGLE BLOG REQUIREMENTS
 			send['function'] = 'blog';
 			send['id'] = 2;
 
-/*			//ADD BLOG REQUIREMENTS
+			//ADD BLOG REQUIREMENTS
 			send['function'] = 'addblog';
-			send['title'] = 'Untitled Blog 2.';
-			send['blurb'] = 'This is my new Blog post diddly dawg!';
-			send['keywords'] = 'sexy, youtube, dance, pilates, sweaty';
-			send['content'] = 'This is my blog.  It is my blog.  I must look after this blog.  It has content.  Its not good though';
-			send['author'] = 'Nick Big Daddy Kington';
-			send['deliver'] = '20-04-2017';
-			send['coverlink'] = 'googleimages.com/blogcoverimg';  //NOT the linking id, the actual file/location
+			send['title'] = 'Preparing to see a lot of new music come this way!';
+			send['blurb'] = 'Lots of music coming your way.';
+			send['keywords'] = 'new, wet, naughty, MA15+';
+			send['content'] = 'Over the coming weeks we are planning on bringing in a lot of new content to the website!  We are very excited to start uploading more content to really push the site further forward!';
+			send['author'] = 'Lisa Horner';
+			send['deliver'] = '02-05-2017';
+			send['coverlink'] = 'googleimages.com/newsongs.jpg';  //NOT the linking id, the actual file/location
 			send['enabled'] = 1;  //will need to be set to true, but may change this to be added automatically
-*/
-/*			//EDIT BLOG REQUIREMENTS
+
+			//EDIT BLOG REQUIREMENTS
 			send['function'] = 'editblog';
-			send['id'] = 5;
-			send['title'] = 'Editted blog 3';
-			send['blurb'] = 'This blog has been editted twice';
-			send['keywords'] = 'sexy, youtube, dance, pilates, sweaty';
-			send['content'] = 'This is my NEW editted Blog post diddly dawg!';
-			send['author'] = 'Nick Big Daddy Kington';
-			send['deliver'] = '23-04-2017';
-			send['coverlinkid'] = '109';  //NOTE this is the linking ID and not file/location
-			send['coverlinkfile'] = 'googleimages.com/newblogimage4';
+			send['id'] = 6;
+			send['title'] = 'Preparing to see a lot of new music come this way!';
+			send['blurb'] = 'LOTS of music coming your way.';
+			send['keywords'] = 'new, wet, naughty, MA15+';
+			send['content'] = 'Over the coming weeks we are planning on bringing in a lot of new content to the website!  We are very excited to start uploading more content to really push the site further forward!';
+			send['author'] = 'Lisa Horner';
+			send['deliver'] = '02-05-2017';
+			send['coverlinkid'] = '114';  //NOTE this is the linking ID and not file/location
+			send['coverlinkfile'] = 'googleimages.com/newsoggs.jpg';
 			send['enabled'] = 1;
-*/
-/*			//DELETE BLOG
+
+			//DELETE BLOG
 			send['function'] = 'deleteblog';
-			send['id'] = 5;
-*/
+			send['id'] = 6;
+
 
 /*			//CONTACT DETAILS
 			send['function'] = 'contact';
@@ -102,30 +101,36 @@
 			send['streetaddress'] = 'New address';
 			send['email'] = 'new email';
 			send['hours'] = 'new hours';
-*/
 
-/*			//ABOUT US DETAILS
+
+			//ABOUT US DETAILS
 			send['function'] = 'aboutus';
 
 
 			//UPDATE ABOUT US DETAILS
 			send['function'] = 'editaboutus';
-			send['content'] = 'This is new content LALALALALALALA';
-			send['link'] = 'google.images.com/newimage.jpeg';
-
+			send['title'] = 'About all of us here at M4P';
+			send['keywords'] = 'about, music, pilates';
+			send['description'] = 'Having experience in music production, Lisa and PJ have created music designed for pilates classes for several years.';
+			send['content'] = 'WE are an officially authorised online retail website providing high quality music tracks to professional Pilates and Fitness Instructors.';
+			send['link'] = 'google.images.com/aboutuspagge.jpeg';
+*/
 
 			//HOMEPAGE DETAILS
 			send['function'] = 'homepage';
 
-			//UPDATE HOMEPAGE DETAILS
+/*			//UPDATE HOMEPAGE DETAILS
 			send['function'] = 'edithomepage';
-			send['content'] = 'New Homepage deets yoloswag!';
-			send['link'] = 'google.images.com/homepagg.jpeg';
+			send['title'] = 'WELCOME to Music for Pilates';
+			send['keywords'] = 'homepage, music, piplates';
+			send['description'] = 'Lisa horner and PJ Hawn work together to bring you a collection of royalty free music, perfect for pilates classes.';
+			send['content'] = 'Yoga, gyms, fitness classes of all kinds, spas, even pubs, clubs, restaurants, hairdressers, offices, anywhere.  Yes, all our music is 100% royalty and license free. This means you can download and use your music in public places, without paying any fees to royalty and license organisations e.g. PPL (UK), PPCA (Australia), ASCAP (USA).';
+			send['link'] = 'google.images.com/homepagge.jpeg';
 
-
+/*
 			//VIEW AUTHORS DETAILS
 			send['function'] = 'authors';
-*/
+
 			//UPDATE AUTHORS DETAILS
 			send['function'] = 'editauthors';
 			send['perryname'] = 'New Perry!';
@@ -135,7 +140,17 @@
 			send['lisaimg'] = 'myspace.com/lisa.jpg';
 			send['lisablurb'] = 'This is Lisas NEW and UPDATED profile blurb';
 
+			//VIEW BLOGS PAGE DETAILS
+			send['function'] = 'blogspage';
 
+			//EDIT BLOGS PAGE
+			send['function'] = 'editblogspage';
+			send['title'] = 'OUR collection of blogs!';
+			send['keywords'] = 'blogs, music, pilates, lisa horner, pj hawn';
+			send['content'] = 'Here is a collection of our blogs!  Be sure to check back regularly for more blogs!';
+			send['description'] = 'Here is a collection of our blogs posts, from Lisa and PJ.';
+
+*/
 			
 			$.ajax({
 				type:"POST",
