@@ -126,7 +126,7 @@ $function = $_POST['function'];
 			$description 	= $_POST['description'];
 			$soundcloudurl 	= $_POST['soundcloudurl'];
 			//$tracklink 		= $_POST['tracklink'];
-			//$coverlink		= $_POST['coverlink'];
+			$coverlink		= $_POST['coverlink'];
 			//$deliver		= $_POST['deliver'];
 			$price			= $_POST['price'];
 			$bpm			= $_POST['bpm'];
@@ -159,27 +159,27 @@ $function = $_POST['function'];
 				//$tracklinkid = $db->insert_id;
 
 				//insert cover link data into file table
-				//$insertFile = $db->prepare("
-				//	INSERT INTO file
-			//		(link, uploaddate, type)
-			//		VALUES (?, ?, ?)
-			//		");
+				$insertFile = $db->prepare("
+					INSERT INTO file
+					(link, uploaddate, type)
+					VALUES (?, ?, ?)
+					");
 
-				//if (!$insertFile) {
-			//		printf("Errormessage: %s\n", $db->error);
-		//		} else {
-		//			echo "Prepared putting coverlink into file <br>";
-		//			$type = 'image';
-		//			$insertFile->bind_param('sss', $coverlink, $uploaddate, $type);
-		//			$insertFile->execute();
-		//		}
+				if (!$insertFile) {
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					//echo "Prepared putting coverlink into file <br>";
+					$type = 'image';
+					$insertFile->bind_param('sss', $coverlink, $uploaddate, $type);
+					$insertFile->execute();
+				}
 
 				//save cover link file id to separate variable
-				//$coverlinkid = $db->insert_id;
+				$coverlinkid = $db->insert_id;
 
 
 				//echo "tracklink " . $tracklinkid . "<br>";
-				//echo "coverlink " . $coverlinkid . "<br>";
+				// echo "coverlink " . $coverlinkid . "<br>";
 				//echo "date " . $uploaddate . "<br>";
 
 				//$test = "INSERT INTO track (title, description, soundcloudurl, tracklink, coverlink, price, bpm, orderposition, discountcode, enabled) VALUES ('$title', '$description', '$soundcloudurl', $tracklinkid, $coverlinkid, $price, $bpm, $orderposition, $discountcode, $enabled)";

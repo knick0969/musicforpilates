@@ -114,7 +114,6 @@
 			success: function(data) {
 				//returndata = data['return'];
 				//$('#resultArea').html(data['data']);
-
 				$('#keywords').val(data['return']['keywords']);
 				$('#description').val(data['return']['description']);
 				$('#title').val(data['return']['title']);
