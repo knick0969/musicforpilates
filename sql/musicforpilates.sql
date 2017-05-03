@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2017 at 10:21 PM
+-- Generation Time: May 03, 2017 at 03:20 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -84,6 +84,33 @@ INSERT INTO `contact` (`id`, `streetaddress`, `email`, `hours`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `featuredtracks`
+--
+
+DROP TABLE IF EXISTS `featuredtracks`;
+CREATE TABLE `featuredtracks` (
+  `id` int(11) NOT NULL,
+  `trackid` int(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Truncate table before insert `featuredtracks`
+--
+
+TRUNCATE TABLE `featuredtracks`;
+--
+-- Dumping data for table `featuredtracks`
+--
+
+INSERT INTO `featuredtracks` (`id`, `trackid`) VALUES
+(0, 26),
+(1, 16),
+(2, 17),
+(3, 25);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `file`
 --
 
@@ -105,6 +132,10 @@ TRUNCATE TABLE `file`;
 --
 
 INSERT INTO `file` (`id`, `link`, `uploaddate`, `type`) VALUES
+(116, 'googleimages.com/thirdsong', '2017-05-03', 'image'),
+(117, 'google.com/music/thirdsong.wav', '2017-05-03', 'music'),
+(118, 'googleimages.com/thirdsong', '2017-05-03', 'image'),
+(115, 'google.com/music/thirdsong.wav', '2017-05-03', 'music'),
 (113, 'google.images.com/homepagge.jpeg', '2017-04-26', 'homepage picture'),
 (112, 'myspace.com/lisa.jpg', '2017-04-24', 'profile picture'),
 (111, 'myspace.com/perry.jpg', '2017-04-24', 'profile picture'),
@@ -254,12 +285,14 @@ CREATE TABLE `track` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `tags` varchar(255) NOT NULL,
   `soundcloudurl` varchar(255) NOT NULL,
   `tracklink` int(50) NOT NULL,
   `coverlink` int(50) NOT NULL,
   `deliver` date NOT NULL,
   `price` double NOT NULL,
   `bpm` varchar(10) NOT NULL,
+  `duration` time NOT NULL,
   `orderposition` int(10) NOT NULL DEFAULT '0',
   `discountcode` varchar(50) DEFAULT NULL,
   `enabled` tinyint(1) NOT NULL DEFAULT '1'
@@ -274,11 +307,11 @@ TRUNCATE TABLE `track`;
 -- Dumping data for table `track`
 --
 
-INSERT INTO `track` (`id`, `title`, `description`, `soundcloudurl`, `tracklink`, `coverlink`, `deliver`, `price`, `bpm`, `orderposition`, `discountcode`, `enabled`) VALUES
-(16, 'MFP001 - Creation of our Dreams', 'This album consists of 3 tracks, lasting over an hour.\n\nThe was the first of our creations. A beautiful, chilled download with calming piano, flute, oboe and pan pipes. You will find your clients with their eyes closed and focusing on your voice, leaving them to really concentrate on their practice. Ideal for Pilates and relaxation.', 'soundcloud.com/music/newsong.wav', 40, 41, '2014-05-08', 25, '60', 2, '', 1),
-(17, 'MFP002 - Whale\'s Journey | Music For Pilates', 'Consists of 3 tracks, lasting over an hour.\n\nA relaxing, mellow and happy feel, using strings, acoustic guitar, piano and flute sounds. Suitable for all Pilates styles.', 'soundcloud.com/music/deletemeplz.wav', 42, 43, '2014-05-08', 25, '80', 4, '', 1),
-(25, 'MFP003 - Birds of Paradise | Music for Pilates', 'This album consists of 4 tracks lasting over an hour.\n\nIt has a beautiful, light and up beat feel. It is easy to lose yourself in these wonderful piano and guitar based sounds. You will be able to focus on your teaching and your participants will be able to focus on their practice. Ideal for all styles of Pilates and relaxation.', 'soundcloud.com/music/thirdsong.wav', 100, 101, '2014-05-08', 25, '100', 1, '', 1),
-(26, 'MFP004 - Funky Music | Music for Pilates', 'Consists of 5 tracks, lasting over an hour.\n\nThis download is available in 5 different tempos: 120bpm, 126bpm, 128bpm,130bpm and 132bpm, enabling you to use it for various style classes, such as Barre and more energetic, circuit type Pilates classes. It has a fun and funky feel and will leave you and your participants feeling invigorated and energised.', 'soundcloud.com/music/thirdsong.wav', 102, 103, '2014-05-08', 25, '126', 3, '', 1);
+INSERT INTO `track` (`id`, `title`, `description`, `tags`, `soundcloudurl`, `tracklink`, `coverlink`, `deliver`, `price`, `bpm`, `duration`, `orderposition`, `discountcode`, `enabled`) VALUES
+(16, 'MFP001 - Creation of our Dreams', 'This album consists of 3 tracks, lasting over an hour.\n\nThe was the first of our creations. A beautiful, chilled download with calming piano, flute, oboe and pan pipes. You will find your clients with their eyes closed and focusing on your voice, leaving them to really concentrate on their practice. Ideal for Pilates and relaxation.', 'music, pilates, dreams', 'soundcloud.com/music/newsong.wav', 40, 41, '2014-05-08', 25, '60', '01:12:30', 0, '', 1),
+(17, 'MFP002 - Whale\'s Journey | Music For Pilates', 'Consists of 3 tracks, lasting over an hour.\n\nA relaxing, mellow and happy feel, using strings, acoustic guitar, piano and flute sounds. Suitable for all Pilates styles.', 'music, pilates, whale, journey', 'soundcloud.com/music/deletemeplz.wav', 42, 43, '2014-05-08', 25, '80', '00:45:50', 0, '', 1),
+(25, 'MFP003 - Birds of Paradise | Music for Pilates', 'This album consists of 4 tracks lasting over an hour.\n\nIt has a beautiful, light and up beat feel. It is easy to lose yourself in these wonderful piano and guitar based sounds. You will be able to focus on your teaching and your participants will be able to focus on their practice. Ideal for all styles of Pilates and relaxation.', 'music, pilates, birds, paradise', 'soundcloud.com/music/thirdsong.wav', 100, 101, '2014-05-08', 25, '100', '02:03:00', 0, '', 1),
+(26, 'MFP004 - Funky Music | Music for Pilates', 'Consists of 5 tracks, lasting over an hour.\n\nThis download is available in 5 different tempos: 120bpm, 126bpm, 128bpm,130bpm and 132bpm, enabling you to use it for various style classes, such as Barre and more energetic, circuit type Pilates classes. It has a fun and funky feel and will leave you and your participants feeling invigorated and energised.', 'music, pilates, funky, pop', 'soundcloud.com/music/thirdsong.wav', 102, 103, '2014-05-08', 25, '126', '01:10:50', 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -319,6 +352,12 @@ ALTER TABLE `blog`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `featuredtracks`
+--
+ALTER TABLE `featuredtracks`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -384,10 +423,15 @@ ALTER TABLE `blog`
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `featuredtracks`
+--
+ALTER TABLE `featuredtracks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `file`
 --
 ALTER TABLE `file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 --
 -- AUTO_INCREMENT for table `meta`
 --

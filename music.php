@@ -117,7 +117,6 @@
 				var alltracks = data.length;
 				
 				// loop attempt 2
-
 				for (var i = 0; i < alltracks;  i++) {
 					$('#tracksContainer').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud">aud</p></div><iframe id="soundcloud_widget_'+i+'" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="'+data[i]['coverlinkfile'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" id="play_'+i+'" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
 				};
@@ -144,7 +143,7 @@
 				console.log('Making widget '+id);
 				widgetCollection[id] = SC.Widget(document.getElementById('soundcloud_widget_'+id));
 				widgetCollection[id].bind(SC.Widget.Events.READY, function() {
-					
+
 					console.log(widgetCollection[id]);
 
 				});
