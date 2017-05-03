@@ -94,20 +94,22 @@ $function = $_POST['function'];
 		$addblog = array();
 		$today = date('Y-m-d');
 		//check to see if post data has been entered in
-		if ((!empty($_POST['title'])) || (!empty($_POST['blurb'])) || (!empty($_POST['keywords'])) || (!empty($_POST['content'])) || (!empty($_POST['author'])) || (!empty($_POST['deliver'])) || (!empty($_POST['coverlink'])) ||  (!empty($_POST['enabled']))){
+		//echo "Bewbehs received <br>";
+
+		if ((!empty($_POST['title'])) || (!empty($_POST['blurb'])) || (!empty($_POST['keywords'])) || (!empty($_POST['content']))/* || (!empty($_POST['author'])) || (!empty($_POST['deliver'])) || (!empty($_POST['coverlink']))*/ ||  (!empty($_POST['enabled']))){
 			$title 			= $_POST['title'];
 			$blurb		 	= $_POST['blurb'];
 			$keywords		= $_POST['keywords'];
 			$content 		= $_POST['content'];
-			$author 		= $_POST['author'];
-			$deliver		= date('Y-m-d',strtotime($_POST['deliver']));
-			$coverlink		= $_POST['coverlink'];
-			$uploaddate		= $deliver;
+			//$author 		= $_POST['author'];
+			//$deliver		= date('Y-m-d',strtotime($_POST['deliver']));
+			//$coverlink		= $_POST['coverlink'];
+			//$uploaddate		= $deliver;
 			$enabled		= $_POST['enabled'];
-			echo "Bewbehs received <br>";
+			//echo "Bewbehs received <br>";
 
 			//insert cover link into file table
-				$insertFile = $db->prepare("
+				/*$insertFile = $db->prepare("
 					INSERT INTO file
 					(link, uploaddate, type)
 					VALUES (?, ?, ?)
@@ -126,18 +128,18 @@ $function = $_POST['function'];
 				$coverlinkid = $db->insert_id;
 
 				echo "coverlink ID is " . $coverlinkid . "<br>";
-
+*/
 			$insertblog = $db->prepare("
 				INSERT INTO blog 
-				(title, blurb, content, keywords, author, deliver, coverlink, uploaddate, enabled)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+				(title, blurb, content, keywords, enabled)
+				VALUES (?, ?, ?, ?, ?)
 				");
 
 			if (!$insertblog) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Inserting into the blog table <br>";
-				$insertblog->bind_param('ssssssiss', $title, $blurb, $keywords, $content, $author, $deliver, $coverlinkid, $uploaddate, $enabled);
+				//echo "Inserting into the blog table <br>";
+				$insertblog->bind_param('ssssi', $title, $blurb, $keywords, $content, $enabled);
 				$insertblog->execute();
 			}
 

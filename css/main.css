@@ -963,6 +963,7 @@ body {
 }
 .musicPage .track {
   position: relative;
+  margin-bottom: 50px;
 }
 .musicPage .track:after {
   content: " ";

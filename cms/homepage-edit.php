@@ -1,3 +1,14 @@
+<?php 
+	
+	//$keywords = $_POST['keywords'];
+	//$_POST['title'] = "";
+	//$_POST['page_description'] = "";
+	//$_POST['page_brief_description'] = "";
+
+	//var_dump(keywords);
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -19,20 +30,20 @@
 			<form method="post" name="homepage-edit" action="">
 				<div class="inputBox">
 					<label for="page_title">Page Title <span>(SEO)</span></label>
-					<input type="text" class="input" name="page_title" placeholder="Type the page title, for example: Music For Pilates">
+					<input type="text" class="input" name="title" id="home-title" placeholder="Type the page title, for example: Music For Pilates">
 				</div>
 				<div class="inputBox">
 					<label for="page_keywords">Page Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="page_keywords">
+					<input type="text" class="input" name="keywords" id="home-keywords">
 				</div>
 				<div class="inputBox">
 					<label for="page_description">Page Description <span>(SEO)</span></label>
-					<input type="text" class="input" name="page_description">
+					<input type="text" class="input" name="description" id="home-description">
 				</div>
 				<div class="divider"></div>
 				<div class="inputBox">
 					<label for="page_brief_description">Brief Description <span>(Displayed on the Homepage)</span></label>
-					<textarea class="input textarea" name="page_brief_description" id="homeBlurb"></textarea>
+					<textarea class="input textarea" name="content" id="homeBlurb"></textarea>
 				</div>
 				<div class="inputBox">
 					<label for="track_order_select">Featured Tracks <span>(Displayed on the Homepage)</span></label>
@@ -119,7 +130,7 @@
 		var send = {};
 		send['function'] = 'homepage';
 		send['id'] = 2;
-		var returndata = {};
+		var data = {};
 
 		$.ajax({
 			type:"POST",
@@ -127,15 +138,17 @@
 			dataType:"JSON",
 			data:send,
 			success: function(data) {
+				console.log(data);
 				//returndata = data['return'];
 				//$('#resultArea').html(data['data']);
+				$('#home-keywords').val(data['return']['keywords'])
+				$('#home-description').val(data['return']['description'])
+				$('#home-title').val(data['return']['title'])
 				$('#homeBlurb').html(data['return']['content'])
-				//$('#homeAboutPic').append('<img src="' + data['return']['image'] + '" class="" align="left">')
-				/* For each loop {
-					$('#trackContainer').append('<div class="track"><img src="img/'+data['return'][i]['image']+'"><h3>'+data['return'][i]['title']+'</h3><div class="description">'+data['return'][i]['description']+'</div><div class="price">'+data['return'][i]['cost']+'</div><a href="track.php?id='+data['return'][i]['id']+'"><button class="moreInfo">More info</button></div>')
-				} */
+				
 			},
 			error: function (xhr, ajaxOptions, thrownError){
+				console.log(data);
 		        //alert(xhr.statusText);
 		        //alert(thrownError);
 		        //$('#resultArea').html(xhr['responseText']);
@@ -144,7 +157,59 @@
 		    }  
 		});
 
-	</script>
+	$(document).ready(function() {
+	    $("form").submit(function(e){
+			        e.preventDefault(e);
 
+			        var send = {};
+
+					send['title'] = $('#home-title').val();
+					send['keywords'] = $('#home-keywords').val();
+					send['description'] = $('#home-description').val();
+					send['content'] = $('#homeBlurb').val();
+
+					send['function'] = 'edithomepage';
+					send['id'] = 2;
+					var data = {};
+
+					$.ajax({
+						type:"POST",
+						url:"../contentApi.php",
+						dataType:"JSON",
+						data:send,
+						// success: function(data) {
+						
+
+						// },
+						error: function (xhr, ajaxOptions, thrownError){
+					        //alert(xhr.statusText);
+					        //alert(thrownError);
+					        //$('#resultArea').html(xhr['responseText']);
+					        //console.log(ajaxOptions);
+					        //console.log(thrownError);
+					    }  
+					});
+
+			        // the script will find all inputs with the class .input
+			        // $.each($('.contactInput, .input'),function() {
+
+			        //    if ($(this).val().length == '') {
+			        //    // it will check it's value and if its empty, a class error will be applied
+			        //     $(this).addClass('error');
+			        //     $('.overlayError').addClass('overlayDisplay').delay(3000).fadeOut(1000);
+			           
+			        //    } else{
+			        //     console.log('here');
+			        //     $(this).removeClass('error');
+			        //     $('.overlaySuccess').addClass('overlayDisplay').delay(3000).fadeOut(1000);
+			           
+			            
+
+			        //    }
+			        // });
+	    });
+	});
+
+	</script>
 </body>
 </html>

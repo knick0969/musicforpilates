@@ -14,7 +14,7 @@
 		<div class="titleSection">
 			<h2>Welcome to MFP's CMS</h2>
 			<h1>Blog Post Add/Edit</h1>
-			<a href="blogs-post-edit.php" class="cta newpost">ADD NEW POST</a>
+			<a href="blogs-post-add.php" class="cta newpost">ADD NEW POST</a>
 		</div>
 		<div class="whiteSection">
 			<h3>List of Blog Posts</h3>
@@ -76,15 +76,15 @@
 			<form name="blogs-edit" method="post" class="myValidate">
 				<div class="inputBox">
 					<label>Page Title <span>(SEO)</span></label>
-					<input type="text" class="input" name="postTitle" data-myrules="required" placeholder="Type the page title, for example: Music For Pilates">
+					<input type="text" class="input" name="postTitle" data-myrules="required" id="title" placeholder="Type the page title, for example: Music For Pilates">
 				</div>
 				<div class="inputBox">
 					<label>Post Keywords <span>(SEO)</span></label>
-					<input type="text" class="input" name="page_keywords">
+					<input type="text" class="input" name="page_keywords" id="keywords">
 				</div>
 				<div class="inputBox">
 					<label>Page Text<span>(SEO)</span></label>
-					<input type="text" class="input" data-myrules="required" name="page_description">
+					<input type="text" class="input" data-myrules="required" name="page_description" id="description">
 				</div>
 				<div class="divider"></div>
 				<input type="submit" value="SAVE" class="cta newpost">
@@ -96,9 +96,9 @@
 
 	<script>
 
+		//call blog list
 		var send = {};
 		send['function'] = 'bloglist';
-//		send['id'] = 7;
 		var returndata = {};
 
 		$.ajax({
@@ -121,7 +121,67 @@
 			error: function (xhr, ajaxOptions, thrownError){
 		        $('resultarea').html(xhr['responseText']);
 		    }  
+		});
 
+		//blog page settings
+		var send = {};
+		send['function'] = 'blogspage';
+		var data = {};
+
+		$.ajax({
+			type:"POST",
+			url:"../contentApi.php",
+			dataType:"JSON",
+			data:send,
+			success: function(data) {
+
+				data = data['return'];
+
+				$('#title').val(data['title']);
+				$('#keywords').val(data['keywords']);
+				$('#description').val(data['description']);
+				
+
+			},
+			error: function (xhr, ajaxOptions, thrownError){
+		        $('resultarea').html(xhr['responseText']);
+		    }  
+		});
+
+		//intercept form submission
+		$(document).ready(function() {
+		    $("form").submit(function(e){
+		        e.preventDefault(e);
+
+		        var send = {};
+
+				send['title'] = $('#title').val();
+				send['keywords'] = $('#keywords').val();
+				send['description'] = $('#description').val();
+
+				send['function'] = 'editblogspage';
+				//send['id'] = 2;
+				var data = {};
+
+				$.ajax({
+					type:"POST",
+					url:"../contentApi.php",
+					dataType:"JSON",
+					data:send,
+					// success: function(data) {
+					
+
+					// },
+					error: function (xhr, ajaxOptions, thrownError){
+				        //alert(xhr.statusText);
+				        //alert(thrownError);
+				        //$('#resultArea').html(xhr['responseText']);
+				        //console.log(ajaxOptions);
+				        //console.log(thrownError);
+				    }  
+				});
+
+		    });
 		});
 
 	</script>
