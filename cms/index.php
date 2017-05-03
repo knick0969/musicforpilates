@@ -24,7 +24,10 @@ if ((!empty($_POST['email'])) && (!empty($_POST['password']))){
 		while ($results->fetch()) {
 			if (password_verify($_POST['password'], $rtPassword)){
 				session_start();
-				console.log("win");
+				$_SESSION['fakehash'] = 'wannabe hacker';
+				$_SESSION['hash'] = $rtEmail . $rtPassword;
+				$options = ['cost' => 11];
+				$_SESSION['check'] = password_hash($rtEmail . $rtPassword, PASSWORD_BCRYPT, $options);
 				header('Location: homepage-edit.php');
 			} else{
 				echo 'I fucked up.<br>';

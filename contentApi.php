@@ -564,20 +564,23 @@ $function = $_POST['function'];
 		$results->store_result();
 		$count = $results->num_rows;
 		if ($count > 0){
-			//echo 'Booya!<br>';
+			echo 'Booya!<br>';
 			while ($results->fetch()) {
 				if (password_verify($_POST['password'], $rtPassword)){
 					session_start();
+					$_SESSION['hash'] = $rtEmail . $rtPassword;
+					$options = ['cost' => 11];
+					$_SESSION['check'] = password_hash($rtEmail . $rtPassword, PASSWORD_BCRYPT, $options);
 					header('Location: homepage-edit.php');
 				} else{
-					//echo 'I fucked up.<br>';
+					echo 'I fucked up.<br>';
 				}
 		    }
 		} else{
-			//echo 'Username is wrong, biatch!';
+			echo 'Username is wrong, biatch!';
 			die();
 		}
-	 }
+	}
 
 		//NO FUNCTION SELECTED
 	 } else {

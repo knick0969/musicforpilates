@@ -6,6 +6,12 @@
 	//$_POST['page_brief_description'] = "";
 
 	//var_dump(keywords);
+	session_start();
+	$options = ['cost' => 11];
+	$hash = password_hash($_SESSION['hash'], PASSWORD_BCRYPT, $options);
+	if (password_verify($_SESSION['check'], $hash)){
+			header('Location: index.php');
+		}
 
 ?>
 
