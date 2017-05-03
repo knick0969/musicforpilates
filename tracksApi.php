@@ -53,6 +53,21 @@ $function = $_POST['function'];
 					$newTrack['coverlinkfile'] = $link;
 				} 
 			}
+			$exploder = explode(':', $newTrack['duration']);
+			if ($exploder[1] == '01'){
+				$mins = 'min ';
+			} else{
+				$mins = 'mins ';
+			}
+			if ($exploder[0] == '00'){
+				$newTrack['duration'] = $exploder[1] . $mins . $exploder[2] . 'secs';
+			} elseif ($exploder[0] == '01'){
+				$newTrack['duration'] = $exploder[0] . "hr " . $exploder[1] . $mins . $exploder[2] . "secs";
+			} else{
+				$newTrack['duration'] = $exploder[0] . "hrs " . $exploder[1] . $mins . $exploder[2] . "secs";
+			}
+			//this is exploding the tags string by commas and storing to an array
+			//$tagsploder = explode(',', $newTrack['tags']);
 			$tracks[] = $newTrack;
 	    }
 	    $returnData = $tracks;

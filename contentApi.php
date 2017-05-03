@@ -330,6 +330,19 @@ $function = $_POST['function'];
 				}
 			}
 	    }
+
+		$featured=$db->prepare("
+			SELECT id,trackid
+			FROM featuredtracks
+			");
+	    $featured->execute();
+	    $featured->bind_result($lineId,$trackid);
+	    $featured->store_result();
+	    while ($featured->fetch()){
+	    	$homepage['pos' . $lineId] = $trackid;
+	    }
+
+
 	    $returnData = $homepage;
 		
 		//EDIT HOME PAGE DETAILS
@@ -342,6 +355,10 @@ $function = $_POST['function'];
 			$description 	= $_POST['description'];
 			$content 		= $_POST['content'];
 			$link	 		= $_POST['link'];
+			$pos1			= $_POST['pos1'];
+			$pos2			= $_POST['pos2'];
+			$pos3			= $_POST['pos3'];
+			$pos4			= $_POST['pos4'];
 			$imageResult=$db->prepare("
 				SELECT fileid
 				FROM pageimage
@@ -378,6 +395,27 @@ $function = $_POST['function'];
 					echo "Content updated <br>";
 					$insertContent->bind_param('ssss', $title, $keywords, $content, $description);
 					$insertContent->execute();
+				}
+			}
+
+			$count = 0;
+			$positions = array($pos1, $pos2, $pos3, $pos4);
+	 		//foreach ($positions as $value) {
+			for ($count = 0; $count < 3; $count++){
+		 		$featuredtracks = $db->prepare("
+		 			UPDATE featuredtracks
+		 			SET trackid = ?
+		 			WHERE id = $count
+		 			");
+		 		$featuredtracks->execute();
+		 		$place = $positions[$count];
+			 	if (!$featuredtracks) {
+					printf("Error updating page table");
+					printf("Errormessage: %s\n", $db->error);
+				} else {
+					echo "Content updated <br>";
+					$featuredtracks->bind_param('i', $place);
+					$featuredtracks->execute();
 				}
 			}
 			$returnData = $edithomepage;
@@ -511,6 +549,38 @@ $function = $_POST['function'];
 			$returnData = $editauthors;
 		}
 		echo "Finished";
+
+		//LOGIN VERIFICATION
+	 } if ($function == 'login'){
+	 if ((!empty($_POST['email'])) && (!empty($_POST['password']))){
+		$results = $db->prepare("
+			SELECT email, password
+			FROM users
+			WHERE email = ?
+			");	
+		$results->bind_param('s', $_POST['email']);
+		$results->execute();
+		$results->bind_result($rtEmail, $rtPassword);
+		$results->store_result();
+		$count = $results->num_rows;
+		if ($count > 0){
+			echo 'Booya!<br>';
+			while ($results->fetch()) {
+				if (password_verify($_POST['password'], $rtPassword)){
+					session_start();
+					$_SESSION['hash'] = $rtEmail . $rtPassword;
+					$options = ['cost' => 11];
+					$_SESSION['check'] = password_hash($rtEmail . $rtPassword, PASSWORD_BCRYPT, $options);
+					header('Location: homepage-edit.php');
+				} else{
+					echo 'I fucked up.<br>';
+				}
+		    }
+		} else{
+			echo 'Username is wrong, biatch!';
+			die();
+		}
+	}
 
 		//NO FUNCTION SELECTED
 	 } else {

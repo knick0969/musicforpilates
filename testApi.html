@@ -119,7 +119,7 @@
 			send['link'] = 'google.images.com/aboutuspagge.jpeg';
 
 
-			//HOMEPAGE DETAILS
+*/			//HOMEPAGE DETAILS
 			send['function'] = 'homepage';
 
 /*			//UPDATE HOMEPAGE DETAILS
@@ -129,6 +129,10 @@
 			send['description'] = 'Lisa horner and PJ Hawn work together to bring you a collection of royalty free music, perfect for pilates classes.';
 			send['content'] = 'Yoga, gyms, fitness classes of all kinds, spas, even pubs, clubs, restaurants, hairdressers, offices, anywhere.  Yes, all our music is 100% royalty and license free. This means you can download and use your music in public places, without paying any fees to royalty and license organisations e.g. PPL (UK), PPCA (Australia), ASCAP (USA).';
 			send['link'] = 'google.images.com/homepagge.jpeg';
+			send['pos1'] = 26;
+			send['pos2'] = 16;
+			send['pos3'] = 17;
+			send['pos4'] = 25;
 
 /*
 			//VIEW AUTHORS DETAILS
@@ -153,11 +157,17 @@
 			send['content'] = 'Here is a collection of our blogs!  Be sure to check back regularly for more blogs!';
 			send['description'] = 'Here is a collection of our blogs posts, from Lisa and PJ.';
 
+			//LOGIN
+			send['function'] = 'login';
+			send['email'] = 'root';
+			send['password'] = 'poots';
+			//Those are the login details.  They will work, the page wont do anything if both fields aren't filled in.
+
 */
 			
 			$.ajax({
 				type:"POST",
-				url:"tracksApi.php",
+				url:"contentApi.php",
 				dataType:"JSON",
 				data:send,
 				success: function(data) {
