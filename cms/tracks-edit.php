@@ -138,12 +138,12 @@
 
 		        var send = {};
 
-				send['title'] = $('#home-title').val();
-				send['keywords'] = $('#home-keywords').val();
-				send['description'] = $('#home-description').val();
-				send['content'] = $('#homeBlurb').val();
+				send['title'] = $('#title').val();
+				send['keywords'] = $('#keywords').val();
+				send['description'] = $('#description').val();
+				send['content'] = $('#content').val();
 
-				send['function'] = 'edithomepage';
+				send['function'] = 'editmusicpage';
 				send['id'] = 2;
 				var data = {};
 
