@@ -550,6 +550,35 @@ $function = $_POST['function'];
 		}
 		echo "Finished";
 
+		//LOGIN VERIFICATION
+	 } if ($function == 'login'){
+	 if ((!empty($_POST['email'])) && (!empty($_POST['password']))){
+		$results = $db->prepare("
+			SELECT email, password
+			FROM users
+			WHERE email = ?
+			");	
+		$results->bind_param('s', $_POST['email']);
+		$results->execute();
+		$results->bind_result($rtEmail, $rtPassword);
+		$results->store_result();
+		$count = $results->num_rows;
+		if ($count > 0){
+			//echo 'Booya!<br>';
+			while ($results->fetch()) {
+				if (password_verify($_POST['password'], $rtPassword)){
+					session_start();
+					header('Location: homepage-edit.php');
+				} else{
+					//echo 'I fucked up.<br>';
+				}
+		    }
+		} else{
+			//echo 'Username is wrong, biatch!';
+			die();
+		}
+	 }
+
 		//NO FUNCTION SELECTED
 	 } else {
 		$returnData = "No function selected";

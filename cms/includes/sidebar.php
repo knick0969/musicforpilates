@@ -37,7 +37,7 @@
 			</a>
 		</div>	
 		<div class="navButton">
-			<a href="index.php" class="btnLogout" title="Log Out of the CMS">
+			<a href="logout.php" class="btnLogout" title="Log Out of the CMS">
 				Log Out
 			</a>
 		</div>

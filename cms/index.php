@@ -1,3 +1,43 @@
+<?php
+
+
+
+//THIS IS MY TESTING GROUND TO SHOW IT WORKS.  THERE IS A FUNCTION IN THE TESTAPI.HTML AND CONTENTAPI.PHP FILES YOU CAN USE.  ALSO NOTE THAT IN THE FORM I'VE CHANGED
+//THE INPUT FOR USERNAME TO EMAIL WHICH CORRESPONDS WITH THE DATABASE
+
+
+require '../start.php';
+
+if ((!empty($_POST['email'])) && (!empty($_POST['password']))){
+	$results = $db->prepare("
+		SELECT email, password
+		FROM users
+		WHERE email = ?
+		");	
+	$results->bind_param('s', $_POST['email']);
+	$results->execute();
+	$results->bind_result($rtEmail, $rtPassword);
+	$results->store_result();
+	$count = $results->num_rows;
+	if ($count > 0){
+		echo 'Booya!<br>';
+		while ($results->fetch()) {
+			if (password_verify($_POST['password'], $rtPassword)){
+				session_start();
+				console.log("win");
+				header('Location: homepage-edit.php');
+			} else{
+				echo 'I fucked up.<br>';
+			}
+	    }
+	} else{
+		echo 'Username is wrong, biatch!';
+		die();
+	}
+}
+ 
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,9 +55,9 @@
 
 	<div class="loginContainer">
 		<h1>Sign In to MFP CMS</h1>
-		<form name="login" class="loginForm">
+		<form action="index.php" name="login" class="loginForm" method="POST">
 			<label for="username">Username</label>
-			<input type="text" maxlength="100" id="username" name="username" class="input username">
+			<input type="text" maxlength="100" id="username" name="email" class="input username">
 			<label for="password">Password</label>
 			<input type="password" maxlength="100" name="password" class="input">
 			<input type="submit" name="btnLogin" class="submit" value="LOGIN">
