@@ -19,20 +19,23 @@ $function = $_POST['function'];
 			WHERE enabled = 1 AND NOW() > deliver
 			");	
 		$results->execute();
-		$results->bind_result($id, $title, $description, $soundcloudurl, $tracklink, $coverlink, $deliver, $price, $bpm, $orderposition, $discountcode, $enabled);
+		$results->bind_result($id, $title, $description, $tags, $soundcloudurl, $tracklink, $coverlink, $deliver, $price, $bpm, $duration,  $orderposition, $discountcode, $enabled);
 		$results->store_result();
 		while ($results->fetch()) {
 			$newTrack['id'] = $id;
 			$newTrack['title'] = $title;
 			$newTrack['description'] = $description;
+			$newTrack['tags'] = $tags;
 			$newTrack['soundcloudurl'] = $soundcloudurl;
 			$newTrack['tracklink'] = $tracklink;
 			$newTrack['coverlink'] = $coverlink;
 			$newTrack['deliver'] = $deliver;
 			$newTrack['price'] = $price;
 			$newTrack['bpm'] = $bpm;
+			$newTrack['duration'] = $duration;
 			$newTrack['orderposition'] = $orderposition;
 			$newTrack['discountcode'] = $discountcode;
+			$newTrack['enabled'] = $enabled;
 			$secondResult = $db->prepare("
 				SELECT id, link, uploaddate
 				FROM file
@@ -190,7 +193,7 @@ $function = $_POST['function'];
 		$addtrack = array();
 		//check to see if post data has been entered in
 		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['soundcloudurl'])) || (!empty($_POST['tracklink'])) || (!empty($_POST['coverlink'])) || (!empty($_POST['deliver'])) || (!empty($_POST['price'])) || (!empty($_POST['bpm'])) || (!empty($_POST['orderposition'])) || (!empty($_POST['enabled'])) || (!empty($_POST['tracklinkfile'])) || (!empty($_POST['coverlinkfile']))){
-			echo "Bewbs have been recieved <br>";
+			//echo "Bewbs have been recieved <br>";
 			$id 			= $_POST['id'];
 			$title 			= $_POST['title'];
 			$description 	= $_POST['description'];

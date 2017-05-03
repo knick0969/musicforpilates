@@ -105,11 +105,11 @@
 		$.ajax({
 			type:"POST",
 			url:"tracksApi.php",
-			//dataType:"JSON",
+			dataType:"JSON",
 			data:send,
 			success: function(data) {
 				//console.log(data['return']);
-				data = jQuery.parseJSON(data);
+				//data = jQuery.parseJSON(data);
 				data = data['return'];
 
 				//console.log(data.length + 'tracks found in total')
@@ -119,39 +119,48 @@
 				// loop attempt 2
 
 				for (var i = 0; i < alltracks;  i++) {
-					$('#tracksContainer').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud">aud</p></div><iframe id="soundcloud_widget_'+i+'" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="img/'+data[i]['coverlinkfile'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
+					$('#tracksContainer').append('<article class="track"><figure class="trackImg"><div class="priceBox"><p class="price"><span>$</span>'+data[i]['price'] +'</p><p class="aud">aud</p></div><iframe id="soundcloud_widget_'+i+'" width="100%" height="100%" scrolling="no" frameborder="no" src="'+data[i]['soundcloudurl'] +'"></iframe><img src="'+data[i]['coverlinkfile'] +'" class="overlayImg"></figure><div class="trackInfo"><p class="trackTitle">'+data[i]['title'] +'</p><p class="trackDuration">'+data[i]['duration'] +'</p><p class="trackDescription">'+data[i]['description'] +'</p><a href="#" id="play_'+i+'" class="cta blackCta play">LISTEN</a><a href="#" class="cta blackCta">ADD TO CART</a></div></article>');
 				};
+
+				createSoundclouds();
 
 			},
 			error: function (xhr, ajaxOptions, thrownError){
-		        $('resultarea').html(xhr['responseText']);
-
+		        //$('resultarea').html(xhr['responseText']);
+		        console.log(ajaxOptions);
+		        console.log(thrownError);
+		        console.log(xhr.responseText);
 		    }  
 		});
 	</script>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
+
+		function createSoundclouds() {
+			var widgetCollection = [];
+
+			$('.play').each(function() {
+				var id = $(this).attr('id').split('_')[1];
+				console.log('Making widget '+id);
+				widgetCollection[id] = SC.Widget(document.getElementById('soundcloud_widget_'+id));
+				widgetCollection[id].bind(SC.Widget.Events.READY, function() {
+					
+					console.log(widgetCollection[id]);
+
+				});
+				widgetCollection[id].bind(SC.Widget.Events.PLAY , function() {
+
+		            $('#play'+id).trigger('click');
+
+		        });
+			});
 	       
-	        var widget = SC.Widget(document.getElementById('soundcloud_widget_0'));
-	        var widget = SC.Widget(document.getElementById('soundcloud_widget_1'));
-	        var widget = SC.Widget(document.getElementById('soundcloud_widget_2'));
 
     		var isPlaying = false;
-
-
-
-			widget.bind(SC.Widget.Events.READY, function() {
-				console.log(widget);
-
-			});
-			widget.bind(SC.Widget.Events.PLAY , function() {
-
-	            $('.play2').trigger('click');
-
-	        });
 		
 			$('.play').click(function(e) {
+
+				var id = $(this).attr('id').split('_')[1];
 
 				e.preventDefault();
 				var isPlaying = true;
@@ -163,10 +172,10 @@
 		           'opacity' : '0',
 		           'z-index' : '-1'
 		        });
-				widget.toggle();
+				widgetCollection[id].toggle();
 			});
+		}
 
-		});
 	</script>
 
 	<!-- <?php include('includes/featured-blog.php'); ?>-->

@@ -61,7 +61,7 @@ $function = $_POST['function'];
 			");	
 		$results->bind_param('i', $musicPageDescriptionId);
 		$results->execute();
-		$results->bind_result($id, $title, $description, $keywords, $content);
+		$results->bind_result($id, $content, $description, $keywords, $title);
 		$results->store_result();
 		while ($results->fetch()) {
 			$musicPageDescription['id']	= $id;
@@ -122,7 +122,7 @@ $function = $_POST['function'];
 				printf("Error updating page table");
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Content updated <br>";
+				//echo "Content updated <br>";
 				$insertContent->bind_param('ssss', $title, $keywords, $description, $content);
 				$insertContent->execute();
 			}

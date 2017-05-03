@@ -13,7 +13,7 @@
 		<div class="titleSection">
 			<h2>Welcome to MFP's CMS</h2>
 			<h1>Tracks</h1>
-			<a href="tracks-add-edit.php" class="cta newTrack">ADD NEW TRACK</a>
+			<a href="tracks-add-new.php" class="cta newTrack">ADD NEW TRACK</a>
 		</div>
 		<div class="whiteSection">	
 			<h3>List of Tracks</h3>
@@ -103,7 +103,7 @@
 
 		var send = {};
 		send['function'] = 'musicdescription';
-		send['id'] = 3;
+		//send['id'] = 3;
 		var data = {};
 
 		$.ajax({
@@ -118,7 +118,7 @@
 				$('#keywords').val(data['return']['keywords']);
 				$('#description').val(data['return']['description']);
 				$('#title').val(data['return']['title']);
-				$('#content').html(data['return']['content']);
+				$('#content').val(data['return']['content']);
 				
 			},
 			error: function (xhr, ajaxOptions, thrownError){
@@ -144,7 +144,7 @@
 				send['content'] = $('#content').val();
 
 				send['function'] = 'editmusicpage';
-				send['id'] = 2;
+				//send['id'] = 2;
 				var data = {};
 
 				$.ajax({
