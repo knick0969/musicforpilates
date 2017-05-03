@@ -159,54 +159,54 @@
 
 	$(document).ready(function() {
 	    $("form").submit(function(e){
-			        e.preventDefault(e);
+	        e.preventDefault(e);
 
-			        var send = {};
+	        var send = {};
 
-					send['title'] = $('#home-title').val();
-					send['keywords'] = $('#home-keywords').val();
-					send['description'] = $('#home-description').val();
-					send['content'] = $('#homeBlurb').val();
+			send['title'] = $('#home-title').val();
+			send['keywords'] = $('#home-keywords').val();
+			send['description'] = $('#home-description').val();
+			send['content'] = $('#homeBlurb').val();
 
-					send['function'] = 'edithomepage';
-					send['id'] = 2;
-					var data = {};
+			send['function'] = 'edithomepage';
+			send['id'] = 2;
+			var data = {};
 
-					$.ajax({
-						type:"POST",
-						url:"../contentApi.php",
-						dataType:"JSON",
-						data:send,
-						// success: function(data) {
-						
+			$.ajax({
+				type:"POST",
+				url:"../contentApi.php",
+				dataType:"JSON",
+				data:send,
+				// success: function(data) {
+				
 
-						// },
-						error: function (xhr, ajaxOptions, thrownError){
-					        //alert(xhr.statusText);
-					        //alert(thrownError);
-					        //$('#resultArea').html(xhr['responseText']);
-					        //console.log(ajaxOptions);
-					        //console.log(thrownError);
-					    }  
-					});
+				// },
+				error: function (xhr, ajaxOptions, thrownError){
+			        //alert(xhr.statusText);
+			        //alert(thrownError);
+			        //$('#resultArea').html(xhr['responseText']);
+			        //console.log(ajaxOptions);
+			        //console.log(thrownError);
+			    }  
+			});
 
-			        // the script will find all inputs with the class .input
-			        // $.each($('.contactInput, .input'),function() {
+	        // the script will find all inputs with the class .input
+	        // $.each($('.contactInput, .input'),function() {
 
-			        //    if ($(this).val().length == '') {
-			        //    // it will check it's value and if its empty, a class error will be applied
-			        //     $(this).addClass('error');
-			        //     $('.overlayError').addClass('overlayDisplay').delay(3000).fadeOut(1000);
-			           
-			        //    } else{
-			        //     console.log('here');
-			        //     $(this).removeClass('error');
-			        //     $('.overlaySuccess').addClass('overlayDisplay').delay(3000).fadeOut(1000);
-			           
-			            
+	        //    if ($(this).val().length == '') {
+	        //    // it will check it's value and if its empty, a class error will be applied
+	        //     $(this).addClass('error');
+	        //     $('.overlayError').addClass('overlayDisplay').delay(3000).fadeOut(1000);
+	           
+	        //    } else{
+	        //     console.log('here');
+	        //     $(this).removeClass('error');
+	        //     $('.overlaySuccess').addClass('overlayDisplay').delay(3000).fadeOut(1000);
+	           
+	            
 
-			        //    }
-			        // });
+	        //    }
+	        // });
 	    });
 	});
 
