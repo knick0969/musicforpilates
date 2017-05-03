@@ -8,10 +8,6 @@ $returnError = '';
 $function = $_POST['function'];
 	//DISPLAY LIST OF TRACKS
 	if ($function == 'tracklist') {
-		//$disabledSQL = 'WHERE enabled = 1';
-		//if (empty($_POST['disabled'])) {
-		//	$disabledSQL = '';
-		//}
 		$tracks = array();
 		$results = $db->prepare("
 			SELECT *
@@ -19,20 +15,22 @@ $function = $_POST['function'];
 			WHERE enabled = 1 AND NOW() > deliver
 			");	
 		$results->execute();
-		$results->bind_result($id, $title, $description, $soundcloudurl, $tracklink, $coverlink, $deliver, $price, $bpm, $orderposition, $discountcode, $enabled);
+		$results->bind_result($id, $title, $description, $tags, $soundcloudurl, $tracklink, $coverlink, $deliver, $price, $bpm, $duration, $orderposition, $discountcode, $enabled);
 		$results->store_result();
 		while ($results->fetch()) {
-			$newTrack['id'] = $id;
-			$newTrack['title'] = $title;
-			$newTrack['description'] = $description;
-			$newTrack['soundcloudurl'] = $soundcloudurl;
-			$newTrack['tracklink'] = $tracklink;
-			$newTrack['coverlink'] = $coverlink;
-			$newTrack['deliver'] = $deliver;
-			$newTrack['price'] = $price;
-			$newTrack['bpm'] = $bpm;
-			$newTrack['orderposition'] = $orderposition;
-			$newTrack['discountcode'] = $discountcode;
+			$newTrack['id'] 			= $id;
+			$newTrack['title'] 			= $title;
+			$newTrack['description'] 	= $description;
+			$newTrack['tags']			= $tags;
+			$newTrack['soundcloudurl'] 	= $soundcloudurl;
+			$newTrack['tracklink'] 		= $tracklink;
+			$newTrack['coverlink'] 		= $coverlink;
+			$newTrack['deliver'] 		= $deliver;
+			$newTrack['price'] 			= $price;
+			$newTrack['bpm'] 			= $bpm;
+			$newTrack['duration'] 		= $duration;
+			$newTrack['orderposition'] 	= $orderposition;
+			$newTrack['discountcode'] 	= $discountcode;
 			$secondResult = $db->prepare("
 				SELECT id, link, uploaddate
 				FROM file
@@ -44,15 +42,21 @@ $function = $_POST['function'];
 			$secondResult->bind_result($id, $link, $uploaddate);
 			while ($secondResult->fetch()) {
 				if ($id === $tracklink){
-					$newTrack['tracklinkfile'] = $link;
+					$newTrack['tracklinkfile'] 	 = $link;
 					$newTrack['tracklinkupload'] = $uploaddate;
 				} else{
-					$newTrack['coverlinkfile'] = $link;
+					$newTrack['coverlinkfile'] 	 = $link;
 				} 
 			}
+			$exploder = explode(':', $newTrack['duration']);
+			$newTrack['duration'] = $exploder[0] . "hr " . $exploder[1] . 'mins ' . $exploder[2] . "secs";
+			//this is exploding the tags string by commas and storing to an array
+			$tagsploder = explode(',', $newTrack['tags']);
 			$tracks[] = $newTrack;
+			
 	    }
 	    $returnData = $tracks;
+
 	    //DISPLAY SINGLE TRACK DATA
 	} elseif ($function == 'track') {
 		$track = array();
@@ -63,18 +67,20 @@ $function = $_POST['function'];
 			");	
 		$results->bind_param('i', $_POST['id']);
 		$results->execute();
-		$results->bind_result($id, $title, $description, $soundcloudurl, $tracklink, $coverlink, $deliver, $price, $bpm, $orderposition, $discountcode, $enabled);
+		$results->bind_result($id, $title, $description, $tags, $soundcloudurl, $tracklink, $coverlink, $deliver, $price, $bpm, $duration, $orderposition, $discountcode, $enabled);
 		$results->store_result();
 		while ($results->fetch()) {
 			$newTrack['id'] = $id;
 			$newTrack['title'] = $title;
 			$newTrack['description'] = $description;
+			$newTrack['tags'] = $tags;
 			$newTrack['soundcloudurl'] = $soundcloudurl;
 			$newTrack['tracklink'] = $tracklink;
 			$newTrack['coverlink'] = $coverlink;
 			$newTrack['deliver'] = $deliver;
 			$newTrack['price'] = $price;
 			$newTrack['bpm'] = $bpm;
+			$newTrack['duration'] = $duration;
 			$newTrack['orderposition'] = $orderposition;
 			$newTrack['discountcode'] = $discountcode;
 			$newTrack['enabled'] = $enabled;
@@ -102,16 +108,18 @@ $function = $_POST['function'];
 	} elseif ($function == 'addtrack') {
 		$addtrack = array();
 		//check to see if post data has been entered in
-		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['soundcloudurl'])) || (!empty($_POST['tracklink'])) || (!empty($_POST['coverlink'])) || (!empty($_POST['deliver'])) || (!empty($_POST['price'])) || (!empty($_POST['bpm'])) || (!empty($_POST['orderposition'])) || (!empty($_POST['enabled']))){
-			echo "Bewbs have been recieved <br>";
+		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['tags'])) || (!empty($_POST['soundcloudurl'])) || (!empty($_POST['tracklink'])) || (!empty($_POST['coverlink'])) || (!empty($_POST['deliver'])) || (!empty($_POST['price'])) || (!empty($_POST['bpm'])) || (!empty($_POST['duration'])) || (!empty($_POST['orderposition'])) || (!empty($_POST['enabled']))){
+			//echo "Bewbs have been recieved <br>";
 			$title 			= $_POST['title'];
 			$description 	= $_POST['description'];
+			$tags 			= $_POST['tags'];
 			$soundcloudurl 	= $_POST['soundcloudurl'];
 			$tracklink 		= $_POST['tracklink'];
 			$coverlink		= $_POST['coverlink'];
 			$deliver		= $_POST['deliver'];
 			$price			= $_POST['price'];
 			$bpm			= $_POST['bpm'];
+			$duration		= $_POST['duration'];
 			$orderposition	= $_POST['orderposition'];
 			if (empty($_POST['discountcode'])){
 				$discountcode = '0';
@@ -131,7 +139,7 @@ $function = $_POST['function'];
 				if (!$insertFile) {
 					printf("Errormessage: %s\n", $db->error);
 				} else {
-					echo "Prepared putting tracklink into file <br>";
+					//echo "Prepared putting tracklink into file <br>";
 					$type = 'music';
 					$insertFile->bind_param('sss', $tracklink, $uploaddate, $type);
 					$insertFile->execute();
@@ -150,7 +158,7 @@ $function = $_POST['function'];
 				if (!$insertFile) {
 					printf("Errormessage: %s\n", $db->error);
 				} else {
-					echo "Prepared putting coverlink into file <br>";
+					//echo "Prepared putting coverlink into file <br>";
 					$type = 'image';
 					$insertFile->bind_param('sss', $coverlink, $uploaddate, $type);
 					$insertFile->execute();
@@ -160,27 +168,27 @@ $function = $_POST['function'];
 				$coverlinkid = $db->insert_id;
 
 
-				echo "tracklink " . $tracklinkid . "<br>";
-				echo "coverlink " . $coverlinkid . "<br>";
-				echo "date " . $uploaddate . "<br>";
+				//echo "tracklink " . $tracklinkid . "<br>";
+				//echo "coverlink " . $coverlinkid . "<br>";
+				//echo "date " . $uploaddate . "<br>";
 
 				//$test = "INSERT INTO track (title, description, soundcloudurl, tracklink, coverlink, price, bpm, orderposition, discountcode, enabled) VALUES ('$title', '$description', '$soundcloudurl', $tracklinkid, $coverlinkid, $price, $bpm, $orderposition, $discountcode, $enabled)";
 
 			$inserttrack = $db->prepare("
 				INSERT INTO track 
-				(title, description, soundcloudurl, tracklink, coverlink, deliver, price, bpm, orderposition, discountcode, enabled)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+				(title, description, soundcloudurl, tracklink, coverlink, deliver, price, bpm, duration, orderposition, discountcode, enabled)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 				");
 
 			if (!$inserttrack) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Ready to throw this shit into the tracks table <br>";
-				$inserttrack->bind_param('sssiisdiiss', $title, $description, $soundcloudurl, $tracklinkid, $coverlinkid, $deliver, $price, $bpm, $orderposition, $discountcode, $enabled);
+				//echo "Ready to throw this shit into the tracks table <br>";
+				$inserttrack->bind_param('ssssiisdiiiss', $title, $description, $tags, $soundcloudurl, $tracklinkid, $coverlinkid, $deliver, $price, $bpm, $duration, $orderposition, $discountcode, $enabled);
 				$inserttrack->execute() or die(mysqli_error($db));
 			}
 		} else {
-			echo "Post is empty, my dewd";
+			//echo "Post is empty, my dewd";
 		}		    
 		$returnData = $addtrack;
 		
@@ -189,11 +197,12 @@ $function = $_POST['function'];
 
 		$addtrack = array();
 		//check to see if post data has been entered in
-		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['soundcloudurl'])) || (!empty($_POST['tracklink'])) || (!empty($_POST['coverlink'])) || (!empty($_POST['deliver'])) || (!empty($_POST['price'])) || (!empty($_POST['bpm'])) || (!empty($_POST['orderposition'])) || (!empty($_POST['enabled'])) || (!empty($_POST['tracklinkfile'])) || (!empty($_POST['coverlinkfile']))){
-			echo "Bewbs have been recieved <br>";
+		if ((!empty($_POST['title'])) || (!empty($_POST['description'])) || (!empty($_POST['tags'])) || (!empty($_POST['soundcloudurl'])) || (!empty($_POST['tracklink'])) || (!empty($_POST['coverlink'])) || (!empty($_POST['deliver'])) || (!empty($_POST['price'])) || (!empty($_POST['bpm']))|| (!empty($_POST['duration'])) || (!empty($_POST['orderposition'])) || (!empty($_POST['enabled'])) || (!empty($_POST['tracklinkfile'])) || (!empty($_POST['coverlinkfile']))){
+			//echo "Bewbs have been recieved <br>";
 			$id 			= $_POST['id'];
 			$title 			= $_POST['title'];
 			$description 	= $_POST['description'];
+			$tag 			= $_POST['tags'];
 			$soundcloudurl 	= $_POST['soundcloudurl'];
 			$tracklinkid	= $_POST['tracklinkid'];
 			$tracklinkfile	= $_POST['tracklinkfile'];
@@ -202,10 +211,11 @@ $function = $_POST['function'];
 			$deliver		= $_POST['deliver'];
 			$price			= $_POST['price'];
 			$bpm			= $_POST['bpm'];
+			$duration		= $_POST['duration'];
 			$orderposition	= $_POST['orderposition'];
 			$discountcode	= $_POST['discountcode'];
 			$enabled		= $_POST['enabled'];
-			echo $title;
+			//echo $title;
 
 			$results = $db->prepare("
 				SELECT id, tracklink, coverlink
@@ -226,7 +236,7 @@ $function = $_POST['function'];
 			if (!$insertFile) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Prepared!";
+				//echo "Prepared!";
 				$insertFile->bind_param('s', $tracklinkfile);
 				$insertFile->execute();
 			}
@@ -240,30 +250,30 @@ $function = $_POST['function'];
 			if (!$insertFile) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Prepared!";
+				//echo "Prepared!";
 				$insertFile->bind_param('s', $coverlinkfile);
 				$insertFile->execute();
 			}
 				
-			echo "tracklink " . $tracklinkid . "<br>";
-			echo "coverlink " . $coverlinkid . "<br>";
+			//echo "tracklink " . $tracklinkid . "<br>";
+			//echo "coverlink " . $coverlinkid . "<br>";
 
 			$inserttrack = $db->prepare("
 				UPDATE track 
-				SET title = ?, description = ?, soundcloudurl = ?, tracklink = ?, coverlink = ?, deliver = ?, price = ?, bpm = ?, orderposition = ?, discountcode = ?, enabled = ?
+				SET title = ?, description = ?, tags = ?, soundcloudurl = ?, tracklink = ?, coverlink = ?, deliver = ?, price = ?, bpm = ?, duration = ?, orderposition = ?, discountcode = ?, enabled = ?
 				WHERE id = $id
 				");
 
 			if (!$inserttrack) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Prepared!";
-				$inserttrack->bind_param('sssiisdiiss', $title, $description, $soundcloudurl, $tracklinkid, $coverlinkid, $deliver, $price, $bpm, $orderposition, $discountcode, $enabled);
+				//echo "Prepared!";
+				$inserttrack->bind_param('ssssiisdiiiss', $title, $description, $tags, $soundcloudurl, $tracklinkid, $coverlinkid, $deliver, $price, $bpm, $deliver, $orderposition, $discountcode, $enabled);
 				$inserttrack->execute();
 			}
 
 		} else {
-			echo "Post is empty, my dewd";
+			//echo "Post is empty, my dewd";
 		}		    
 		$returnData = $addtrack;
 	
@@ -280,7 +290,7 @@ $function = $_POST['function'];
 		if (!$results) {
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Prepared!";
+				//echo "Prepared!";
 			}
 
 		$results->execute();
@@ -294,5 +304,6 @@ $function = $_POST['function'];
 	$result['data'] = 'All ok';	
 	//$result['test'] = $test;
 	$result['return'] = $returnData;
-	echo json_encode($result);
+	//echo 'Got to end';
+	//echo json_encode($result);
 ?>
