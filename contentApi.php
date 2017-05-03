@@ -55,44 +55,47 @@ $function = $_POST['function'];
 		$musicPageDescriptionId = 3;
 		//the PAGE table has - id, content, description
 		$results = $db->prepare("
-			SELECT id, content, description
+			SELECT id, content, description, keywords, title
 			FROM page
 			WHERE id = ?
 			");	
 		$results->bind_param('i', $musicPageDescriptionId);
 		$results->execute();
-		$results->bind_result($id, $content, $description);
+		$results->bind_result($id, $content, $description, $keywords, $title);
 		$results->store_result();
 		while ($results->fetch()) {
-			$musicPageDescription['id']			= $id;
+			$musicPageDescription['id']	= $id;
+			$musicPageDescription['title']	= $title;
+			$musicPageDescription['description']	= $description;
+			$musicPageDescription['keywords']	= $keywords;
 			$musicPageDescription['content'] 	= $content;
-			$musicPageDescription['description'] 	= $description;
+
 			//the PAGEIMAGE table has - id, pageid, type, fileid
-			$imageResult = $db->prepare("
-				SELECT fileid
-				FROM pageimage
-				WHERE pageid = ?
-				");
-			$imageResult->bind_param('i', $id);
-			$imageResult->execute();
-			$imageResult->bind_result($fileid);
-			$imageResult->store_result();
-			while($imageResult->fetch()){
-				//the FILE table has - id, link, uploaddate, type
-				$imageFile = $db->prepare("
-					SELECT link, uploaddate
-					FROM file
-					WHERE id = ?
-					");
-				$imageFile->bind_param('i', $fileid);
-				$imageFile->execute();
-				$imageFile->bind_result($link, $uploaddate);
-				$imageFile->store_result();
-				while($imageFile->fetch()){
-					$musicPageDescription['image'] = $link;
-					$musicPageDescription['uploaddate'] = $uploaddate;	
-				}
-			}
+			// $imageResult = $db->prepare("
+			// 	SELECT fileid
+			// 	FROM pageimage
+			// 	WHERE pageid = ?
+			// 	");
+			// $imageResult->bind_param('i', $id);
+			// $imageResult->execute();
+			// $imageResult->bind_result($fileid);
+			// $imageResult->store_result();
+			// while($imageResult->fetch()){
+			// 	//the FILE table has - id, link, uploaddate, type
+			// 	$imageFile = $db->prepare("
+			// 		SELECT link, uploaddate
+			// 		FROM file
+			// 		WHERE id = ?
+			// 		");
+			// 	$imageFile->bind_param('i', $fileid);
+			// 	$imageFile->execute();
+			// 	$imageFile->bind_result($link, $uploaddate);
+			// 	$imageFile->store_result();
+			// 	while($imageFile->fetch()){
+			// 		$musicPageDescription['image'] = $link;
+			// 		$musicPageDescription['uploaddate'] = $uploaddate;	
+			// 	}
+			// }
 	    }
 	    $returnData = $musicPageDescription;
 		
@@ -119,7 +122,7 @@ $function = $_POST['function'];
 				printf("Error updating page table");
 				printf("Errormessage: %s\n", $db->error);
 			} else {
-				echo "Content updated <br>";
+				//echo "Content updated <br>";
 				$insertContent->bind_param('ssss', $title, $keywords, $description, $content);
 				$insertContent->execute();
 			}
